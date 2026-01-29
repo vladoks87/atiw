@@ -348,6 +348,75 @@ Constraints: technische Zwangsregeln die Integrität gewährleisten sollen.
 - **Integrität** beschreibt die Regeln
 - **Constraints** setzen diese Regeln technisch um
 - **Konsistenz** ist der Zustand, wenn alle *Constraints* eingehalten werden
+#### Entity-Relationship-Modell (ER-Modell)
+
+![[Pasted image 20260129180518.png]]
+##### Grundkomponenten
+
+- **Entitätstypen** (Rechtecke): Datenobjekte wie `Kunde`, `Bestellung`, `Produkt`.  
+- **Attribute** (Ovale): Eigenschaften wie `KundenID`, `Name`, `Preis`.  
+- **Beziehungstypen** (Raute): Verknüpfungen zwischen Entitäten.  
+- **Kardinalitäten**: Wie viele Entitäten zueinander in Beziehung stehen können (1:1, 1:n, n:m).
+
+---
+
+**Kardinalitäten – Der Trick zum Verstehen**
+
+**Merksatz**: *"Links → rechts, wie viele?"*  
+**Leserichtung**: Immer von **links nach rechts** die Kardinalität lesen.
+
+**1:1 (eins zu eins)**
+
+- **Jede** Entität links ist mit **genau einer** rechts verbunden (und umgekehrt).  
+- **Beispiele**:  
+  - `Person` 1:1 `Personalausweis`  
+  - `Auto` 1:1 `Kennzeichen` (vor Wechselkennzeichen)  
+
+**1:n (eins zu n/vielen)**
+
+- **Eine** Entität links ist mit **0, 1 oder vielen** rechts verbunden.  
+- **Eine** rechts ist mit **genau einer** links verbunden.  
+- **Beispiele**:  
+  - `Mutter` 1:n `Kind`  
+  - `Abteilung` 1:n `Mitarbeiter`  
+  - `Museum` 1:n `Kunstwerk`
+
+**n:m (viele zu vielen)**
+
+- **Viele** links können mit **vielen** rechts verbunden sein.  
+- **Beispiele**:  
+  - `Student` n:m `Professor`  
+  - `Kunde` n:m `Produkt`  
+  - `Laden` n:m `Produkt`
+
+---
+
+**Beispiel 1: Online-Shop**
+
+```text
+Entitäten:
+[Kunde] ---arbeitet--- [Bestellung] ---enthält--- [Produkt]
+
+Kardinalitäten:
+Kunde 1:n Bestellung  (ein Kunde kann viele Bestellungen haben)
+Bestellung n:m Produkt (eine Bestellung kann viele Produkte enthalten)
+```
+
+---
+
+**Zusammenfassungstabelle**
+
+| Kardinalität | Links → rechts | Rechts → links | **Beispiel** |
+| :-- | :-- | :-- | :-- |
+| **1:1** | genau 1 | genau 1 | Auto ↔ Kennzeichen |
+| **1:n** | 0..n | genau 1 | Abteilung ↔ Mitarbeiter |
+| **n:m** | 0..n | 0..n | Student ↔ Kurs |
+
+ **Merksätze**
+
+- **$1:n$**: "Eine Firma → viele Mitarbeiter"  
+- **$n:m$**: "Viele Kunden kaufen viele Produkte"  
+- **Immer**: Von der "**Mutter**-Seite" aus denken!
 
 #### Relation, Tabelle, Datensatz, Feld
 
