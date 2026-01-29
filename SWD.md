@@ -428,21 +428,13 @@ Bestellung n:m Produkt (eine Bestellung kann viele Produkte enthalten)
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | In der Mengenlehre ist das kartesische Produkt die Kombination aller Elemente zweier Mengen.<br><br>Beispiel:<br><br>- Menge A: Musikstücke<br>- Menge B: Interpreten<br><br>Das kartesische Produkt enthält alle möglichen Kombinationen, auch unsinnige.<br><br>=> Eine Relation ist immer nur eine Teilmenge dieses kartesischen Produkts – nämlich die fachlich sinnvollen Kombinationen.<br><br>Wichtig:<br><br>- Relationen sind Mengen<br>- Mengen enthalten keine Duplikate  <br>    → Daher dürfen Datensätze in einer Tabelle nicht identisch sein |
 
-- **Tabelle**  
-    Strukturierte Darstellung einer Relation mit Spalten und Zeilen
-
-- **Datensatz** (Zeile der Tabelle)  
-    Eine Zeile in einer Tabelle  
+- **Tabelle** - Strukturierte Darstellung einer Relation mit Spalten und Zeilen
+- **Datensatz** - Zeile der Tabelle)
     → beschreibt ein konkretes Objekt (z. B. ein Gerät)
-
-- **Feld**  
-    Eine einzelne Zelle bzw. ein Attribut eines Datensatzes
-
-- **Attribute** (Spalte der Tabelle)
+- **Feld**  - Eine einzelne Zelle bzw. ein Attribut eines Datensatzes
+- **Attribute** - Spalte der Tabelle
 
 Ein Attribut beschreibt eine Eigenschaft eines Objekts, das in der Datenbank gespeichert wird.
-
-In einer relationalen Datenbank entspricht ein Attribut einer Spalte in einer Tabelle.
 
 Jedes Attribut besitzt:
 
@@ -466,7 +458,6 @@ Beispiel: Tabelle geraete
 | 2         | SN-002       | 15.04.2023 | 980   |
 
 - *seriennummer* → Attribut
-- Die gesamte Spalte *seriennummer* → Spalte
 - SN-001 → Feldwert
 
 Zusammenhang mit Integrität und Constraints
@@ -535,8 +526,7 @@ Kunde(KundenID, Name, Telefonnummern)
 ```
 
 - Problem: `Telefonnummern` enthält mehrere Werte in einem Feld.
-
-
+- 
 **Korrektur (1NF-konform)**
 
 ```text
@@ -550,7 +540,6 @@ Telefon(KundenID, Telefonnummer)
 - Jetzt ist jeder Attributwert atomar, Telefonnummern stehen in separaten Zeilen.
 
 ---
-
 #### 2. Normalform (2NF)
 
 - Voraussetzung: Tabelle ist in 1NF.
@@ -558,7 +547,7 @@ Telefon(KundenID, Telefonnummer)
 - Keine partiellen Abhängigkeiten von nur einem Teil eines zusammengesetzten Schlüssels.
 
 
-** Beispiel (Verletzung der 2NF)**
+**Beispiel (Verletzung der 2NF)**
 
 ```text
 Bestellposition(BestellNr, Artikelnr, ArtikelName, Menge)
@@ -590,7 +579,7 @@ Artikel(Artikelnr, ArtikelName)
 - Alle Nichtschlüsselattribute hängen direkt vom Primärschlüssel ab.
 
 
-** Beispiel (Verletzung der 3NF)**
+**Beispiel (Verletzung der 3NF)**
 
 ```text
 Mitarbeiter(MitarbeiterID, Name, AbteilungsID, AbteilungsName)
