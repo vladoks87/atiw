@@ -1,30 +1,6 @@
 
-**Inhalt**
-
-- [[#Block 1|Block 1]]
-	- [[#Block 1#Datentypen und Typkonvertierung|Datentypen und Typkonvertierung]]
-	- [[#Block 1#Ein- und Ausgabe|Ein- und Ausgabe]]
-	- [[#Block 1#Format-Strings|Format-Strings]]
-	- [[#Block 1#Arithmetische Operatoren|Arithmetische Operatoren]]
-	- [[#Block 1#Funktionen|Funktionen]]
-	- [[#Block 1#Kontrollstrukturen und Testen|Kontrollstrukturen und Testen]]
-		- [[#Kontrollstrukturen und Testen#Schreibtischtest|Schreibtischtest]]
-- [[#Block 2|Block 2]]
-	- [[#Block 2#Generationen von Programmiersprachen|Generationen von Programmiersprachen]]
-	- [[#Block 2#Compiler vs. Interpreter Sprachen|Compiler vs. Interpreter Sprachen]]
-	- [[#Block 2#Kopf- und Fußgesteuerte Schleifen|Kopf- und Fußgesteuerte Schleifen]]
-	- [[#Block 2#Objektorientierte Programmierung|Objektorientierte Programmierung]]
-		- [[#Objektorientierte Programmierung#Klassen, Attribute, Methoden|Klassen, Attribute, Methoden]]
-		- [[#Objektorientierte Programmierung#Objekte als Instanzen von Klassen|Objekte als Instanzen von Klassen]]
-	- [[#Block 2#Praxis|Praxis]]
-		- [[#Praxis#Schleifen|Schleifen]]
-		- [[#Praxis#Textdateien schreiben und lesen|Textdateien schreiben und lesen]]
-		- [[#Praxis#Datenstrukturen|Datenstrukturen]]
-			- [[#Datenstrukturen#Liste|Liste]]
-			- [[#Datenstrukturen#Dictionary|Dictionary]]
-		- [[#Praxis#Klassen|Klassen]]
-			- [[#Klassen#Attribute, Methoden|Attribute, Methoden]]
-			- [[#Klassen#Objekte erzeugen|Objekte erzeugen]]
+```table-of-contents
+```
 
 ### Block 1
 #### Datentypen und Typkonvertierung
