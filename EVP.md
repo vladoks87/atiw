@@ -1,38 +1,5 @@
-**Inhalt**
-
-- [[#Block 1|Block 1]]
-		- [[#IP-Adressen|IP-Adressen]]
-			- [[#IP-Adressen#IPv4|IPv4]]
-			- [[#IP-Adressen#IPv6|IPv6]]
-				- [[#IPv6#Formaler Aufbau:|Formaler Aufbau:]]
-				- [[#IPv6#IPv6-Unicast|IPv6-Unicast]]
-				- [[#IPv6#1. Link-Local (LLA)|1. Link-Local (LLA)]]
-				- [[#IPv6#2. Globale Unicast Adresse (GUA)|2. Globale Unicast Adresse (GUA)]]
-				- [[#IPv6#IPv6 Multicast|IPv6 Multicast]]
-		- [[#MAC-Adressen (Media Access Control)|MAC-Adressen (Media Access Control)]]
-		- [[#Schichtenmodelle|Schichtenmodelle]]
-			- [[#Schichtenmodelle#OSI 7 Schichten Referenzmodell|OSI 7 Schichten Referenzmodell]]
-			- [[#Schichtenmodelle#TCP/IP Referenzmodell|TCP/IP Referenzmodell]]
-			- [[#Schichtenmodelle#ARP|ARP]]
-		- [[#Ausdehnung von Netzwerken|Ausdehnung von Netzwerken]]
-		- [[#Umrechnung Dezimal/Binär/Hexadezimal|Umrechnung Dezimal/Binär/Hexadezimal]]
-			- [[#Umrechnung Dezimal/Binär/Hexadezimal#Allgemeine Anforderungen an Netzwerke|Allgemeine Anforderungen an Netzwerke]]
-- [[#Block 2|Block 2]]
-		- [[#Subnetting|Subnetting]]
-			- [[#Subnetting#Subnetting in IPv4|Subnetting in IPv4]]
-			- [[#Subnetting#Subnetting in IPv6|Subnetting in IPv6]]
-		- [[#IP Protokoll|IP Protokoll]]
-			- [[#IP Protokoll#IP Protokoll Header|IP Protokoll Header]]
-		- [[#DHCP v4 und v6|DHCP v4 und v6]]
-			- [[#DHCP v4 und v6#DHCP v4|DHCP v4]]
-			- [[#DHCP v4 und v6#IGMP - Internet Group Management Protocol|IGMP - Internet Group Management Protocol]]
-		- [[#ICMP und NDP|ICMP und NDP]]
-			- [[#ICMP und NDP#ICMP|ICMP]]
-			- [[#ICMP und NDP#NDP - Neighbor Discovery Protocol|NDP - Neighbor Discovery Protocol]]
-		- [[#Routing|Routing]]
-		- [[#TCP, UDP und Portadressen - Transportschicht|TCP, UDP und Portadressen - Transportschicht]]
-
-
+```table-of-contents
+```
 ## Block 1
 #### IP-Adressen
 ##### IPv4
@@ -344,7 +311,6 @@ SYN - SYN, ACK - ACK
 ##### Grundidee
 - Mit **VLSM** kannst du innerhalb eines IP-Adressbereichs Subnetze mit unterschiedlich langen Präfixen (z.B. **/24**, **/26**, **/27**) verwenden.
 - Ziel ist eine **effiziente** Nutzung des Adressraums, indem jedes Subnetz nur so groß ist, wie es tatsächlich benötigt wird.
-
 ##### Grundvorgehen bei VLSM
 
 1. **Gesamten IP-Block** festlegen (z.B. **192.168.1.0/24**).
@@ -397,6 +363,7 @@ Broadcast:   192.168.1.239`
 **Hosts pro Netz**: $(2^h - 2)$, mit **h = Anzahl Host-Bits** (z.B. **/26 → 6 Host-Bits → 62 Hosts**).
 **Merkregel**: Je **größer** der Präfix (z.B. **/28**, **/29**, …), desto **kleiner** das Subnetz.
 
+---
 ### Routing
 
 #### Statisches Routing
@@ -471,12 +438,31 @@ Bei gleichem Zielnetz wählt der Router die Route mit dem niedrigsten AD-Wert, z
 | Metrik                  | Hop Count      | Bandbreite          |
 | Skalierbarkeit          | Schlechter     | Besser              |
 | AD                      | 120            | 110                 |
+
+---
 ### Firewalls und ACLs
 Klassische Firewalls arbeiten als Paketfilterfirewalls. Diese Filtern Pakete anhand von Regeln (ACLs), diese Regeln können sich auf IP Adressen (Quelle/Ziel) oder Protokolle oder Ports beziehen. Funktionieren also auf OSI-Schichten 3-7.
 
 Diese arbeiten dabei nach dem **First Match Prinzip**, das heißt die erste Regel die passt wird auch angewendet. **Daher müssen ACLs vom Speziellen zum Allgemeinen definiert werden.**
 
 Am Ende jeder Firewall befindet sich außerdem ein implizietes **deny any**, welches alles was nicht explizit definiert ist abweist.
+
+**Wichtige Ports und Dienste**
+
+| Port | Protokoll | Dienst      | Verwendung[](https://www.ionos.de/digitalguide/server/knowhow/tcp-und-udp-ports/) |
+| ---- | --------- | ----------- | --------------------------------------------------------------------------------- |
+| 22   | TCP       | SSH         | Sichere Remote-Verbindung                                                         |
+| 23   | TCP       | Telnet      | Unsichere Remote-Verbindung                                                       |
+| 25   | TCP       | SMTP        | E-Mail-Versand                                                                    |
+| 53   | TCP/UDP   | DNS         | Namensauflösung                                                                   |
+| 67   | UDP       | DHCP-Server | IP-Zuweisung                                                                      |
+| 68   | UDP       | DHCP-Client | IP-Anfragen                                                                       |
+| 80   | TCP       | HTTP        | Unverschlüsselte Webseiten                                                        |
+| 143  | TCP       | IMAP        | E-Mail-Abruf                                                                      |
+| 443  | TCP       | HTTPS       | Verschlüsselte Webseiten                                                          |
+| 993  | TCP       | IMAPS       | Sicheres IMAP (SSL/TLS)                                                           |
+| 21   | TCP       | FTP         | Dateitransfer (Control)                                                           |
+| 110  | TCP       | POP3        | E-Mail-Abruf (klassisch)                                                          |
 
 #### SPI, Proxy und Reverse-Proxy
 **SPI, Proxy und Reverse-Proxy** sind zentrale Netzwerkkonzepte für Sicherheit und Traffic-Steuerung, die du als Sysadmin oft in Firewalls (z.B. FRITZ!Box) oder nginx konfigurierst.
@@ -499,6 +485,7 @@ Am Ende jeder Firewall befindet sich außerdem ein implizietes **deny any**, wel
 |**Typische Nutzung**|FRITZ!Box Firewall|Corporate Webproxy|nginx vor Docker-Apps|
 |**IP-Verbergen**|Nein|Client-IP|Server-IP|
 
+---
 ### Kryptographie
 Kryptographie - Bezeichnet allgemein das Verschlüsseln bzw. das Hashen von Daten und beinhaltet:
 
@@ -515,5 +502,60 @@ Mit der Kryptographie sollen im Wesentlichen 3 Ziele erreicht werden:
 | Ziel  (VIA)        | CIA             | Erläuterung                                   |
 | ------------------ | --------------- | --------------------------------------------- |
 | 1. Vertraulichkeit | Confidentiality | Nur bestimmte Personen dürfen die Daten sehen |
-| 1. Integrität      | Integrity       | Die Daten liegen unverändert vor              |
-| 1. Authentizität   | Authenticity    | Der Sender kann verifiziert werden            |
+| 2. Integrität      | Integrity       | Die Daten liegen unverändert vor              |
+| 3. Authentizität   | Authenticity    | Der Sender kann verifiziert werden            |
+#### Symmetrische Verschlüsselung
+**AES – Advanced Encryption Standard**
+
+Schlüssellängen von 128, 192 oder 256 Bit. AES verschlüsselt in mehreren Etappen (Runden). Jede Etappe besteht zudem aus verschiedenen Schritten, in denen Bits ersetzt, Zeilen verschoben und Spalten gemischt werden.
+
+**Problem symmetrischer Verschlüsselung - Schlüsselaustausch**
+
+Einsatz: WLAN, Festplatten, Zertifikate
+##### Asymmetrische Verschlüsselung
+**Grundprinzip**: Jeder Teilnehmer erhält ein Schlüsselpaar, das einen mathematischen Zusammenhang hat. Bob erhält einen öffentlichen Schlüssel Key$_{pub}$ und einen Key$_{priv}$ den nur er selbst kennt.
+
+Das Verschlüsselungsverfahren heißt **RSA** (Rivest Shamir Adleman). Die Schlüssellänge dieses RSA-Schlüsselpaars kann 2048, 3072 bzw. 4096 Bits sein.
+
+Eine Nachricht verschlüsselt mit Bobs Key$_{pub}$  kann nur mit Bobs Key$_{priv}$ entschlüsselt werden.
+Eine Nachricht verschlüsselt mit Bobs Key$_{priv}$ kann nur mit Bobs Key$_{pub}$  entschlüsselt werden.
+
+![[Pasted image 20260201134721.png]]
+Advanced wird es, wenn dort noch eine **Digitale Signatur** eingefügt wird, so erfüllt die verschlüsselte Nachricht nicht nur die **Vertraulichkeit** sondern auch die **Authentizität**
+
+Dazu wird der [[#Hashwerte|Hashwert]] der Nachricht an die Nachricht gehangen und mit dem eigenen Key$_{priv}$ verschlüsselt. Der Empfänger kann den Hashwert entschlüsseln und einen eigenen Hashwert aus der Nachricht bilden um den Inhalt und Absender zu authentifizieren.
+
+![[Pasted image 20260201134931.png]]
+
+##### Hashwerte
+Die **Hashfunktion** ist eine kryptografische Prüfsumme für eine Nachricht, um deren Integrität sicherzustellen. Im ersten Schritt wird der Hashwert wie ein Komprimat, ein Fingerabdruck an den Klartext angehängt. Der gewählte Algorithmus legt fest, wie lang der Hashwert ist und wie er berechnet wird.
+
+Anforderungen an ein Hashverfahren sind:
+
+1. **Einwegfunktion** – aus einem Klartext kann ein Hashwert berechnet werden, aber nicht andersherum
+2. **Deterministisch** – derselbe Klartext hat immer denselben Hashwert
+3. **Kollisionsfreiheit** – zwei Klartexte sollen nicht denselben Hashwert haben
+
+Bekannte Hash-Algorithmen
+
+- MD5: 512 Bit Blockgröße mit einem Hashwert von 128 Bit – mit einfachen Tools zu entschlüsseln
+- SHA-1: 512 Bit Blockgröße - 160 Bit Hashwert - langsamer aber etwas sicherer – heute aber auch unsicher
+- SHA-2: immer noch 512 Blockgröße – mit 256 Bit Hashwert
+- SHA-3 1024 Bit Blockgröße – mit 512 Bit Hashwert – komplexerer Rechenweg
+
+**Grundprinzip**: der Sender schickt Daten und den von ihm generierten Hashwert (H1) mit, der Empfänger: bildet einen eigenen Hashwert der Daten (H2)
+
+Prüfen H1=H2? Daten sind unverändert
+
+##### Hybride Verschlüsselung
+Kombination aus symmetrisch und asymmetrisch um die jeweiligen Schwächen auszugleichen.
+
+| Verfahren    | Vorteil(e)                                          | Nachteil(e)                  |
+| ------------ | --------------------------------------------------- | ---------------------------- |
+| symmetrisch  | Performant, da einfache Rechenoperationen vorliegen | Schlüsselaustausch           |
+| asymmetrisch | Die Schlüssel liegen bereits vor                    | Langsam, hoher Rechenaufwand |
+
+Hybride Verschlüsselung - Vorgehen
+
+1. Der Session Key wird asymmetrisch verschlüsselt
+2. Die Daten symmetrisch verschlüsselt
