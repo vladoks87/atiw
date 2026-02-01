@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SWD.md",
+                "file": "EVP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SWD"
+              "title": "EVP"
             }
           }
         ]
@@ -186,6 +186,10 @@
   },
   "active": "55fb4032c451b892",
   "lastOpenFiles": [
+    "WBL.md",
+    "GIT.md",
+    "EVP.md",
+    "SWD.md",
     "Images_Files/Pasted image 20260129180518.png",
     "Images_Files/Pasted image 20260126161426.png",
     "Images_Files/Pasted image 20260126161310.png",
@@ -195,12 +199,7 @@
     "Images_Files/Pasted image 20250701080241.png",
     "Images_Files/Pasted image 20250626114905.png",
     "Images_Files/Pasted image 20250316112459.png",
-    "SWD.md",
     "Images_Files/Pasted image 20250311170619.png",
-    "Images_Files/Pasted image 20250311171804.png",
-    "WBL.md",
-    "Images_Files",
-    "EVP.md",
-    "GIT.md"
+    "Images_Files"
   ]
 }

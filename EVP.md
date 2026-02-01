@@ -400,11 +400,120 @@ Broadcast:   192.168.1.239`
 ### Routing
 
 #### Statisches Routing
+Ziel ist Verbindungen zwischen Netzwerken herzustellen, ohne Routing kennt ein Router nur die angeschlossenen Netzwerke. 
+Beispiel Routingtabelle:
 
+| Router 1           | Router 2           |
+| ------------------ | ------------------ |
+| L - 192.168.1.1/32 | L - 192.168.2.1/32 |
+| C - 192.168.1.0/24 | C - 192.168.2.0/24 |
+| L - 192.168.0.1/32 | L - 192.168.0.2/32 |
+| C - 192.168.0.0/24 | C - 192.168.0.0/24 |
+L - local - lokale IP Adresse des Routers im Netz.
+C - Connected - Netzadresse des angeschlossenen Netzes.
+
+Router 1 kennt nur die Netze 0.0 und 0.1, Router 2 kennt nur die Netze 0.0 und 0.2.
+
+Statischer Routingeintrag Router 1 um Netz 2.0/24 bekannt zu machen wäre also:
+S - 192.168.2.0 via 192.168.0.2 
+Statisch - *Zielnetz* via *Next Hop*.
+
+``` terminal
+ip route 192.168.1.0 255.255.255.0 192.168.0.1
+```
+
+Befehl für Cisco. Die Rückroute würde so eingerichtet.
+
+Dann gibt es noch den Standardrouting-Befehl, wie er auch im DSL Router zuhause die Verbindung ins Internet herstellt:
+
+``` terminal
+ip route 0.0.0.0 0.0.0.0 next hop
+```
+
+Jeglicher Traffic mit unbekanntem Ziel wird über diesen Hop ausgegeben.
+
+In IPV6 lautet der Befehl ``ipv6 route ::/0 next hop``
 #### Dynamisches Routing
 
-##### RIP
+Dynamisches Routing soll den Einrichtungsaufwand in großen Netzwerken verringern, dazu gibt es zwei Protokolle.
+
+| Vorteil                                                     | Nachteil                                           |
+| ----------------------------------------------------------- | -------------------------------------------------- |
+| Automatisch günstigste Wege                                 | Höherer Ressourcenverbrauch (Traffic und Hardware) |
+| Kann besser auf Veränderungen reagieren - Ausfallsicherheit | Keine Kontrolle der optimalen Wege                 |
+| Weniger administrativer Aufwand                             | Sicherheit: Updates sind nicht vertrauenswürdig    |
+
+##### RIP - Routing Information Protocol
+RIP ist ein Distanzvektorprotokoll bzw. Nachbarschaftsprinzip, jeder  Nachbar meldet seine Nachbarn und die Route dorthin. Dies wiederholt sich alle 30 Sekunden. Wenn alle Router sich gemeldet haben herrscht **Konvergenz**, d.h. jeder Router kennt die optimalen Routen im Netzwerk.
+
+RIPv2 ist dabei eine Weiterentwicklung mit mehr Sicherheit und weniger Traffic.
 ##### OSPF
+OSPF funktioniert über Link-States (eigene Verbindungen) die an alle angeschlossenen Netzwerke außer das eingehende weitergeschickt werden. Aus diesen Link-States wird ein Shortest Path First Baum erstellt und mit dem Dijkstra Algorithmus der kürzeste Weg gefunden. Sobald dieser feststeht herrscht Konvergenz und OSPF Traffic verringert sich und verschickt nur noch Keep-Alives und Updates.
+
+#### Administrative Distanz und Metriken 
+Administrative Distanz (AD) ist ein Wert in Cisco-Routern, der die Vertrauenswürdigkeit und Priorität von Routenquellen bewertet – niedrigere Werte werden bevorzugt, wenn mehrere Routen zum selben Ziel existieren.​
+
+**Standard-AD-Werte (Cisco)**
+
+| Routing-Quelle          | Administrative Distanz | Metrik     |
+| ----------------------- | ---------------------- | ---------- |
+| Direkt verbundene Netze | 0​                     | -          |
+| Statische Route         | 1 ​                    | -          |
+| OSPF                    | 110 ​                  | Bandbreite |
+| RIP                     | 120 ​                  | Hop Count  |
+
+Bei gleichem Zielnetz wählt der Router die Route mit dem niedrigsten AD-Wert, z. B. OSPF vor RIP.
+
+| Unterschied             | RIP            | OSPF                |
+| ----------------------- | -------------- | ------------------- |
+| Updates nach Konvergenz | ja             | nein                |
+| Update Traffic          | Permanent hoch | Zu Beginn  <br>hoch |
+| Metrik                  | Hop Count      | Bandbreite          |
+| Skalierbarkeit          | Schlechter     | Besser              |
+| AD                      | 120            | 110                 |
 ### Firewalls und ACLs
+Klassische Firewalls arbeiten als Paketfilterfirewalls. Diese Filtern Pakete anhand von Regeln (ACLs), diese Regeln können sich auf IP Adressen (Quelle/Ziel) oder Protokolle oder Ports beziehen. Funktionieren also auf OSI-Schichten 3-7.
+
+Diese arbeiten dabei nach dem **First Match Prinzip**, das heißt die erste Regel die passt wird auch angewendet. **Daher müssen ACLs vom Speziellen zum Allgemeinen definiert werden.**
+
+Am Ende jeder Firewall befindet sich außerdem ein implizietes **deny any**, welches alles was nicht explizit definiert ist abweist.
+
+#### SPI, Proxy und Reverse-Proxy
+**SPI, Proxy und Reverse-Proxy** sind zentrale Netzwerkkonzepte für Sicherheit und Traffic-Steuerung, die du als Sysadmin oft in Firewalls (z.B. FRITZ!Box) oder nginx konfigurierst.
+
+**Kurze Definitionen**
+
+**SPI (Stateful Packet Inspection)** prüft Pakete im Kontext aktiver Verbindungen – speichert Zustandsdaten wie TCP-Flags und Ports, um Angriffe wie SYN-Floods zu blocken. Diese laufen an den ACL vorbei und öffnen Verbindungen von innen nach außen.​
+
+**Proxy (Forward/Outbound Proxy)** steht zwischen internen Clients und Internet – cached Inhalte, filtert Requests und anonymisiert Client-IPs.​
+
+**Reverse-Proxy** sitzt vor Webservern, verteilt Last, cached statische Inhalte und schützt Server-Infrastruktur vor direkten Zugriffen.​
+
+**Vergleichstabelle**
+
+|Kriterium|SPI|Proxy (Forward)|Reverse-Proxy|
+|---|---|---|---|
+|**Schutzrichtung**|Bidirektional (Firewall)|Client → Internet|Internet → Server|
+|**Funktion**|Connection-Tracking|Caching, Filtering, Anonymität|Load Balancing, SSL-Termination|
+|**Layer**|L3/L4 (IP/TCP/UDP)|L5-L7 (HTTP/SOCKS)|L5-L7 (HTTP/HTTPS)|
+|**Typische Nutzung**|FRITZ!Box Firewall|Corporate Webproxy|nginx vor Docker-Apps|
+|**IP-Verbergen**|Nein|Client-IP|Server-IP|
 
 ### Kryptographie
+Kryptographie - Bezeichnet allgemein das Verschlüsseln bzw. das Hashen von Daten und beinhaltet:
+
+1. Verschlüsselung - ein Text wird verschlüsselt und kann dementsprechend entschlüsselt werden. **2-Wege**!
+
+2.  Hashverfahren - Eine Art Prüfsumme einer Nachricht - **Einweg-Funktion**!
+
+Kryptoanalyse verfolgt das Ziel, kryptographische Systeme und Verfahren  auf ihre Sicherheit bzw. ihre Stärken und Schwächen zu testen
+
+Mit der Kryptographie sollen im Wesentlichen 3 Ziele erreicht werden:
+
+[[GIT#IT-Grundschutz/Schutzbedarfsanalyse]]
+
+| Ziel  (VIA)        | CIA             | Erläuterung                                   |
+| ------------------ | --------------- | --------------------------------------------- |
+| 1. Vertraulichkeit | Confidentiality | Nur bestimmte Personen dürfen die Daten sehen |
+| 1. Integrität      | Integrity       | Die Daten liegen unverändert vor              |
+| 1. Authentizität   | Authenticity    | Der Sender kann verifiziert werden            |
