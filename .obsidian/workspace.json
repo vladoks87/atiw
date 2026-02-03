@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EVP.md",
+                "file": "GIT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EVP"
+              "title": "GIT"
             }
           }
         ]
@@ -186,20 +186,20 @@
   },
   "active": "55fb4032c451b892",
   "lastOpenFiles": [
-    "Images_Files/Pasted image 20260201134931.png",
+    "Images_Files/Pasted image 20260203194134.png",
+    "GIT.md",
+    "Images_Files/Pasted image 20260203194505.png",
+    "Images_Files/Pasted image 20260203194113.png",
+    "Images_Files/Pasted image 20260203193850.png",
+    "Images_Files/Pasted image 20260203193802.png",
+    "Images_Files/Pasted image 20260203193706.png",
     "EVP.md",
+    "Images_Files/Pasted image 20260201134931.png",
     "Images_Files/Pasted image 20260201134847.png",
     "Images_Files/Pasted image 20260201134721.png",
     "WBL.md",
-    "GIT.md",
     "SWD.md",
     "Images_Files/Pasted image 20260129180518.png",
-    "Images_Files/Pasted image 20260126161426.png",
-    "Images_Files/Pasted image 20260126161310.png",
-    "Images_Files/Pasted image 20260126161242.png",
-    "Images_Files/Pasted image 20260126161034.png",
-    "Images_Files/Pasted image 20260126160711.png",
-    "Images_Files/Pasted image 20250701080241.png",
     "Images_Files"
   ]
 }

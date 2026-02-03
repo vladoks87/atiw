@@ -1,28 +1,16 @@
  **Inhalt**
 
-- [[#Block 1|Block 1]]
-		- [[#Von-Neumann-Architektur|Von-Neumann-Architektur]]
-		- [[#Nutzwertanalyse|Nutzwertanalyse]]
-- [[#Block 2|Block 2]]
-		- [[#Arbeitsplatzergonomie|Arbeitsplatzergonomie]]
-		- [[#Monitore|Monitore]]
-			- [[#Monitore#Funktionsweise Monitor|Funktionsweise Monitor]]
-		- [[#Farbmischung|Farbmischung]]
-		- [[#Umweltsiegel und Green-IT|Umweltsiegel und Green-IT]]
-		- [[#Datensicherheit/Datenschutz|Datensicherheit/Datenschutz]]
-			- [[#Datensicherheit/Datenschutz#Schutzziele|Schutzziele]]
-			- [[#Datensicherheit/Datenschutz#Gefährdungen|Gefährdungen]]
-			- [[#Datensicherheit/Datenschutz#TOMs: RAID, Backup, USV|TOMs: RAID, Backup, USV]]
-		- [[#IT-Grundschutz/Schutzbedarfsanalyse|IT-Grundschutz/Schutzbedarfsanalyse]]
-			- [[#IT-Grundschutz/Schutzbedarfsanalyse#Schutzbedarfskategorien|Schutzbedarfskategorien]]
-				- [[#Schutzbedarfskategorien#**Schutzbedarfsfeststellung – Zusammenfassung**|**Schutzbedarfsfeststellung – Zusammenfassung**]]
-		- [[#Grundlagen Betriebssysteme|Grundlagen Betriebssysteme]]
-			- [[#Grundlagen Betriebssysteme#Softwarearten, Lizenzarten, Arten der Veröffentlichung|Softwarearten, Lizenzarten, Arten der Veröffentlichung]]
-			- [[#Grundlagen Betriebssysteme#Creative Commons|Creative Commons]]
-			- [[#Grundlagen Betriebssysteme#Klassifizierung Betriebssysteme|Klassifizierung Betriebssysteme]]
-			- [[#Grundlagen Betriebssysteme#Schalen- und Schichtenmodell|Schalen- und Schichtenmodell]]
-			- [[#Grundlagen Betriebssysteme#BIOS/UEFI|BIOS/UEFI]]
-
+```table-of-contents
+title: 
+style: nestedList # TOC style (nestedList|nestedOrderedList|inlineFirstLevel)
+minLevel: 0 # Include headings from the specified level
+maxLevel: 0 # Include headings up to the specified level
+include: 
+exclude: 
+includeLinks: true # Make headings clickable
+hideWhenEmpty: false # Hide TOC if no headings are found
+debugInConsole: false # Print debug info in Obsidian console
+```
 
 ## Block 1 
 
@@ -294,3 +282,102 @@ CC0 bedeutet keine Einschränkungen bei Nachnutzung, bei allen weiteren bedeutet
 ## Block 3
 
 ### Projektmanagement
+
+#### Definition Projekt
+Ein Projekt ist eine zeitlich begrenzte Unternehmung, die darauf abzielt, ein einmaliges Ziel unter spezifischen Bedingungen zu erreichen. Im Gegensatz zu Routineaufgaben zeichnet sich ein Projekt durch folgende Merkmale aus:
+
+1. **Einmaligkeit der Bedingungen:** Ein Projekt wird immer unter einzigartigen Umständen durchgeführt, wodurch es sich von wiederholbaren Prozessen unterscheidet. Es wird sozusagen zum ersten und letzten Mal in der definierten Form umgesetzt.
+2. **Zielvorgabe:** Jedes Projekt verfolgt präzise definierte Ziele, die es innerhalb eines bestimmten Rahmens zu erreichen gilt. Diese Ziele dienen als zentrale Orientierung für das gesamte Projektteam.
+3. **Begrenzte Ressourcen:** Ein Projekt hat immer eine klare zeitliche, personelle und finanzielle Begrenzung. Es gibt einen festen Endtermin sowie begrenzte Mittel und Kapazitäten, die zur Zielerreichung eingesetzt werden.
+4. **Projektspezifische Organisation:** Für die Durchführung eines Projekts werden spezifische organisatorische Rahmenbedingungen geschaffen. Dazu zählen beispielsweise die Bildung eines Projektteams und die Festlegung von Verantwortlichkeiten.
+
+Darüber hinaus gibt es weitere Merkmale, die ein Projekt in der Wirtschaftspraxis auszeichnen:
+
+- **Komplexität:** Projekte sind oft durch eine Vielzahl an ineinandergreifenden Aufgaben und Wechselwirkungen gekennzeichnet, die ein systematisches Vorgehen erfordern.
+- **Hoher Aufwand:** Im Vergleich zu routinemäßigen Aufgabenstellungen erfordern Projekte in der Regel deutlich mehr Planung, Koordination und Ressourcen.
+- **Fachübergreifender Charakter:** Bei Projekten arbeiten häufig Fachkräfte aus verschiedenen Disziplinen oder Abteilungen zusammen, um ihre unterschiedlichen Expertisen einzubringen.
+- **Teamarbeit:** Projekte setzen eine enge Zusammenarbeit der Beteiligten voraus, die durch einen kontinuierlichen Austausch von Informationen und Ergebnissen geprägt ist.
+
+Ein Projekt kann somit als ein klar strukturiertes Vorhaben verstanden werden, das durch begrenzte Ressourcen, spezifische Zielsetzungen und die Notwendigkeit einer intensiven Teamarbeit definiert ist.
+
+#### Projektmanagement Definition
+
+Projektmanagement wird in der DIN 69901 als die **Gesamtheit von Führungsaufgaben, -organisation, -techniken und -mitteln definiert, die für die Initiierung, Definition, Planung, Steuerung und den Abschluss von Projekten** erforderlich sind. Es umfasst somit alle Aktivitäten, die notwendig sind, um Projekte erfolgreich zu realisieren und die definierten Ziele zu erreichen.
+
+In einfachen Worten kann Projektmanagement als ein „Handwerk für Manager“ verstanden werden: So wie ein Tischler Schritt für Schritt plant, um ein Möbelstück zu bauen, wird auch beim Projektmanagement schrittweise vorgegangen, um ein Projekt strukturiert und effizient abzuwickeln. Dabei kommen verschiedene Methoden und Werkzeuge zum Einsatz, die den Verlauf des Projekts unterstützen.
+
+#### Projektphasen
+Die 4 Projektphasen
+
+Ein Projekt durchläuft typischerweise vier Phasen, die im Rahmen eines strukturierten Vorgehensmodells abgearbeitet werden. Diese Phasen helfen, ein Projekt von der Idee bis zum Abschluss effizient und zielgerichtet zu steuern.
+
+1. **Definitionsphase**
+
+- Ziel: Unklare Vorstellungen werden in konkrete und klare Ziele umgewandelt.
+- Aufgaben:
+	- Festlegen des Projektumfangs.
+	- Definieren der Ziele und Anforderungen.
+	- Abstimmung zwischen Auftraggeber und Projektteam.
+- Ergebnis: Eine gemeinsame, eindeutige Vorstellung über die Zielsetzung und das gewünschte Projektergebnis.
+
+2. **Planungsphase**
+
+- Ziel: Vorbereitung der Projektdurchführung durch detaillierte Planung.
+- Aufgaben:
+	- Identifikation der benötigten Ressourcen (Zeit, Kosten, Personal, Materialien).
+	- Erstellen eines Zeitplans und Festlegen von Meilensteinen.
+	- Definition der Aufgaben und Zuständigkeiten.
+- Ergebnis: Ein umfassender Projektplan, der den genauen Ablauf und die erforderlichen Mittel darstellt.
+
+3. **Realisierungsphase (Durchführungsphase)**
+
+- Ziel: Umsetzung der Planungen in konkrete Aktionen.
+- Aufgaben:
+	- Durchführung der geplanten Aufgaben und Aktivitäten.
+	- Steuerung und Überwachung der Fortschritte.
+	- Behebung von Problemen und Anpassung des Plans bei Bedarf.
+- Ergebnis: Die geplanten Projektziele werden Schritt für Schritt erreicht.
+
+4. **Abschlussphase**
+
+- Ziel: Abschluss des Projekts und Reflexion.
+- Aufgaben:
+	- Abnahme des Projektergebnisses durch den Auftraggeber.
+	- Bewertung des Projekterfolgs (Soll-Ist-Vergleich).
+	- Dokumentation und Identifikation von Verbesserungsbereichen.
+- Ergebnis: Ein erfolgreich abgeschlossenes Projekt und Erkenntnisse für zukünftige Vorhaben.
+#### Projektmanagement Methoden
+
+##### Nicht-agil: Wasserfall
+- Einfaches planbares Modell zur Bearbeitung kleinerer Projekte
+ ![[Pasted image 20260203193706.png]]
+##### SCRUM - agil
+Scrum ist ein **agiles** Modell, das Projekt wird in Sprints aufgeteilt, der Fortschritt in Daily Meeting überwacht. Anwendung: Komplexe Projekte, Bsp.: Softwareentwicklung
+![[Pasted image 20260203193802.png]]Aufgabe aufgeteilt in Sprints, Daily Standups, Backlog das mitgeschleift wird.
+
+![[Pasted image 20260203193850.png]]
+#### Formulierung von Projektzielen
+
+**SMART-Ziele** sind eine bewährte Methode, um sicherzustellen, dass Ziele klar formuliert und realistisch sind. Das Akronym „SMART“ steht für fünf wichtige Kriterien, die ein Ziel erfüllen sollte:
+
+1. Spezifisch (Specific): Ein Ziel muss eindeutig und detailliert formuliert sein. Es sollte klar beschreiben, was erreicht werden soll und was nicht.
+2. Messbar (Measurable): Um den Erfolg des Ziels zu überprüfen, muss es messbare Kriterien geben. Dies kann durch Zahlen, Daten oder andere quantifizierbare Merkmale erfolgen.
+3. Akzeptiert (Accepted): Ein Ziel muss von allen Beteiligten akzeptiert werden. Es sollte von den Teammitgliedern oder Stakeholdern als wichtig und sinnvoll anerkannt sein.
+4. Realisierbar (Realistic): Das Ziel muss erreichbar und umsetzbar sein. Es sollte den verfügbaren Ressourcen und der Zeit entsprechen, damit es erfolgreich abgeschlossen werden kann.
+5. Terminiert (Timely): Ein klares Zeitrahmen ist entscheidend. Es muss ein definierter Beginn und ein Endtermin für das Ziel festgelegt werden, damit der Fortschritt überwacht werden kann.
+
+Diese Kriterien helfen dabei, Projekte erfolgreich zu planen und umzusetzen, indem sie sicherstellen, dass alle Aspekte eines Ziels berücksichtigt werden.
+
+**Zeitziel, Kostenziel, Sachziel (Muss, Soll Kann)**
+
+![[Pasted image 20260203194113.png]]
+![[Pasted image 20260203194134.png]]
+##### Lasten- und Pflichtenheft
+| Kriterium  | Lastenheft                                                                                                          | Pflichtenheft                                                                                                   |
+| ---------- | ------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Definition | Forderungen des Auftraggebers an die Leistung – "Was soll erreicht werden?" (DIN 69901-5)                           | Realisierungsvorgaben des Auftragnehmers auf Basis des Lastenhefts – "Wie wird es umgesetzt?"                   |
+| Urheber    | Auftraggeber/Kunde                                                                                                  | Auftragnehmer (du in der Prüfung)                                                                               |
+| Inhalte    | Projektziele, funktionale/nicht-funktionale Anforderungen, Ausgangslage, Rahmenbedingungen (Zeit, Budget, Qualität) | Detaillierte Umsetzung (Technologien, Prozesse, Architektur), Abnahmekriterien, Risiken; enthält oft Lastenheft |
+#### Strukturpläne
+![[Pasted image 20260203194505.png]]
+Können Objekt- oder Funktionsorientiert sein.
