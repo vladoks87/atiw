@@ -360,11 +360,11 @@ Scrum ist ein **agiles** Modell, das Projekt wird in Sprints aufgeteilt, der For
 
 **SMART-Ziele** sind eine bewährte Methode, um sicherzustellen, dass Ziele klar formuliert und realistisch sind. Das Akronym „SMART“ steht für fünf wichtige Kriterien, die ein Ziel erfüllen sollte:
 
-1. Spezifisch (Specific): Ein Ziel muss eindeutig und detailliert formuliert sein. Es sollte klar beschreiben, was erreicht werden soll und was nicht.
-2. Messbar (Measurable): Um den Erfolg des Ziels zu überprüfen, muss es messbare Kriterien geben. Dies kann durch Zahlen, Daten oder andere quantifizierbare Merkmale erfolgen.
-3. Akzeptiert (Accepted): Ein Ziel muss von allen Beteiligten akzeptiert werden. Es sollte von den Teammitgliedern oder Stakeholdern als wichtig und sinnvoll anerkannt sein.
-4. Realisierbar (Realistic): Das Ziel muss erreichbar und umsetzbar sein. Es sollte den verfügbaren Ressourcen und der Zeit entsprechen, damit es erfolgreich abgeschlossen werden kann.
-5. Terminiert (Timely): Ein klares Zeitrahmen ist entscheidend. Es muss ein definierter Beginn und ein Endtermin für das Ziel festgelegt werden, damit der Fortschritt überwacht werden kann.
+1. **Spezifisch** (Specific): Ein Ziel muss eindeutig und detailliert formuliert sein. Es sollte klar beschreiben, was erreicht werden soll und was nicht.
+2. **Messbar** (Measurable): Um den Erfolg des Ziels zu überprüfen, muss es messbare Kriterien geben. Dies kann durch Zahlen, Daten oder andere quantifizierbare Merkmale erfolgen.
+3. **Akzeptiert** (Accepted): Ein Ziel muss von allen Beteiligten akzeptiert werden. Es sollte von den Teammitgliedern oder Stakeholdern als wichtig und sinnvoll anerkannt sein.
+4. **Realisierbar** (Realistic): Das Ziel muss erreichbar und umsetzbar sein. Es sollte den verfügbaren Ressourcen und der Zeit entsprechen, damit es erfolgreich abgeschlossen werden kann.
+5. **Terminiert** (Timely): Ein klares Zeitrahmen ist entscheidend. Es muss ein definierter Beginn und ein Endtermin für das Ziel festgelegt werden, damit der Fortschritt überwacht werden kann.
 
 Diese Kriterien helfen dabei, Projekte erfolgreich zu planen und umzusetzen, indem sie sicherstellen, dass alle Aspekte eines Ziels berücksichtigt werden.
 
