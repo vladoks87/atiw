@@ -380,4 +380,113 @@ Diese Kriterien helfen dabei, Projekte erfolgreich zu planen und umzusetzen, ind
 | Inhalte    | Projektziele, funktionale/nicht-funktionale Anforderungen, Ausgangslage, Rahmenbedingungen (Zeit, Budget, Qualität) | Detaillierte Umsetzung (Technologien, Prozesse, Architektur), Abnahmekriterien, Risiken; enthält oft Lastenheft |
 #### Strukturpläne
 ![[Pasted image 20260203194505.png]]
-Können Objekt- oder Funktionsorientiert sein.
+Können **Objekt**- oder **Funktion**sorientiert sein.
+
+##### Vorgangsliste / Gantt-Diagramm / Netzplan
+
+**Vorgangsliste**
+![[Pasted image 20260204170009.png]] 
+- **Unübersichtlichkeit** in Bezug auf Reihenfolge
+- **Kein Zeitstrahl**
+- Aber Ablauf in der richtigen Nummerierung
+**- Parallele Aufgaben können nicht dargestellt werden.**
+- Überblick über alle Vorgänge des Projekts
+
+**Gantt-Diagramm**
+![[Pasted image 20260204170119.png]]
+- Übersichtlich
+- Alles auf einen Blick
+- Parallele Aufgaben können dargestellt werden.
+- **Keine Pufferanzeige** und Darstellung des kritischen Pfads
+
+**Netzplan**
+![[Pasted image 20260204170213.png]]
+
+- **Puffer** können ausgelesen werden, Probleme können frühzeitig erkannt werden
+- Überblick beim Erstellen geht verloren
+- **Parallele Aufgaben **können dargestellt werden.
+
+FAZ = Frühester Anfangszeitpunkt
+FEZ = Frühester Endzeitpunkt
+SAZ = Spätester...
+SEZ = Spätester...
+
+Vorwärtsrechnung, dann Rückwärsrechnung für Puffer, Eintragung des kritischen Pfads (Kette von Vorgängen ohne Puffer)
+
+
+#### Projektkosten
+Einzelkosten, Materialkosten und direkt dem Projekt zurechenbar.
+	Beispiel: Hardware für wird Projekt angeschafft
+Personalkosten, Lohn (abhängig von Arbeitszeit), Gehalt (unabhängig von AZ)
+	Brutto plus AG Anteile!
+Gemeinkosten, alles was unabhängig anfällt
+	Strom, Miete, Internet
+
+Unterscheidung Fixkosten (konstant) und variable Kosten (steigen mit der Zeit)
+
+Beispiel Projektkosten
+ 
+| Kostenart                | Arbeitgeberanteil | Summe      | Projektsumme |
+| ------------------------ | ----------------- | ---------- | ------------ |
+| Ausbildungsgehalt Brutto | -                 | 860,00 €   | 188,13 €     |
+| Arbeitslosenversicherung | 1,5%              | 12,90 €    | 2,82 €       |
+| Krankenversicherung      | 7,30%             | 62,78 €    | 13,73 €      |
+| Pflegeversicherung       | 1,03%             | 8,82 €     | 1,93 €       |
+| Rentenversicherung       | 9,45%             | 81,27 €    | 17,78 €      |
+| Unfallversicherung       | 1,60%             | 13,7 €     | 3,01 €       |
+| Gesamt                   |                   | 1.120,37 € | 245,08 €     |
+**Gegebene Werte:** - Gesamtkosten Arbeitgeber pro Monat: 1.120,37 € - Arbeitstage pro Monat: 20 Tage - Arbeitsstunden pro Tag: 8 Stunden - Gesamtarbeitsstunden pro Monat: 160 Stunden 
+**Formel:**
+
+$$ \text{Stundensatz} = \frac{\text{Gesamtkosten Arbeitgeber pro Monat}}{\text{Arbeitstage im Projekt} \times \text{Arbeitsstunden pro Tag}} $$
+**Ergebnis:** Der Stundensatz beträgt **7,00 € pro Stunde**.
+
+**Einzelkosten**
+
+| Produkt                 | Preis pro Einheit | Anzahl | Projektkosten   |     |
+| ----------------------- | ----------------- | ------ | --------------- | --- |
+| Fujitsu Server          | 900,00 €          | 1      | 900,00 €        |     |
+| Windows Server 2012 R2  | 3.050,00 €        | 1      | 3.050,00 €      |     |
+| Exchange 2013 Standard  | 849,00 €          | 1      | 849,00 €        |     |
+| Exchange Benutzer       | 86,72 €           | 65     | 5.636,80 €      |     |
+| Net at Work Mailgateway | 70,00 €           | 50     | 3.500,00 €      |     |
+| **Gesamt**              |                   |        | **13.935,80 €** |     |
+**Kostenübersicht Betriebskosten**
+
+| Kostenart | Kosten pro Monat | Kosten pro Stunde | Projektkosten |
+| --- | --- | --- | --- |
+| **Betriebskosten** |  |  |  |
+| Miete (6m²) | 60,00 € | 0,38 € | 13,13 € |
+| Energie | 45,00 € | 0,28 € | 9,84 € |
+| **Materialkosten** |  | 0,00 € | 0,00 € |
+| Client (Test-PC 35h) | 30,00 € | 0,19 € | 6,56 € |
+| Test-Netzwerk | 125,00 € | 0,78 € | 27,34 € |
+| sonst. Materialkosten | 35,00 € | 0,22 € | 7,66 € |
+| **Gesamt** |  |  | **64,53 €** |
+
+Berechnung Abschreibung
+**Gegebene Werte:**
+- Anschaffungspreis: 2.500,00 € 
+- Abschreibungszeit: 36 Monate
+- Arbeitsstunden pro Monat: 30 Tage × 24 Stunden = 720 Stunden 
+- **Schritt 1: Kosten pro Monat** $$ \frac{2.500{,}00 \text{ €}}{36 \text{ Monate}} = 69{,}44 \text{ € pro Monat} $$ **Schritt 2: Kosten pro Stunde** $$ \frac{69{,}44 \text{ €}}{30 \times 24 \text{ h}} = \frac{69{,}44 \text{ €}}{720 \text{ h}} \approx 0{,}10 \text{ € pro Stunde} $$ **Schritt 3: Projektkosten berechnen** $$ \text{Projektkosten} = \text{Kosten pro Stunde} \times \text{Projektdauer (Stunden)} $$ **Beispiel:** Bei 35 Stunden Projektdauer: $$ 0{,}10 \text{ €/h} \times 35 \text{ h} = 3{,}50 \text{ €} $$
+#### Testen
+![[Pasted image 20260204172245.png]]
+
+Qualitätsplan für Tests
+
+- funktionale Tests, überprüfen Vorgaben aus Lastenheft
+	- Unit-Test
+	- Integrationstest
+- nicht-funktionale Tests
+	- testet Verhalten der Anwendung
+	- z.B.: Ladezeiten, Performance
+
+| Kriterium | Blackbox-Test | Whitebox-Test | 
+| --- | --- | --- | 
+| **Kenntnisstand** | Keine Kenntnis der internen Struktur/Code | Volle Kenntnis von Code und Struktur | 
+| **Testobjekt** | Funktionalität aus Anwendersicht | Interne Logik, Codequalität |
+| **Basis** | Spezifikation/Anforderungen | Code, Struktur, Design | 
+| **Perspektive** | "Von außen" – Eingabe/Ausgabe | "Von innen" – Codeabdeckung |
+| **Typische Techniken** | Äquivalenzklassen, Grenzwerte | Anweisungs-/Zweigüberdeckung |
+| **Durchführung** | Auch ohne Programmierkenntnisse möglich | Programmierkenntnisse erforderlich |`

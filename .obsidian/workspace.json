@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "GIT"
             }
+          },
+          {
+            "id": "8e4555e54272f883",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images_Files/Pasted image 20260204172245.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20260204172245"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -184,22 +197,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "55fb4032c451b892",
+  "active": "1e2632744b6272f0",
   "lastOpenFiles": [
-    "Images_Files/Pasted image 20260203194134.png",
     "GIT.md",
+    "Images_Files/Pasted image 20260204172245.png",
+    "Images_Files/Pasted image 20260204170213.png",
+    "Images_Files/Pasted image 20260204170119.png",
+    "Images_Files/Pasted image 20260204170009.png",
+    "Images_Files/Pasted image 20260203194134.png",
     "Images_Files/Pasted image 20260203194505.png",
     "Images_Files/Pasted image 20260203194113.png",
     "Images_Files/Pasted image 20260203193850.png",
     "Images_Files/Pasted image 20260203193802.png",
     "Images_Files/Pasted image 20260203193706.png",
     "EVP.md",
-    "Images_Files/Pasted image 20260201134931.png",
-    "Images_Files/Pasted image 20260201134847.png",
-    "Images_Files/Pasted image 20260201134721.png",
     "WBL.md",
     "SWD.md",
-    "Images_Files/Pasted image 20260129180518.png",
     "Images_Files"
   ]
 }
