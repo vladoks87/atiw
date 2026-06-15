@@ -260,3 +260,7 @@ Kein Führerschein für Fahrer
 **Irrtum in der Übermittlung**
 Tippfehler, falsch verstanden
 KEINE Anfechtung be Motivirrtum (kaufe Laufschuhe aber Laufpartner will nicht mehr)
+
+### Block 4
+
+#### Marketing
