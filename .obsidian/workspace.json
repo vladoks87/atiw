@@ -56,7 +56,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SWD.md",
+                "file": "WBL.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of SWD"
+              "title": "Outline of WBL"
             }
           },
           {
@@ -209,8 +209,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8e4555e54272f883",
+  "active": "1e2632744b6272f0",
   "lastOpenFiles": [
+    "Images_Files/Pasted image 20260622165439.png",
+    "Images_Files/Pasted image 20260622163824.png",
+    "Images_Files/Pasted image 20260622163413.png",
     "GIT.md",
     "POL.md",
     "SWD.md",
@@ -224,8 +227,6 @@
     "Images_Files/Pasted image 20260203194505.png",
     "Images_Files/Pasted image 20260203194113.png",
     "Images_Files/Pasted image 20260203193850.png",
-    "Images_Files/Pasted image 20260203193802.png",
-    "Images_Files/Pasted image 20260203193706.png",
     "Images_Files"
   ]
 }

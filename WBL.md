@@ -264,3 +264,88 @@ KEINE Anfechtung be Motivirrtum (kaufe Laufschuhe aber Laufpartner will nicht me
 ### Block 4
 
 #### Marketing
+Anhand **strategischer Analyse** (SWOT, - **S**trenght - **W**eakness - **O**pportunities - **T**hreats.-  Marktgrößenanalyse, Produktlebenszyklusanalyse, Portfolioanalyse) und begleitet durch ständige Marktforschung werden **strategische Ziele** für das Marketing festgelegt und überprüft. **Marketingstrategien** sind dabei Wachstumsstrategien, Segementierungsstrageien oder Positionierungsstrategien.
+
+Darauf aufbauend passiert das operative Marketing.
+#### Operatives Marketing
+- 4 Ps 
+	- Product
+	- Price
+	- Place
+	- Promotion
+Marketing also mehr als nur Werbung.
+#### Product - Produktpolitik
+![[Pasted image 20260622163413.png]]**Produktpolitik** unterscheidet zwischen Produkt**innovation**, Produkt**variation** und Produkt**elimination**
+##### Produktinnovation
+- Einführung neuer Produkte
+Produktdifferenzierung, neues Produkt in gleicher Gruppe (Bsp. Auto - Kleinwagen)
+Produktdiversifikation - neue Produktgruppe (Bsp. zusätzlich zu Autos noch Fahrräder)
+Produktdiversifikation kann horizontal (gleiche Wirtschaftsstufe), vertikal (andere Wirtschaftsstufe) oder diagonal (andere Wirtschaftsstufe und Produktgruppe, auch lateral genannt) passieren
+
+##### Produktvariation
+- Veränderung des Produkts, Produkt verschwindet und nur Variante existiert weiter
+- kann physisch-funktionell sein
+- ästethisch
+- Image
+- Namensvariation
+
+##### Produktelimination
+- Produkt verschwindet
+![[Pasted image 20260622163824.png]]
+#### Price - Preispolitik
+Der Preis kann **Nachfrageorientiert**, **konkurrenzorientiert** oder per **Kostenkalkulation** gebildet werden.
+
+##### Nachfrageorientierung
+- Marktforschung um herauszufinden welchen Preis Kunden bereit wären zu zahlen
+- es werden Nachfragekurven (Nachfrage x bei Preis y) gebildet
+- gibt Effekte wie Snob-Effekt, Preis interessiert nicht wenn Produkt "exklusiv" genug ist
+- Preiselastizität beschreibt den Effekt den eine Preisänderung auf die Nachfrage hat, kann elastisch oder unelastisch sein
+$$ e = \frac{\text{prozentuale Mengenänderung}}{\text{prozentuale Preisänderung}} \cdot (-1) $$
+#### Konkurrenzorientierung
+Es wird ein Vergleich mit Preisen und Angeboten der Konkurrenz angestellt und davon abgeleitet ein Preis gebildet.
+
+##### Industriepreiskalkulation
+Der Listenverkaufspreis (LV) wird mit Hilfe der Zuschlagskalkulation gebildet.
+
+| Zuschlagssatz | Position                | EUR   |
+| ------------- | ----------------------- | ----- |
+|               | Fertigungsmaterial      | 6,70  |
+| + 10%         | Materialgemeinkosten    | 0,67  |
+| =             | Materialkosten          | 7,37  |
+|               | Fertigungslöhne         | 12,50 |
+| + 90%         | Fertigungsgemeinkosten  | 11,25 |
+| =             | Fertigungskosten        | 23,75 |
+| =             | **Herstellkosten**      | 31,12 |
+| + 12%         | Verwaltungsgemeinkosten | 3,73  |
+| + 5%          | Vertriebsgemeinkosten   | 1,56  |
+| =             | **Selbstkosten**        | 36,41 |
+| + 15%         | Gewinn                  | 5,46  |
+| =             | **Barverkaufspreis**    | 41,87 |
+| + 2%          | Kundenskonto            | 0,85  |
+| =             | **Zielverkaufspreis**   | 42,72 |
+| + 20%         | Kundenrabatt            | 10,68 |
+| =             | **Listenverkaufspreis** | 53,40 |
+Feste Zuschlagssätze werden zu den Fixkosten addiert um Allgemeinkosten des Betriebs aufzufangen. Skonto und Rabatt werden dabei "von Hundert" gerechnet.
+
+$$
+\text{Zielverkaufpreis} = \frac{\text{Barverkaufspreis}}{100 - \text{Skonto}} \cdot \text{Skonto}
+$$
+
+$$
+\text{Listenverkaufspreis} = \frac{\text{Listenverkaufspreis}}{100 - \text{Rabatt}} \cdot \text{Rabatt}
+$$
+
+**Deckungsbeitrag**
+![[Pasted image 20260622165439.png]]
+##### Place - Vertriebspolitik
+Der **Vertrieb** kann über **unternehmenseigene** und **unternehmensfremde Absatzorgane** organisiert sein.
+Unternehmensfremd sind dabei rechtlich selbstständige Absatzorgane
+
+| Unternehmenseigen       | Unternehmensfremd |
+| ----------------------- | ----------------- |
+| (Handlungs-) Reisende   | Handel            |
+| Verkaufsniederlassungen | Franchising       |
+| Internet                | Handelsvertreter  |
+| Telefon                 | Handelsmakler     |
+| Mitglieder der GF       | Kommisionär       |
+| Factory Outlet Center   |                   |
