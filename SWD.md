@@ -601,3 +601,28 @@ Abteilung(AbteilungsID, AbteilungsName)
 
 - In jeder Tabelle hängen alle Nichtschlüsselattribute direkt vom Primärschlüssel ab.
 
+### Block 4
+#### Powershell
+#### Dateiaustauschformate
+#### Versionsverwaltung - GIT
+System, das verwendet wird, um Änderungen an Dateien zu verfolgen, zu verwalten und zu
+dokumentieren.
+
+**Aufgaben**: 
+- unterschiedliche Entwicklungen zusammenführen
+- Dokumentation aller Änderungen
+- Unterschiede sichtbar machen (Vergleichen)
+- Kontrollfunktion
+- Zugriffkontrollen/Berechtigungskonzept
+- Bereitstellung von Dateien (Auschecken)
+- Kollaboration
+
+
+| Repository   | Verzeichnis, dessen Inhalte versioniert werden.         |
+| ------------ | ------------------------------------------------------- |
+| Historie     | Zeitlicher Verlauf der Versionen                        |
+| Branch       | Abzweigungen für individuelle Entwicklungsstränge       |
+| Merge        | Zusammenführen von unterschiedlichen Versionen/Branches |
+| Arbeitskopie | Version in Bearbeitung                                  |
+| Commit       | Festschreiben der Änderungen -> Version wird erstellt   |
+![[Pasted image 20260626075529.png]]

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WBL.md",
+                "file": "SWD.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "WBL"
+              "title": "SWD"
             }
           }
         ],
@@ -209,15 +209,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1e2632744b6272f0",
+  "active": "8e4555e54272f883",
   "lastOpenFiles": [
+    "Pasted image 20260626075529.png",
+    "WBL.md",
     "Images_Files/Pasted image 20260622165439.png",
     "Images_Files/Pasted image 20260622163824.png",
     "Images_Files/Pasted image 20260622163413.png",
     "GIT.md",
     "POL.md",
     "SWD.md",
-    "WBL.md",
     "EVP.md",
     "Images_Files/Pasted image 20260204172245.png",
     "Images_Files/Pasted image 20260204170213.png",
@@ -226,7 +227,6 @@
     "Images_Files/Pasted image 20260203194134.png",
     "Images_Files/Pasted image 20260203194505.png",
     "Images_Files/Pasted image 20260203194113.png",
-    "Images_Files/Pasted image 20260203193850.png",
     "Images_Files"
   ]
 }
