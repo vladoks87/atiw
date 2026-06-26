@@ -669,4 +669,4 @@ Lock-Modify-Write Prinzip:
  - Datei wird während der Bearbeitung gesperrt, parallele Zusammenarbeit nicht möglich
  Copy-Modify-Merge Prinzip:
  - lokale Arbeitskopien werden erstellt und später zusammengeführt (Merge)
- - ![[Pasted image 20260626095753.png]]
+ ![[Pasted image 20260626095753.png]]

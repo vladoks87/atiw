@@ -213,12 +213,57 @@ So steht die Source-IP in Zeile 4 - daher lautet sie **C0 A8 01 11** oder dezima
 #### DHCP v4 und v6
 
 ##### DHCP v4
+![[Pasted image 20260626102438.png]]
 Automatische Vergabe von IP Adressen.
 Vorteile:
 - Weniger Aufwand
 - Weniger Fehler
 - Möglichkeiten für Technologien wie PXE Boot
 ![[Pasted image 20250622164419.png]]
+**D O R A**
+- Vergibt:
+	- IP-Adresse und Subnetzmaske
+	- Standard-Gateway
+	- DNS-Server
+##### DHCP v6
+Ablauf:
+- der Client richtet sich mit der Multicastadresse **FF02::2 (all routers)** an den Router in seinem lokalen Netzwerksegment. An dieser Stelle entscheidet sich welches Verfahren der dynamischen Adresszuordnung durchgeführt wird.
+
+| Option | Adressvergabe  | DHCP-Server                                     |
+| ------ | -------------- | ----------------------------------------------- |
+| 1      | SLAAC          | wird nicht benötigt                             |
+| 2      | Stateless DHCP | Vergibt die Bereichsoptionen                    |
+| 3      | Stateful DHCP  | Vergibt die IP-Adresse und die Bereichsoptionen |
+![[Pasted image 20260626102608.png]]
+Die Nachricht **Router Solicitation** verwendet als Zieladresse die Multicast-Adresse FF02::2. Die Antwort vom Router, das **Router Advertisement **wird ausgewertet.
+
+Im Router Advertisement werden zwei Flags mitgeschickt:
+
+| Flag   | Bezeichnung             | Bedeutung                       |                                        |
+| ------ | ----------------------- | ------------------------------- | -------------------------------------- |
+| M-Flag | Managed -> IP-Adresse   | 0 – IP-Adresse vom Router       | 1 – IP-Adresse vom DHCPv6              |
+| O-Flag | Other->Bereichsoptionen | 0 – Bereichsoptionen vom Router | 1.  Bereichsoptionen vom DHCPv6-Server |
+Falls ein DHCP-Server benötigt wird (Option 2 oder 3) sieht die anschließende Kommunikation mit dem DHCPv6-Server folgendermaßen aus.
+![[Pasted image 20260626102845.png]]
+Der Client eine DHCP-Solicitation-Nachricht an die DHCPv6-Multicast-Adresse "ff02::1:2" (alle DHCPv6-Server).  
+DHCPv6-Client: UDP Port 546, DHCP-Server: UDP Port 547
+1. Die erreichbaren DHCPv6-Server antworten mit einer DHCP-Advertisement-Nachricht, die die Parameter (DNS-Server, NTP-Server etc.) zur Vervollständigung der IP-Konfiguration enthält (bei stateful auch den globalen Präfix).  
+2.    Der Client wählt eine IP-Konfiguration aus und fordert sie beim jeweiligen DHCPv6-Server mit einem DHCPv6-Request explizit an.
+3.   Der DHCPv6-Server speichert die IP-Konfiguration mit der Client-ID (Stateful Address Configuration) und bestätigt dem Client die IP-Konfiguration per DHCPv6-Reply. Alle anderen DHCPv6-Server, die keine Anforderung des Clients erhalten haben, geben ihre angebotene IPv6-Adresse wieder frei.
+#### SLAAC
+**Stateless Address Autoconfiguration**
+**EUI-64 Process**
+- Uses a client’s 48-bit Ethernet MAC address and inserts another 16 bits in the middle of the 46-bit MAC address to create a 64-bit Interface ID.
+- Advantage is that the Ethernet MAC address can be used to determine the interface; is easily tracked.
+
+EUI-64 Interface ID is represented in binary and comprises three parts:
+
+- 24-bit OUI from the client MAC address, but the 7th bit (the Universally/Locally bit) is reversed (0 becomes a 1).
+- Inserted as a 16-bit value FFFE.
+- 24-bit device identifier from the client MAC address.
+
+Beispiel einer EUI-64 Adresse
+![[Pasted image 20260626103130.png]]
 ##### IGMP - Internet Group Management Protocol
 1. **Was ist das Internet Group Management Protocol (IGMP)?**
 
@@ -559,3 +604,12 @@ Hybride Verschlüsselung - Vorgehen
 
 1. Der Session Key wird asymmetrisch verschlüsselt
 2. Die Daten symmetrisch verschlüsselt
+
+### Block 4
+#### Klausur
+[[#Routing]]
+[[#DHCP v4]]
+#### NAT-PAT
+#### DHCPv6
+#### DNS
+#### Angriffe und Absicherungen
