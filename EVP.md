@@ -633,10 +633,56 @@ Hybride Verschlüsselung - Vorgehen
 
 1. Der Session Key wird asymmetrisch verschlüsselt
 2. Die Daten symmetrisch verschlüsselt
+##### TLS 
+###### Diffie-Hellman
+
+Der Diffie-Hellman-Algorithmus dient dazu, einen gemeinsamen geheimen Schlüssel über einen unsicheren Kanal auszutauschen. Dabei werden öffentliche Parameter wie eine Primzahl und eine Basis genutzt, während beide Seiten geheime Zufallswerte wählen; daraus entsteht am Ende derselbe gemeinsame Schlüssel [web:81][web:91].
+
+*Ablauf*
+1. Öffentliche Werte vereinbaren: Primzahl \(p\) und Basis \(g\).
+2. Alice und Bob wählen jeweils geheime Zahlen \(a\) und \(b\).
+3. Beide berechnen öffentliche Werte und tauschen sie aus.
+4. Aus den empfangenen Werten berechnen beide den gleichen gemeinsamen Schlüssel [web:77][web:86].
+
+Wichtige Eigenschaft
+- Der Schlüssel wird nicht direkt übertragen.
+- Die Sicherheit beruht auf dem schwierigen diskreten Logarithmusproblem [web:86][web:88].
+
 ##### TLS 1.2
+
+TLS 1.2 ist eine ältere, aber noch weit verbreitete Version von Transport Layer Security. Sie unterstützt viele Cipher Suites und war lange der Standard für sichere Verbindungen im Web [web:78][web:82].
+**Merkmale**
+- Flexibler als ältere TLS-Versionen.
+- Unterstützt mehrere Handshake-Varianten.
+- Im Vergleich zu TLS 1.3 komplexer und langsamer [web:78][web:84].
+
 ##### TLS 1.3
 
+TLS 1.3 ist die modernere und sicherere Version von TLS. Der Handshake ist schneller, die Kryptografie schlanker, und viele ältere oder unsichere Verfahren wurden entfernt [web:78][web:82].
 
+Merkmale
+- Weniger Round-Trips beim Verbindungsaufbau.
+- Stärker auf Sicherheit und Einfachheit optimiert.
+- Bessere Performance und typischerweise mehr Schutz durch moderne Verfahren [web:78][web:84].
+#### Kurzvergleich: TLS 1.2 vs. TLS 1.3
+
+| Punkt              | TLS 1.2                                 | TLS 1.3                                    |
+| ------------------ | --------------------------------------- | ------------------------------------------ |
+| Handshake          | 2 Round-Trips                           | 1 Round-Trip                               |
+| Schlüsselaustausch | RSA **oder** Diffie-Hellman (DHE/ECDHE) | Nur Diffie-Hellman (ECDHE) – verpflichtend |
+| Forward Secrecy    | Optional (nur mit DHE/ECDHE)            | Immer aktiv (ECDHE erzwingt es)            |
+| Cipher Suites      | Viele, inkl. veraltete                  | Reduziert, nur sichere                     |
+| Verschlüsselung    | AES-CBC oder AES-GCM                    | Nur AES-GCM oder ChaCha20                  |
+| Sicherheit         | Gut, aber komplexer                     | Modern und strenger                        |
+| Empfehlung         | Noch verbreitet                         | Standard für neue Systeme                  |
+> **Hinweis zum Schlüsselaustausch:**
+> In TLS 1.2 war Diffie-Hellman optional — viele Server nutzten stattdessen RSA.
+> Bei RSA wird der Sitzungsschlüssel mit dem langfristigen privaten Schlüssel des Servers verschlüsselt.
+> Wird dieser Server-Schlüssel später kompromittiert, können **alle alten aufgezeichneten Sitzungen nachträglich entschlüsselt** werden.
+>
+> In TLS 1.3 ist RSA als Schlüsselaustausch komplett entfernt.
+> Nur noch **ECDHE (Ephemeral Diffie-Hellman)** ist erlaubt: Für jede Sitzung wird ein **frischer, einmaliger Schlüssel** ausgehandelt, der danach verworfen wird.
+> Selbst wenn der Server-Schlüssel später in falsche Hände gerät, bleiben vergangene Sitzungen geschützt — das nennt man **Forward Secrecy**.
 ### Block 4
 #### Klausur
 [[#Routing]]
@@ -648,7 +694,7 @@ Hybride Verschlüsselung - Vorgehen
 [[#DNS]]
 Grundlagen - Namensauflösung in der Namenshierarchie - DNS-Zonen (Forward Lookup und Reverse Lookup) und Einträge in den Zonen (Resource Records) A, AAAA, SOA, NS, MX, TXT
 [[#Kryptographie]]
-alles rund um TLS1.2 und TLS1.3 (Diffie Hellmann)
+alles rund um [[#TLS 1.2]] und [[#TLS 1.3]] ([[#Diffie-Hellman]])
 [[#Angriffe und Absicherungen]]
 Cyber Kill Chain - Reconnaissance-Strategien, Angriffe auf Accounts, Exploits, DDoS zwei Strategien Ihrer Wahl, Social Engineering, Abwehrmaßnahmen
 #### NAT-PAT
