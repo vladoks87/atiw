@@ -633,6 +633,9 @@ Hybride Verschlüsselung - Vorgehen
 
 1. Der Session Key wird asymmetrisch verschlüsselt
 2. Die Daten symmetrisch verschlüsselt
+##### TLS 1.2
+##### TLS 1.3
+
 
 ### Block 4
 #### Klausur
@@ -642,7 +645,12 @@ Hybride Verschlüsselung - Vorgehen
 2. DHCPv4 - Nachrichtenaustausch DORA - Absicherung mit Reservierungen und Begrenzen des IP-Adressbereichs - DHCP-Relay-Agent
 [[#DHCPv6]]
 3. DHCPv6 - Aufgabe des Routers (Router Solicitation, Router Advertisement) - SLAAC mit EUI-64, Stateless und Stateful DHCPv6
-
+[[#DNS]]
+Grundlagen - Namensauflösung in der Namenshierarchie - DNS-Zonen (Forward Lookup und Reverse Lookup) und Einträge in den Zonen (Resource Records) A, AAAA, SOA, NS, MX, TXT
+[[#Kryptographie]]
+alles rund um TLS1.2 und TLS1.3 (Diffie Hellmann)
+[[#Angriffe und Absicherungen]]
+Cyber Kill Chain - Reconnaissance-Strategien, Angriffe auf Accounts, Exploits, DDoS zwei Strategien Ihrer Wahl, Social Engineering, Abwehrmaßnahmen
 #### NAT-PAT
 #### DNS
 #### Angriffe und Absicherungen
