@@ -603,7 +603,46 @@ Abteilung(AbteilungsID, AbteilungsName)
 
 ### Block 4
 #### Powershell
+Skriptsprache von Microsoft. Arbeitet mit Commandlets.
+
+| Bereich | PowerShell-Befehle | Anwendung |
+|---|---|---|
+| Dateien & Ordner | `Get-ChildItem`, `Set-Location`, `New-Item`, `Copy-Item`, `Move-Item`, `Remove-Item` | Dateien auflisten, Ordner wechseln, Dateien/Ordner erstellen, kopieren, verschieben, löschen |
+| Inhalte anzeigen | `Get-Content`, `Select-String`, `Out-File` | Dateien lesen, Text suchen, Ausgabe in Datei schreiben |
+| Prozesse & Dienste | `Get-Process`, `Stop-Process`, `Get-Service`, `Start-Service`, `Stop-Service` | Laufende Prozesse und Windows-Dienste überwachen und steuern |
+| Systeminfos | `Get-ComputerInfo`, `Get-Date`, `Get-Host` | Systemdaten, Uhrzeit und Umgebung auslesen |
+| Netzwerk | `Test-Connection`, `Resolve-DnsName`, `Invoke-WebRequest` | Verbindung prüfen, DNS auflösen, Webanfragen ausführen |
+| Automatisierung | `ForEach-Object`, `Where-Object`, `Sort-Object`, `Export-Csv` | Daten filtern, verarbeiten und exportieren |
+| Typische Anwendungen | Skripte, Administration, Backups, Monitoring, Batch-Aufgaben | Wiederkehrende Aufgaben automatisieren und Systeme verwalten |
+
 #### Dateiaustauschformate
+##### Übersicht
+| Format | Struktur / Beispiel | Verwendungszwecke | Vorteile | Nachteile |
+|---|---|---|---|---|
+| TXT | Einfache Textdatei, z. B.:<br>Max Mustermann<br>Musterstraße 1<br>12345 Musterstadt | Notizen<br>Logs<br>Schnelle Speicherung von Textdaten | Sehr einfach<br>Universell lesbar<br>Kaum Speicherbedarf | Keine feste Struktur<br>Nicht maschinenfreundlich<br>Kein Standard für komplexe Daten |
+| CSV | Kommagetrennte Werte:<br>Name,Alter,Ort<br>Anna,28,Berlin<br>Ben,35,Hamburg | Tabellenexporte (z. B. aus Excel)<br>Datenbanken<br>Import/Export zwischen Systemen | Leicht verständlich<br>Kompatibel mit Tabellenprogrammen<br>Platzsparend | Keine Unterstützung für verschachtelte Daten<br>Sonderzeichen (z. B. Komma) müssen behandelt werden |
+| XML | Markup-Sprache mit Tags:<br>`<person>`<br>`<name>Anna</name>`<br>`<alter>28</alter>`<br>`</person>` | Datenaustausch in Webservices<br>Konfigurationsdateien<br>Dokumentenmanagement | Gut strukturiert<br>Unterstützt Hierarchien<br>Standardisiert | Relativ groß und unübersichtlich<br>Aufwändiger zu schreiben/parsen |
+| JSON | Objektstruktur ähnlich JavaScript:<br>`{ "name": "Anna", "alter": 28 }` | Webentwicklung (APIs)<br>Datenaustausch zwischen Server und Browser<br>Moderne Anwendungen | Kompakt und lesbar<br>Ideal für verschachtelte Daten<br>Gut für Maschinen und Menschen | Nicht tabellenorientiert<br>Weniger geeignet für reine Text-/CSV-Formate |
+
+Klausurrelevante Dateiaustauschformate sind CSV und JSON.
+**CSV** Comma Separated Values
+```CSV
+Header1, Header2, Header3;
+Value1, Value2, Value3;
+Value1a, Value2a, Value3a;
+```
+**JSON**
+Werte werden in Objekten gespeichert.
+
+```JSON
+{
+	"Objekt" : "wert";
+	"Objekt2" : [
+		"Array1";
+		"Array2"
+	]
+}
+```
 #### Versionsverwaltung - GIT
 System, das verwendet wird, um Änderungen an Dateien zu verfolgen, zu verwalten und zu
 dokumentieren.
@@ -626,3 +665,8 @@ dokumentieren.
 | Arbeitskopie | Version in Bearbeitung                                  |
 | Commit       | Festschreiben der Änderungen -> Version wird erstellt   |
 ![[Pasted image 20260626075529.png]]
+Lock-Modify-Write Prinzip:
+ - Datei wird während der Bearbeitung gesperrt, parallele Zusammenarbeit nicht möglich
+ Copy-Modify-Merge Prinzip:
+ - lokale Arbeitskopien werden erstellt und später zusammengeführt (Merge)
+ - ![[Pasted image 20260626095753.png]]
