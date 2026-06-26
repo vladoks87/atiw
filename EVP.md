@@ -282,7 +282,7 @@ DHCPv6-Client: UDP Port 546, DHCP-Server: UDP Port 547
 #### SLAAC
 **Stateless Address Autoconfiguration**
 **EUI-64 Process**
-- Uses a client’s 48-bit Ethernet MAC address and inserts another 16 bits in the middle of the 46-bit MAC address to create a 64-bit Interface ID.
+- Uses a client’s 48-bit Ethernet MAC address and inserts another 16 bits in the middle of the 48-bit MAC address to create a 64-bit Interface ID.
 - Advantage is that the Ethernet MAC address can be used to determine the interface; is easily tracked.
 
 EUI-64 Interface ID is represented in binary and comprises three parts:

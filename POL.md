@@ -1,9 +1,5 @@
-- [[#Block 1|Block 1]]
-		- [[#Rechtliche Grundlagen der Berufsausbildung|Rechtliche Grundlagen der Berufsausbildung]]
-				- [[#BBiG Berufsbildungsgesetz|BBiG Berufsbildungsgesetz]]
-		- [[#Jugendarbeitsschutzgesetz|Jugendarbeitsschutzgesetz]]
-- [[#Block 2|Block 2]]
-		- [[#Sozialversicherungen|Sozialversicherungen]]
+```table-of-contents
+```
 
 ## Block 1
 #### Rechtliche Grundlagen der Berufsausbildung

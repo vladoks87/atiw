@@ -1,5 +1,4 @@
  **Inhalt**
-
 ```table-of-contents
 title: 
 style: nestedList # TOC style (nestedList|nestedOrderedList|inlineFirstLevel)
