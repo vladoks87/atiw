@@ -220,7 +220,7 @@ Vorteile eines DHCP-Servers
 2. Weniger fehleranfällig
 3. Skalierbarkeit - größerer Adressraum
 4. Administration – weniger Aufwand
-5. 
+
 Dynamische Zuordnung
 - DHCP-Server vergibt Adressen aus einem vordefinierten Adressbereich
 - Adressen werden nur für festgelegte Zeit vergeben ('Lease-Time')
