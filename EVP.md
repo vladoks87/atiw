@@ -215,16 +215,45 @@ So steht die Source-IP in Zeile 4 - daher lautet sie **C0 A8 01 11** oder dezima
 ##### DHCP v4
 ![[Pasted image 20260626102438.png]]
 Automatische Vergabe von IP Adressen.
-Vorteile:
-- Weniger Aufwand
-- Weniger Fehler
-- Möglichkeiten für Technologien wie PXE Boot
+Vorteile eines DHCP-Servers
+1. Zentrale Verwaltbarkeit z.B. DNS-Server IP-Adresse ändern
+2. Weniger fehleranfällig
+3. Skalierbarkeit - größerer Adressraum
+4. Administration – weniger Aufwand
+5. 
+Dynamische Zuordnung
+- DHCP-Server vergibt Adressen aus einem vordefinierten Adressbereich
+- Adressen werden nur für festgelegte Zeit vergeben ('Lease-Time')
+- 'Meldet' sich ein Client vor Ablauf der Lease-Time nicht, wird die Adresse wieder frei
+- ein Client bekommt nach Ablauf der Lease-Zeit die gleiche IP-Adresse wie zuvor (wenn nicht anderweitig vergeben)
+- Ist der Adressbereich komplett vergeben, können sich keine zusätzlichen Clients in Netz einbinden
+
 ![[Pasted image 20250622164419.png]]
 **D O R A**
-- Vergibt:
-	- IP-Adresse und Subnetzmaske
-	- Standard-Gateway
-	- DNS-Server
+Damit der Client einen DHCP-Server nutzen kann, muss sich dieser im selben Netzwerksegment (in derselben **Broadcastdomäne**) befinden, da DHCP Broadcasts verwendet und Router keine Broadcasts weiterleiten. Befindet sich der DHCP-Server in einem anderen Netzwerksegment, so muss ein so genannter **DHCP-Relay-Agent** installiert werden, der die DHCP-Anfragen an den eigentlichen Server weitergibt.
+![[Pasted image 20260626104438.png ]]
+
+Der DHCP-Client verschickt ein das DHCP-Discover als UDP-Paket mit der Ziel-Adresse 255.255.255.255 und der Quell-Adresse 0.0.0.0. Dieser Broadcast dient als Adressanforderung an alle verfügbaren DHCP-Server. Das UDP-Paket enthält die Hardware-Adresse (MAC-Adresse) des Clients. Jeder angesprochene DHCP-Server schickt daraufhin ein DHCP-Offer als UDP-Paket mit folgenden Daten zurück:
+
+- MAC-Adresse des Clients
+- mögliche IP-Adresse
+- Laufzeit der IP-Adresse
+- Subnetzmaske
+- IP-Adresse des DHCP-Servers / Server-ID
+Aus der Auswahl von evtl. mehreren DHCP-Servern sucht sich der DHCP-Client eine IP-Adresse heraus. Daraufhin verschickt er eine positive Meldung an den betreffenden DHCP-Server (DHCP-Request). Alle anderen Server erhalten die Meldung ebenso und gehen von der Annahme der IP-Adresse zugunsten eines anderen Servers aus. Anschließend muss die Vergabe der IP-Adresse vom DHCP-Server bestätigt werden. Sobald der DHCP-Client die Bestätigung erhalten hat, speichert er die Daten lokal ab. Abschließend wird der TCP/IP-Stack vollständig gestartet.
+
+DHCP vergibt:
+- IP-Adresse und Netzwerkmaske
+- Default-Gateway
+- Nameserver
+- WINS-Server
+- Proxy-Konfiguration
+- Time- sowie NTP-Server
+- DNS-Server, DNS Context und DNS Tree
+##### Absicherung
+Um Fehlkonfigurationen und Angriffe zu vermeiden kann man IP-Adressen am DHCP-Server reservieren, nach der Reservierung wird einer Mac-Adresse immer die gleiche IP-Adresse zugewiesen.
+Des Weiteren kann man den IP-Adressbereich reservieren und so auf die genaue Anzahl der benötigen Adressen begrenzen, so sind für unauthorisierte Clients keine IP-Adressen zur Vergabe frei.
+
 ##### DHCP v6
 Ablauf:
 - der Client richtet sich mit der Multicastadresse **FF02::2 (all routers)** an den Router in seinem lokalen Netzwerksegment. An dieser Stelle entscheidet sich welches Verfahren der dynamischen Adresszuordnung durchgeführt wird.
@@ -608,8 +637,13 @@ Hybride Verschlüsselung - Vorgehen
 ### Block 4
 #### Klausur
 [[#Routing]]
+1. Routing-Aufgabe: Szenario Netzwerk - Eigene Routingeinträge erstellen und lesen können - Troubleshooting am PC
 [[#DHCP v4]]
+2. DHCPv4 - Nachrichtenaustausch DORA - Absicherung mit Reservierungen und Begrenzen des IP-Adressbereichs - DHCP-Relay-Agent
+[[#DHCPv6]]
+3. DHCPv6 - Aufgabe des Routers (Router Solicitation, Router Advertisement) - SLAAC mit EUI-64, Stateless und Stateful DHCPv6
+
 #### NAT-PAT
-#### DHCPv6
 #### DNS
 #### Angriffe und Absicherungen
+
