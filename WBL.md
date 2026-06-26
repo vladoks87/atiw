@@ -1,29 +1,6 @@
 **Inhalt**
-
-- [[#Block 1|Block 1]]
-		- [[#Rechts- und Geschäftsfähigkeit|Rechts- und Geschäftsfähigkeit]]
-		- [[#Businesspläne|Businesspläne]]
-		- [[#Stellung des Betriebs|Stellung des Betriebs]]
-		- [[#Unternehmenskennzahlen|Unternehmenskennzahlen]]
-		- [[#Kaufmannseigenschaften|Kaufmannseigenschaften]]
-- [[#Block 2|Block 2]]
-		- [[#Rechtsformen|Rechtsformen]]
-		- [[#Beschaffung|Beschaffung]]
-			- [[#Beschaffung#Operative und strategische Beschaffungsaufgaben|Operative und strategische Beschaffungsaufgaben]]
-			- [[#Beschaffung#Beschaffungsstrategien|Beschaffungsstrategien]]
-			- [[#Beschaffung#Make or Buy|Make or Buy]]
-				- [[#Make or Buy#Kosten als Entscheidungskriterium|Kosten als Entscheidungskriterium]]
-				- [[#Make or Buy#Kurzfristige Make-or-buy-Entscheidungen|Kurzfristige Make-or-buy-Entscheidungen]]
-				- [[#Make or Buy#Langfristige Make-or-buy-Entscheidungen|Langfristige Make-or-buy-Entscheidungen]]
-				- [[#Make or Buy#Formel zur Berechnung der kritischen Menge|Formel zur Berechnung der kritischen Menge]]
-		- [[#Optimale Bestellmenge|Optimale Bestellmenge]]
-				- [[#Make or Buy#Beispiel (Ausgangsdaten)|Beispiel (Ausgangsdaten)]]
-				- [[#Make or Buy#Mathematisches Verfahren (Andler-Formel)|Mathematisches Verfahren (Andler-Formel)]]
-				- [[#Make or Buy#Beispielrechnung:|Beispielrechnung:]]
-			- [[#Optimale Bestellmenge#Tabellarisches Verfahren|Tabellarisches Verfahren]]
-				- [[#Tabellarisches Verfahren#Vorteile:|Vorteile:]]
-				- [[#Tabellarisches Verfahren#Formeln:|Formeln:]]
-
+```table-of-contents
+```
 
 ## Block 1
 #### Rechts- und Geschäftsfähigkeit
@@ -261,7 +238,7 @@ Kein Führerschein für Fahrer
 Tippfehler, falsch verstanden
 KEINE Anfechtung be Motivirrtum (kaufe Laufschuhe aber Laufpartner will nicht mehr)
 
-### Block 4
+## Block 4
 
 #### Marketing
 Anhand **strategischer Analyse** (SWOT, - **S**trenght - **W**eakness - **O**pportunities - **T**hreats.-  Marktgrößenanalyse, Produktlebenszyklusanalyse, Portfolioanalyse) und begleitet durch ständige Marktforschung werden **strategische Ziele** für das Marketing festgelegt und überprüft. **Marketingstrategien** sind dabei Wachstumsstrategien, Segementierungsstrageien oder Positionierungsstrategien.
