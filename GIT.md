@@ -33,6 +33,60 @@ debugInConsole: false # Print debug info in Obsidian console
 5. Teilnutzwerte und Gesamtnutzwert berechnen: Die Bewertungen der Alternativen werden mit den Gewichtungen der Kriterien multipliziert und summiert, um den Gesamtnutzen jeder Alternative zu berechnen.
 
 6. Ergebnisse diskutieren und beste Alternative (Monitor) auswählen: Die Alternative mit dem höchsten Gesamtnutzen wird als die beste Wahl identifiziert.
+
+#### Widerstände, URI-Dreieck, Reihen- und Parallelschaltung
+
+##### Ohmsches Gesetz
+
+Das Ohmsche Gesetz beschreibt den Zusammenhang zwischen Spannung, Strom und Widerstand.
+
+$$
+U = R \cdot I
+$$
+
+Daraus folgen:
+
+$$
+I = \frac{U}{R}
+$$
+
+$$
+R = \frac{U}{I}
+$$
+
+
+##### Reihenschaltung
+
+Bei der **Reihenschaltung** sind die Widerstände hintereinander geschaltet.  
+Der Strom ist überall gleich, die Spannung teilt sich auf.
+
+$$
+I_{ges} = I_1 = I_2 = I_3
+$$
+
+$$
+U_{ges} = U_1 + U_2 + U_3
+$$
+
+$$
+R_{ges} = R_1 + R_2 + R_3
+$$
+
+Beispiel:
+
+$$
+R_1 = 2\ \Omega,\quad R_2 = 3\ \Omega,\quad R_3 = 5\ \Omega
+$$
+
+$$
+R_{ges} = 2 + 3 + 5 = 10\ \Omega
+$$
+
+---
+
+##### Parallelschaltung
+
+Bei einer Parallelschaltung gilt: $$ \frac{1}{R_{ges}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \frac{1}{R_4} $$ Beispiel Gegeben: $$ R_1 = 4\ \Omega,\quad R_2 = 6\ \Omega,\quad R_3 = 12\ \Omega,\quad R_4 = 3\ \Omega $$ Rechnung: $$ \frac{1}{R_{ges}} = \frac{1}{4} + \frac{1}{6} + \frac{1}{12} + \frac{1}{3} $$ $$ \frac{1}{R_{ges}} = \frac{3}{12} + \frac{2}{12} + \frac{1}{12} + \frac{4}{12} $$ $$ \frac{1}{R_{ges}} = \frac{10}{12} = \frac{5}{6} $$ $$ R_{ges} = \frac{6}{5} = 1{,}2\ \Omega $$
 ## Block 2
 #### Arbeitsplatzergonomie
 - gute Haltung und Equipment welches dabei unterstützt
@@ -51,8 +105,6 @@ Andere Arten:
 Touchscreens - resistiv oder kapazitiv (oder induktiv, das teilweise auch zusätzlich)
 E-Ink
 **OLED** mit organischen Dioden, daher keine Hintergrundbeleuchtung
-
-Monitorwetr
 ##### Funktionsweise Monitor
 
 ![[Pasted image 20250622164856.png]]
@@ -489,3 +541,143 @@ Qualitätsplan für Tests
 | **Perspektive** | "Von außen" – Eingabe/Ausgabe | "Von innen" – Codeabdeckung |
 | **Typische Techniken** | Äquivalenzklassen, Grenzwerte | Anweisungs-/Zweigüberdeckung |
 | **Durchführung** | Auch ohne Programmierkenntnisse möglich | Programmierkenntnisse erforderlich |`
+## Block 4
+#### Industrie 4.0
+![[Pasted image 20260705153849.png|697]]
+
+| Aspekt             | Industrie 3.0                   | Industrie 4.0                                                   |
+| ------------------ | ------------------------------- | --------------------------------------------------------------- |
+| Grundprinzip       | Automatisierung                 | Digitalisierung und Vernetzung                                  |
+| Technik            | Computer, Elektronik, Roboter   | IoT, Cloud, Datenanalyse, vernetzte Systeme                     |
+| Produktion         | Maschinen arbeiten automatisch  | Maschinen, Anlagen und Produkte kommunizieren miteinander       |
+| Rolle des Menschen | Steuert und überwacht stark mit | Überwacht eher, Systeme treffen teilweise selbst Entscheidungen |
+| Ziel               | Effizienz durch Automatisierung | Flexible, intelligente und vernetzte Produktion                 |
+| Systemart          | Meist getrennte Systeme         | Smarte, vernetzte Systeme                                       |
+#### CPS / CPPS
+![[Pasted image 20260705154221.png]]
+**Was wird für ein CPS benötigt?**
+- Sensoren
+- Prozessoren (Verarbeitungseinheiten)
+- Aktoren (ausführende Einheit, es bewegt sich etwas)
+- Kommunikationsmedium (z.B. WLAN) und z.B. Cloudanbindung (MQTT-Broker)
+- Bedingungen in Form von Software
+##### Abgrenzung CPS/CPPS IOT/IIOT
+
+| Begriff                                       | Erklärung                                                                                                                                                                                    |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Cyber-physische Systeme (CPS)**             | CPS sind ein Verbund aus informatischen und softwaretechnischen Komponenten mit mechanischen wie auch elektrischen Teilen, die mit IT-Systemen vernetzt kommunizieren.                       |
+| **Cyber-physische Produktionssysteme (CPPS)** | CPPS sind entsprechende cyber-physische Systeme, die im industriellen Umfeld in modernen Produktionsmaschinen und -anlagen zum Einsatz kommen.                                               |
+| **Internet of Things (IoT)**                  | Das IoT ist ein Sammelbegriff für die unterschiedlichsten Technologien einer global vernetzten Infrastruktur, die sowohl physische als auch virtuelle Objekte über das Internet verbindet.   |
+| **Industrial Internet of Things (IIoT)**      | Das IIoT beschreibt industrielle Anwendungen im Internet of Things. Hierbei steht besonders die Vernetzung mit Maschinen und Anlagen mittels intelligenter Sensorik im Vordergrund.          |
+| **Smart Factory**                             | Die Smart Factory bezeichnet eine sich selbst organisierende und optimierende Produktionsumgebung, in der mittels cyber-physischen Systemen Maschinen und Anlagen miteinander vernetzt sind. |
+| **Smart Home**                                | Smart Home ist der Oberbegriff für den Einsatz von cyber-physischen Systemen in Wohn- und Bürogebäuden zur Erhöhung der Wohn- und Lebensqualität und zum intelligenten Energiemanagement.    |
+##### Automatisierungspyramide
+![[Pasted image 20260705154334.png]]**Klassische Automatisierungspyramide**
+
+Die klassische Automatisierung ist hierarchisch aufgebaut. Ganz unten liegt die **Feldebene** mit Sensoren und Aktoren, darüber die **Steuerungsebene** mit SPS, CNC oder Antrieben, dann die **Prozessleitebene** mit SCADA, danach die **Betriebsleitebene** mit MES und ganz oben die **Unternehmensleitebene** mit ERP.
+
+Diese Struktur ist stark **vertikal integriert**: Daten werden von unten nach oben weitergegeben, also von der Maschine bis zur Unternehmensplanung. Die Ebenen sind dabei klar getrennt und jede hat ihre eigene Aufgabe, etwa Steuerung, Überwachung, Produktionsplanung oder betriebswirtschaftliche Verwaltung.
+
+**Industrie 4.0 / Zukunftsszenario**
+
+Im Zukunftsbild von Industrie 4.0 werden diese Grenzen deutlich aufgelöst. **Cyber-physische Systeme** verbinden Sensoren, Aktoren, Maschinen, SCADA, MES und ERP direkt miteinander, sodass Daten nicht mehr nur streng hierarchisch, sondern auch flexibel zwischen den Ebenen fließen.
+
+Das führt zu einer stärkeren **horizontalen Integration** entlang der Wertschöpfungskette, also zwischen Lieferanten, Maschinen, Kunden und sogar Menschen. Gleichzeitig werden Entscheidungen zunehmend datenbasiert und teilweise dezentral getroffen, was die Produktion flexibler, transparenter und intelligenter macht.
+
+**Wichtigste Änderung**
+
+Der Kernunterschied ist: **früher feste Ebenen mit klarer Hierarchie**, heute **vernetzte Systeme mit direktem Datenaustausch**. Industrie 4.0 ersetzt die starre Pyramide nicht komplett, aber sie macht sie durchlässiger und verbindet Planung, Steuerung und Produktion viel enger miteinander.
+
+##### ESP32 RaspberryPI und Arduino
+|Merkmal|Raspberry Pi|ESP32|Arduino|
+|---|---|---|---|
+|Typ|Einplatinen‑Computer|Mikrocontroller|Mikrocontroller|
+|OS|Linux (voll)|Nein (Firmware/RTOS)|Nein (Firmware)|
+|CPU / Leistung|Hoch|Mittel|Niedrig|
+|WLAN / BT|Oft ja (Modelabhängig)|Ja (meist)|Meist nein (Module möglich)|
+|Stromverbrauch|Relativ hoch|Niedrig|Sehr niedrig|
+|GPIO / Echtzeit|Gut, aber nicht echtzeitfest|Gut, besser für Echtzeit als Pi|Sehr gut für einfache Echtzeitsteuerung|
+|Entwicklungsstil|Python, Node, C, Docker, Komplettsystem|C/C++, MicroPython, FreeRTOS|C/C++ (Arduino-API), sehr einfach|
+|Typische Einsatzzwecke|Home-Server, Media, Edge‑AI, Gateways|Sensoren, Aktoren, Low‑Power IoT|Einsteiger‑Projekte, Steuerung, einfache Sensoren/Aktoren|
+##### MQTT
+
+**MQTT kurz erklärt**
+
+![[Pasted image 20260705154925.png]]
+
+![[Pasted image 20260705154959.png]]
+##### Beispiel
+
+- Sensor sendet Temperatur an Topic `home/wohnzimmer/temperatur`
+- Broker empfängt die Nachricht
+- Home-Assistant oder eine App mit Abo auf dieses Topic erhält die Daten
+
+MQTT arbeitet nach dem **Publisher/Subscriber-Prinzip**: Ein Sender, der Publisher, schickt Nachrichten nicht direkt an einen Empfänger, sondern an einen **Broker**. Die Empfänger, also die Subscriber, abonnieren vorher bestimmte Themenbereiche und bekommen nur die Nachrichten, die zu ihren abonnierten Topics passen.elektroniknet+1
+
+**Vorteile von MQTT** sind vor allem der geringe Datenverbrauch, die einfache Struktur und die gute Eignung für IoT und schwache Netzwerke. Außerdem sind Publisher und Subscriber voneinander entkoppelt, was das System flexibel und skalierbar macht.hosteurope+1
+
+Ein **Topic-Wildcard** ist ein Platzhalter in einem Topic-Abonnement, mit dem man mehrere Topics auf einmal erfassen kann. Dabei steht `+` für genau eine Ebene und `#` für alle Unterebenen ab einer bestimmten Stelle.wara+1
+
+
+Wildcards werden in MQTT **nur beim Subscriben** verwendet, nicht beim Publizieren. Sie helfen dabei, mehrere Topics mit einer einzigen Subscription abzudecken.[docs.aws.amazon](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html)
+
+ Beispiele für `+` und `#`
+
+- `home/+/temperatur`  
+    passt auf `home/wohnzimmer/temperatur`, `home/kueche/temperatur` und `home/bad/temperatur`, aber **nicht** auf `home/wohnzimmer/luefter/temperatur`.[docs.aws.amazon](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html)
+    
+- `home/#`  
+    passt auf `home/wohnzimmer`, `home/wohnzimmer/temperatur`, `home/kueche/luftfeuchte` und alles darunter.[docs.aws.amazon](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html)
+    
+- `+/flur/temperatur`  
+    passt auf `eg/flur/temperatur` oder `og/flur/temperatur`, aber nur, wenn genau **eine Ebene** an der Stelle steht.[wara](https://dt.wara.de/pdf/its/netzwerkTechnik/mqtt/einfuehrungTeil2.pdf)
+    
+- `haus/+/fenster/#`  
+    passt auf `haus/eg/fenster/status`, `haus/og/fenster/wohnzimmer/offen` usw.
+
+
+Die **QoS-Stufen** unterscheiden sich in der Zustellgarantie: **QoS 0** bedeutet „maximal einmal“, **QoS 1** „mindestens einmal“ und **QoS 2** „genau einmal“. Je höher die Stufe, desto sicherer die Zustellung, aber auch desto mehr Aufwand und Protokoll-Overhead.
+
+Bei **QoS 1** gilt: **mindestens einmal**. Der Publisher sendet die Nachricht und behält sie so lange, bis eine **Bestätigung** vom Broker kommt.
+
+Der Ablauf ist ungefähr so:
+
+1. Der Client sendet `PUBLISH`.
+2. Der Broker empfängt die Nachricht und antwortet mit `PUBACK`.
+3. Kommt die Bestätigung nicht rechtzeitig an, sendet der Client die Nachricht erneut.
+4. Dadurch kann die Nachricht im Fehlerfall **mehrfach** ankommen.wara+1
+
+Das bedeutet: Die Nachricht geht normalerweise nicht verloren, aber der Empfänger muss mit **Duplikaten** rechnen.
+
+Bei **QoS 2** gilt: **genau einmal**. Dafür nutzt MQTT einen längeren Vier-Schritt-Handshake, damit keine doppelten Nachrichten entstehen.
+Der Ablauf ist:
+
+1. Der Client sendet `PUBLISH`.
+2. Der Broker antwortet mit `PUBREC` und signalisiert damit: Nachricht angekommen.
+3. Der Client sendet `PUBREL`.
+4. Der Broker schickt `PUBCOMP` als Abschluss.infosys.beckhoff+1
+
+Erst nach diesem Ablauf gilt die Nachricht als endgültig zugestellt. Wenn unterwegs etwas verloren geht, wird der jeweils letzte Schritt erneut gesendet, bis der Handshake abgeschlossen ist.
+
+- **QoS 1:** sicherer Zustellversuch, aber **Duplikate möglich**.
+- **QoS 2:** **keine Duplikate**, dafür mehr Overhead und langsamer.
+
+Ein **Last Will Testament (LWT)** ist eine Art Notfallnachricht, die der Broker automatisch verschickt, wenn ein Client unerwartet die Verbindung verliert. Damit können andere Teilnehmer zum Beispiel erkennen, dass ein Gerät offline gegangen ist.
+
+Eine **Retained Message** speichert der Broker als letzte Nachricht zu einem Topic, damit neue Subscriber sofort den aktuellen Wert erhalten. Eine **Persistent Session** sorgt dafür, dass Abonnements und ausstehende Nachrichten erhalten bleiben, auch wenn der Client kurzzeitig offline ist. **Keep Alive** ist ein Zeitwert, der dem Broker signalisiert, wie lange eine Verbindung ohne Meldung noch als aktiv gilt.
+##### Eigenschaften von MQTT 
+- **Performance:** MQTT wurde für Netzwerke mit großer Verzögerungszeit und kleiner Bandbreite entwickelt. Sehr kleine Nachrichten können schnell und in großen Mengen ausgetauscht werden. Die notwendigen Header-Felder wie QoS oder Flags werden ressourcenschonend als Binärwerte gespeichert. Selbst definierte Header werden nicht unterstützt. Ideal eignet sich MQTT für kleinste Nachrichten, zum Beispiel einzelne Messwerte von Sensoren. Eine Komprimierung auf Protokollebene ist nicht verfügbar. Bei etwas größeren Nachrichten ab wenigen Kilobyte kann es effizienter sein, die Nachricht über HTTP mit Komprimierung zu transportieren. 
+- **Skalierbarkeit:** MQTT wurde dafür entwickelt, die wachsende Anzahl von Sensoren und Geräten mit nur einem Server zu vernetzen. Gerade der Transport von vielen kleinen Nachrichten zwischen vielen Geräten ist eine ideale Anwendung von MQTT. 
+- **Sicherheit:** MQTT selbst unterstützt nur eine Absicherung über Benutzername und Passwort. Mit SSL bzw. TLS kann die Kommunikation auf Transportebene verschlüsselt werden. Für zusätzliche Sicherheit können Broker-/Client-Zertifikate für die Authentifizierung verwendet werden oder beispielsweise durch die Überprüfung der IP der Zugriff über Access Control Lists eingeschränkt werden.
+
+##### Auswahl Protokolle
+| Technologie         | Reichweite                            | Stromverbrauch  | Übertragungsrate   | Anwendungsgebiete                                                      |
+| ------------------- | ------------------------------------- | --------------- | ------------------ | ---------------------------------------------------------------------- |
+| **Zigbee**          | Kurz bis mittel, mit Mesh erweiterbar | Sehr niedrig    | Niedrig            | Smart Home, Sensoren, Licht, Aktoren                                   |
+| **LoRaWAN**         | Sehr groß, mehrere Kilometer          | Sehr niedrig    | Sehr niedrig       | Umweltmessung, Smart City, Landwirtschaft, Fernsensoren                |
+| **Thread / Matter** | Kurz bis mittel, mit Mesh erweiterbar | Sehr niedrig    | Niedrig            | Smart Home, Sensoren, Beleuchtung, vernetzte Geräte                    |
+| **NFC**             | Nur wenige Zentimeter                 | Extrem niedrig  | Sehr niedrig       | Bezahlen, Zutrittskontrolle, Tag-Lesen, Pairing                        |
+| **WLAN**            | Mittel, ca. 20–50 m im Gebäude        | Hoch            | Hoch               | Kameras, Smartphones, Computer, Streaming, Smart Home                  |
+| **Bluetooth / BLE** | Kurz, meist 5–30 m                    | Niedrig         | Niedrig bis mittel | Wearables, Sensoren, Headsets, einfache IoT-Geräte                     |
+| **LTE**             | Sehr groß, mobil über Funknetz        | Mittel bis hoch | Hoch               | Mobile Daten, Router, Telemetrie, IoT mit großem Aktionsradius         |
+| **5G**              | Sehr groß, mobil über Funknetz        | Mittel bis hoch | Sehr hoch          | Mobile Daten, Industrie 4.0, Echtzeit-Anwendungen, vernetzte Maschinen |

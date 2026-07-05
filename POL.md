@@ -15,7 +15,7 @@
 ![[Pasted image 20250316112459.png]]
 
 ## Block 2
-#### Sozialversicherungen
+### Sozialversicherungen
 
 ## Block 3
 ### Betriebliche Mitbestimmung
