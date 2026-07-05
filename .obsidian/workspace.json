@@ -25,12 +25,14 @@
             "id": "6363accf1abcd985",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Images_Files/Pasted image 20260705154925.png"
+                "file": "GIT.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260705154925"
+              "icon": "lucide-file",
+              "title": "GIT"
             }
           }
         ],
@@ -207,12 +209,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1e2632744b6272f0",
+  "active": "6363accf1abcd985",
   "lastOpenFiles": [
+    "Images_Files/Pasted image 20260705154925.png",
     "GIT.md",
     "EVP.md",
     "Images_Files/Pasted image 20260705154959.png",
-    "Images_Files/Pasted image 20260705154925.png",
     "Pasted image 20260705154722.png",
     "Images_Files/Pasted image 20260705153849.png",
     "Images_Files/Pasted image 20260705154334.png",

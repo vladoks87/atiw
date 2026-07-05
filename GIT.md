@@ -87,6 +87,65 @@ $$
 ##### Parallelschaltung
 
 Bei einer Parallelschaltung gilt: $$ \frac{1}{R_{ges}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \frac{1}{R_4} $$ Beispiel Gegeben: $$ R_1 = 4\ \Omega,\quad R_2 = 6\ \Omega,\quad R_3 = 12\ \Omega,\quad R_4 = 3\ \Omega $$ Rechnung: $$ \frac{1}{R_{ges}} = \frac{1}{4} + \frac{1}{6} + \frac{1}{12} + \frac{1}{3} $$ $$ \frac{1}{R_{ges}} = \frac{3}{12} + \frac{2}{12} + \frac{1}{12} + \frac{4}{12} $$ $$ \frac{1}{R_{ges}} = \frac{10}{12} = \frac{5}{6} $$ $$ R_{ges} = \frac{6}{5} = 1{,}2\ \Omega $$
+**Vorwiderstand berechnen**
+
+Der Vorwiderstand wird verwendet, um die Spannung zu verringern und den Strom zu begrenzen, zum Beispiel bei einer LED.
+
+**Formel**
+
+$$
+R_V = \frac{U_V}{I}
+$$
+
+Dabei gilt:
+
+- \(R_V\) = Vorwiderstand
+- \(U_V\) = Spannung am Vorwiderstand
+- \(I\) = Stromstärke
+
+**Spannung am Vorwiderstand berechnen**
+
+$$
+U_V = U_{ges} - U_{Bauteil}
+$$
+
+**Vorgehen**
+
+1. Gesamtspannung aufschreiben
+2. Spannung des Bauteils abziehen
+3. Ergebnis durch den Strom teilen
+
+**Beispiel**
+
+Gegeben:
+
+$$(U_{ges} = 12\,V)$$
+$$(U_{LED} = 2\,V)$$
+$$(I = 20\,mA = 0{,}02\,A)$$
+
+Zuerst die Spannung am Vorwiderstand:
+
+$$
+U_V = 12\,V - 2\,V = 10\,V
+$$
+
+Dann den Vorwiderstand berechnen:
+
+$$
+R_V = \frac{10\,V}{0{,}02\,A} = 500\,\Omega
+$$
+
+**Ergebnis**
+
+Der Vorwiderstand beträgt:
+
+$$
+R_V = 500\,\Omega
+$$
+
+**Merksatz**
+
+Erst Spannung abziehen, dann durch den Strom teilen.
 ## Block 2
 #### Arbeitsplatzergonomie
 - gute Haltung und Equipment welches dabei unterstützt
