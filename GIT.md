@@ -612,14 +612,14 @@ Der Kernunterschied ist: **früher feste Ebenen mit klarer Hierarchie**, heute *
 - Broker empfängt die Nachricht
 - Home-Assistant oder eine App mit Abo auf dieses Topic erhält die Daten
 
-MQTT arbeitet nach dem **Publisher/Subscriber-Prinzip**: Ein Sender, der Publisher, schickt Nachrichten nicht direkt an einen Empfänger, sondern an einen **Broker**. Die Empfänger, also die Subscriber, abonnieren vorher bestimmte Themenbereiche und bekommen nur die Nachrichten, die zu ihren abonnierten Topics passen.elektroniknet+1
+MQTT arbeitet nach dem **Publisher/Subscriber-Prinzip**: Ein Sender, der Publisher, schickt Nachrichten nicht direkt an einen Empfänger, sondern an einen **Broker**. Die Empfänger, also die Subscriber, abonnieren vorher bestimmte Themenbereiche und bekommen nur die Nachrichten, die zu ihren abonnierten Topics passen.
 
-**Vorteile von MQTT** sind vor allem der geringe Datenverbrauch, die einfache Struktur und die gute Eignung für IoT und schwache Netzwerke. Außerdem sind Publisher und Subscriber voneinander entkoppelt, was das System flexibel und skalierbar macht.hosteurope+1
+**Vorteile von MQTT** sind vor allem der geringe Datenverbrauch, die einfache Struktur und die gute Eignung für IoT und schwache Netzwerke. Außerdem sind Publisher und Subscriber voneinander entkoppelt, was das System flexibel und skalierbar macht.
 
-Ein **Topic-Wildcard** ist ein Platzhalter in einem Topic-Abonnement, mit dem man mehrere Topics auf einmal erfassen kann. Dabei steht `+` für genau eine Ebene und `#` für alle Unterebenen ab einer bestimmten Stelle.wara+1
+Ein **Topic-Wildcard** ist ein Platzhalter in einem Topic-Abonnement, mit dem man mehrere Topics auf einmal erfassen kann. Dabei steht `+` für genau eine Ebene und `#` für alle Unterebenen ab einer bestimmten Stelle.
 
 
-Wildcards werden in MQTT **nur beim Subscriben** verwendet, nicht beim Publizieren. Sie helfen dabei, mehrere Topics mit einer einzigen Subscription abzudecken.[docs.aws.amazon](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html)
+Wildcards werden in MQTT **nur beim Subscriben** verwendet, nicht beim Publizieren. Sie helfen dabei, mehrere Topics mit einer einzigen Subscription abzudecken.
 
  Beispiele für `+` und `#`
 
