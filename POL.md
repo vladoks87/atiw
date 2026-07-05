@@ -92,3 +92,19 @@ Die **Aussperrung** ist die Antwort der Arbeitgeber auf einen Streik, dabei werd
 - schriftlicher Vertrag zwischen Arbeitgeber/Arbeitgeberverband und Gewerkschaft
 - **schuldrechtlicher Teil** z.B. die Friedenspflicht
 - **normativer Teil** regelt Inhalt von Arbeitsverhältnissen wie Entgeltgruppen, Urlaub etc.
+
+Tarifverträge gelten **räumlich** für bestimmte Gebiete, **fachlich-betrieblich** für bestimmte Betriebe/Branchen, **persönlich** für bestimmte Beschäftigtengruppen und **zeitlich** für einen festgelegten Zeitraum.
+
+###### Tarifvertragsarten
+- **Verbandstarifverträge:** 
+	Vertragspartner sind Arbeitgeberverbände einer Branche in einer Region und Gewerkschaften
+- **Haus-, Firmen- oder Werktarifverträge:** 
+	Vertragspartner sind ein einzelner Arbeitgeber und die für den Betrieb zuständige Gewerkschaft
+- **Lohn- und Gehaltstarifverträge (Vergütungstarifverträge):**
+	regeln vorwiegend die geldlichen Arbeitsbedingungen (Stundenlöhne, Monatsgehälter, Ausbildungsvergütungen, konkrete Höhe des Ecklohns etc.). Sie haben kurze Laufzeiten (in der Regel ein bis zwei Jahre).
+- **Rahmentarifverträge:** 
+	definieren Eingruppierungsgrundsätze, die Einteilung von Entgeltgruppen (unter Berücksichtigung von Ausbildung, Alter, Schwierigkeitsgrad der Tätigkeit etc.) und die Entgeltstufen. Sie haben in der Regel eine Laufzeit von mehreren Jahren. %% In manchen Tarifbereichen gibt es keine Rahmentarifverträge und die entsprechenden Regelungen sind Bestandteil des Manteltarifvertrags. %%
+- **Manteltarifverträge:**
+	regeln allgemeine/ grundsätzliche Arbeitsbedingungen (z.B. wöchentliche Arbeitsstunden, Urlaubstage, Weihnachts- und Urlaubsgeld, Zuschläge für Mehr-, Nacht-, Schicht-, Akkord-, Sonn- und Feiertagsarbeit etc.). Sie haben in der Regel eine Laufzeit von mehreren Jahren.
+
+Die **Allgemeinverbindlicherklärung** eines Tarifvertrags erweitert ihn auf nicht tarifgebundene Arbeitgeber und Arbeitnehmer. Sie wird vom Bundesministerium für Arbeit und Soziales oder von der zuständigen obersten Arbeitsbehörde eines Bundeslandes im Einvernehmen mit dem Tarifausschuss ausgesprochen.
