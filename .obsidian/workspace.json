@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GIT.md",
+                "file": "WBL.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GIT"
+              "title": "WBL"
             }
           }
         ],
@@ -56,7 +56,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Dateiexplorer"
@@ -211,21 +213,21 @@
   },
   "active": "6363accf1abcd985",
   "lastOpenFiles": [
-    "Images_Files/Pasted image 20260705154925.png",
+    "Pasted image 20260913143507.png",
+    "Images_Files/Pasted image 20260913143517.png",
+    "WBL.md",
+    "SWD.md",
     "GIT.md",
+    "POL.md",
     "EVP.md",
+    "Images_Files/Pasted image 20260705154925.png",
     "Images_Files/Pasted image 20260705154959.png",
     "Pasted image 20260705154722.png",
     "Images_Files/Pasted image 20260705153849.png",
     "Images_Files/Pasted image 20260705154334.png",
     "Images_Files/Pasted image 20260705154221.png",
     "Images_Files/Pasted image 20260705154114.png",
-    "POL.md",
     "Images_Files/Pasted image 20260705144220.png",
-    "SWD.md",
-    "Images_Files/Pasted image 20260626104438.png",
-    "Images_Files/Pasted image 20260626103130.png",
-    "WBL.md",
     "Images_Files"
   ]
 }
