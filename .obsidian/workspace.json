@@ -197,7 +197,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 345.5
+    "width": 351.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -213,10 +213,10 @@
   },
   "active": "6363accf1abcd985",
   "lastOpenFiles": [
+    "SWD.md",
+    "WBL.md",
     "Pasted image 20260913143507.png",
     "Images_Files/Pasted image 20260913143517.png",
-    "WBL.md",
-    "SWD.md",
     "GIT.md",
     "POL.md",
     "EVP.md",

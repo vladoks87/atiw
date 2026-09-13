@@ -328,9 +328,9 @@ Unternehmensfremd sind dabei rechtlich selbstständige Absatzorgane
 | Factory Outlet Center   |                   |
 ## Block 5
 
-#### Kosten- und Leistungsrechnung
+### Kosten- und Leistungsrechnung
 
-##### 1. Betriebliches Rechnungswesen
+#### 1. Betriebliches Rechnungswesen
 
 Das **betriebliche Rechnungswesen** erfasst sämtliche wirtschaftlichen Geschäftsfälle, die in einem Unternehmen Wertbewegungen auslösen.
 
@@ -345,15 +345,16 @@ Grundsätzlich wird zwischen **internem** und **externem Rechnungswesen** unters
 | Internes Rechnungswesen | Externes Rechnungswesen |
 |---|---|
 | Kosten- und Leistungsrechnung | Finanzbuchhaltung |
-| individuell gestaltbar | gesetzlich geregelt |
-| dient internen Entscheidungen | richtet sich u. a. an Eigentümer, Gläubiger und Staat |
+| individuell gestaltbar | einheitliche handels- und steuerrechtliche Vorschriften |
+| Informations-, Kontroll- und Steuerungsinstrument | vergangenheitsbezogene Rechnungslegung |
+| dient vor allem der Geschäftsleitung | richtet sich u. a. an Eigentümer, Gläubiger und Staat |
 | Kostenrechnung und Leistungsrechnung | GuV und Bilanz |
 
 ---
 
-## 2. Aufbau der Kosten- und Leistungsrechnung
+####  2. Aufbau der Kosten- und Leistungsrechnung
 
-Die **KLR** besteht aus:
+Die **Kosten- und Leistungsrechnung (KLR)** besteht aus:
 
 - **Kostenrechnung**
 - **Leistungsrechnung**
@@ -373,18 +374,32 @@ Die Kostenrechnung gliedert sich in drei Stufen:
 >
 > **Welche Kosten? → Wo? → Wofür?**
 
-**Einzelkosten** können direkt einem Kostenträger zugerechnet werden.
+Dabei ist besonders wichtig:
 
-**Gemeinkosten** müssen zunächst über die Kostenstellenrechnung verteilt und anschließend über Gemeinkostenzuschläge den Kostenträgern zugerechnet werden.
+- **Einzelkosten** können direkt einem Kostenträger zugerechnet werden.
+- **Gemeinkosten** werden zunächst über die Kostenstellenrechnung verteilt.
+- Anschließend werden die Gemeinkosten über **Gemeinkostenzuschläge** den Kostenträgern zugerechnet.
+
+##### Vereinfachter Ablauf
+
+```mermaid
+flowchart LR
+    A["1. Kostenartenrechnung<br/>Welche Kosten?"]
+    B["2. Kostenstellenrechnung<br/>Wo?"]
+    C["3. Kostenträgerrechnung<br/>Wofür?"]
+
+    A --> B
+    B --> C
+```
 
 ---
 
-## 3. Leistungsrechnung
+#### 3. Leistungsrechnung
 
-In der Leistungsrechnung werden die betrieblichen Leistungen möglichst detailliert erfasst.
+In der Leistungsrechnung werden alle Leistungen möglichst detailliert erfasst, um sie später den entsprechenden Kosten möglichst genau zuordnen zu können.
 
 > [!definition]
-> **Leistungen** sind in Geldeinheiten bewertete, erfolgswirksame Wertzuflüsse, die aus der betrieblichen Leistungserstellung resultieren.
+> **Leistungen** sind die in Geldeinheiten bewerteten erfolgswirksamen Wertzuflüsse, die aus der betrieblichen Leistungserstellung resultieren.
 
 ##### Absatzleistungen
 
@@ -396,25 +411,27 @@ Mehrbestände an unfertigen und fertigen Erzeugnissen.
 
 ##### Aktivierte Eigenleistungen
 
-Selbst erstellte Anlagen, die im eigenen Betrieb verwendet werden.
+Selbst erstellte Anlagen, die im eigenen Betrieb Verwendung finden.
 
 ##### Gesamtleistungen
 
+Die Gesamtleistungen ergeben sich aus der Summe aller Leistungen:
+
 $$
-\text{Gesamtleistung}
+\text{Gesamtleistungen}
 =
-\text{Absatzleistung}
+\text{Absatzleistungen}
 +
-\text{Lagerleistung}
+\text{Lagerleistungen}
 +
-\text{aktivierte Eigenleistung}
+\text{aktivierte Eigenleistungen}
 $$
 
 ---
 
-## 4. Kostenrechnung
+####  4. Kostenrechnung
 
-Die Kostenrechnung erfasst alle im Unternehmen anfallenden **Kosten**.
+Die Kostenrechnung dient der **Erfassung aller anfallenden Kosten**.
 
 > [!definition]
 > **Kosten** sind der in Geldeinheiten bewertete mengenmäßige Verbrauch an Gütern und Leistungen, der zur betrieblichen Leistungserstellung erforderlich ist.
@@ -427,17 +444,17 @@ Die Kosten werden:
 
 ---
 
-## 5. Kostenartenrechnung
+####  5. Kostenartenrechnung
 
 Die **Kostenartenrechnung** ist die **1. Stufe der Kostenrechnung**.
 
-Sie dient der Erfassung und Systematisierung aller Kostenarten einer Abrechnungsperiode.
+Sie dient der Erfassung und Systematisierung aller Kostenarten, die innerhalb einer Abrechnungsperiode angefallen sind.
 
-Die Daten stammen hauptsächlich aus:
+Die Zahlen stammen beispielsweise aus:
 
 - Finanzbuchhaltung
 - Lohn- und Gehaltsbuchhaltung
-- weiteren Hilfsrechnungen
+- vorgeschalteten Hilfsrechnungen
 
 > [!question]
 > **Welche Kosten sind in welcher Höhe angefallen?**
@@ -445,7 +462,8 @@ Die Daten stammen hauptsächlich aus:
 ##### Beispiele für Kostenarten
 
 - Materialkosten
-- Personalkosten
+- Löhne
+- Gehälter
 - Mietkosten
 - Energiekosten
 - Abschreibungen
@@ -453,81 +471,92 @@ Die Daten stammen hauptsächlich aus:
 
 ---
 
-## 6. Aufgaben der KLR
+####  6. Aufgaben der Kosten- und Leistungsrechnung
 
-##### Ermittlung der Selbstkosten einer Abrechnungsperiode
+Die KLR dient nicht nur dazu, Kosten und Leistungen zu erfassen und daraus das Betriebsergebnis zu ermitteln.
 
-Alle Kosten und Leistungen einer Periode werden erfasst, um das **Betriebsergebnis** zu ermitteln.
+Sie erfüllt weitere wichtige Aufgaben.
 
-##### Ermittlung der Selbstkosten eines Erzeugnisses
+##### Ermittlung der Selbstkosten und Leistungen einer Abrechnungsperiode
 
-Die Selbstkosten einzelner Produkte werden ermittelt.
+Durch die Erfassung aller Kosten und Leistungen einer Abrechnungsperiode kann kurzfristig, beispielsweise monatlich, der **betriebliche Erfolg** ermittelt werden.
 
-Sie bilden eine wichtige Grundlage für die **Verkaufspreiskalkulation**.
+##### Ermittlung der Selbstkosten der Erzeugniseinheit
+
+Die Kostenrechnung ermittelt die **Selbstkosten einzelner Erzeugnisse**.
+
+Diese bilden eine wichtige Grundlage für die Festlegung der Verkaufspreise.
+
+Die Kenntnis der Selbstkosten ermöglicht die Beurteilung, welcher Verkaufspreis wirtschaftlich noch vertretbar ist.
 
 ##### Kontrolle der Wirtschaftlichkeit
 
-Die Entwicklung von Kosten und Leistungen wird überwacht.
+Die Entwicklung der Kosten und Leistungen muss dauerhaft kontrolliert werden.
 
 Ziel ist es, die Wirtschaftlichkeit der Leistungserstellung und -verwertung zu verbessern.
 
-##### Bewertung von Beständen
+##### Bewertung fertiger und unfertiger Erzeugnisse
 
-Die KLR liefert die Herstellungskosten zur Bewertung von:
+Die KLR ermittelt die Herstellungskosten, die zur Bewertung der Bestände an:
 
-- unfertigen Erzeugnissen
 - fertigen Erzeugnissen
+- unfertigen Erzeugnissen
+
+benötigt werden.
 
 ##### Ermittlung von Deckungsbeiträgen
 
-Mit der Teilkostenrechnung kann festgestellt werden, welchen Beitrag ein Produkt zur:
+Mit der Teilkostenrechnung kann festgestellt werden, ob ein Erzeugnis einen ausreichenden Beitrag zur:
 
 - Deckung der Fixkosten
 - Erzielung eines Gewinns
 
 leistet.
 
-##### Planung und Entscheidungen
+##### Grundlage für Planungen und Entscheidungen
 
-Die Informationen der KLR bilden eine wichtige Grundlage für betriebliche Planungen und Entscheidungen.
+Die Ergebnisse der KLR liefern wichtige Informationen für betriebliche Planungen und Entscheidungen.
 
 ---
 
-## 7. Aufwand und Kosten
+####  7. Einstieg in die KLR
 
-Ausgangspunkt der KLR ist die **GuV** mit ihren Aufwendungen und Erträgen.
+Ausgangspunkt der KLR ist die **GuV-Rechnung** mit ihren:
 
-Allerdings gilt:
+- Aufwendungen
+- Erträgen
+
+Die **Kostenartenrechnung** bildet die erste Stufe der KLR.
+
+Dabei muss unterschieden werden zwischen:
+
+- Kosten und neutralen Aufwendungen
+- Leistungen und neutralen Erträgen
 
 > [!important]
 > **Nicht jeder Aufwand ist gleichzeitig eine Kostenposition der KLR.**
 
-Aufwendungen werden zunächst unterschieden in:
-
-- **neutralen Aufwand**
-- **Zweckaufwand**
-
 ---
 
-## 8. Neutraler Aufwand
+####  8. Neutraler Aufwand
 
 > [!definition]
-> **Neutraler Aufwand** hat nichts mit der regelmäßigen betrieblichen Leistungserstellung innerhalb der betrachteten Abrechnungsperiode zu tun.
+> **Neutrale Aufwendungen** sind Aufwendungen, die nichts mit der regelmäßigen Erstellung von Betriebsleistungen in der Abrechnungsperiode zu tun haben.
 
 Ein Aufwand ist neutral, wenn mindestens eines der folgenden Merkmale zutrifft:
 
 ##### Betriebsfremd
 
-Hat nichts mit dem eigentlichen Betriebszweck zu tun.
+Der Aufwand ist nicht auf die betriebliche Tätigkeit bezogen.
 
 Beispiele:
 
-- Spenden
+- Spende
 - Spekulationsverluste bei Wertpapieren
 
 ##### Periodenfremd
 
-Gehört nicht zur betrachteten Abrechnungsperiode.
+Der Aufwand gehört nicht zur betrachteten Abrechnungsperiode.
 
 Beispiele:
 
@@ -536,27 +565,29 @@ Beispiele:
 
 ##### Außerordentlich
 
-Tritt unregelmäßig auf oder ist ungewöhnlich hoch.
+Der Aufwand fällt unregelmäßig an oder ist ungewöhnlich hoch.
 
 Beispiele:
 
 - Verkauf einer Maschine weit unter Buchwert
 - Verluste aus Schadenfällen
-- Verluste durch Insolvenz eines Geschäftspartners
+- Verluste aus der Insolvenz von Geschäftspartnern
 
-> [!warning]
-> Neutrale Aufwendungen werden **nicht als Kosten in die KLR übernommen**, da sie das Bild des normalen Betriebsgeschehens verfälschen würden.
+> [!important]
+> Periodenfremde und außerordentliche Aufwendungen können zwar mit dem Betriebszweck zusammenhängen, würden aber das Bild des **normalen Betriebsgeschehens** verfälschen.
+>
+> Deshalb werden sie nicht als Kosten in die KLR übernommen.
 
 ---
 
-## 9. Zweckaufwand und Grundkosten
+####  9. Zweckaufwand und Grundkosten
 
-Aufwendungen, die durch den eigentlichen Betriebszweck verursacht werden, bezeichnet man als **Zweckaufwendungen**.
+Aufwendungen, die durch den Betriebszweck verursacht wurden, werden als **Zweckaufwendungen** bezeichnet.
 
-Werden diese **unverändert** in die KLR übernommen, handelt es sich um **Grundkosten**.
+Werden diese unverändert in die KLR übernommen, handelt es sich um **Grundkosten**.
 
 > [!definition]
-> **Grundkosten = Aufwendungen der Finanzbuchhaltung, die in gleicher Höhe in die KLR übernommen werden.**
+> **Grundkosten** sind Aufwendungen der Geschäftsbuchhaltung, die unverändert in die KLR übernommen werden.
 
 Beispiele:
 
@@ -566,18 +597,18 @@ Beispiele:
 
 ---
 
-## 10. Kalkulatorische Kosten
+####  10. Kalkulatorische Kosten
 
-Die KLR wird zusätzlich um **kalkulatorische Kosten** korrigiert.
+Die KLR wird um **kalkulatorische Kosten** ergänzt bzw. korrigiert.
 
-Dabei wird unterschieden zwischen:
+Dabei handelt es sich um Kosten, denen:
 
-| Kostenart | Bedeutung |
-|---|---|
-| **Anderskosten** | Aufwand existiert in der GuV, wird in der KLR aber in anderer Höhe angesetzt |
-| **Zusatzkosten** | Kosten in der KLR, denen kein Aufwand in der GuV gegenübersteht |
+- entweder kein Aufwand gegenübersteht
+- oder ein Aufwand in anderer Höhe gegenübersteht
 
 ##### Anderskosten
+
+> Aufwand ist vorhanden, wird in der KLR aber **anders bewertet**.
 
 Beispiele:
 
@@ -587,113 +618,171 @@ Beispiele:
 
 ##### Zusatzkosten
 
+> Kosten, denen in der GuV **kein Aufwand** gegenübersteht.
+
 Beispiele:
 
 - kalkulatorischer Unternehmerlohn
 - kalkulatorische Miete
 - kalkulatorische Zinsen für das Eigenkapital
 
-##### Zusammenhang
+##### Zusammenhang zwischen Aufwand und Kosten
 
-```text
-Finanzbuchhaltung                         KLR
+```mermaid
+flowchart TD
+    A["Aufwand der Finanzbuchhaltung"]
 
-Aufwand                                  Kosten
-│                                         │
-├── Neutraler Aufwand                     │
-│   → keine Kosten                        │
-│                                         │
-└── Zweckaufwand ──── Grundkosten ────────┤
-                                          │
-                       Anderskosten ───────┤
-                                          │
-                       Zusatzkosten ───────┘
+    A --> B["Neutraler Aufwand"]
+    A --> C["Zweckaufwand"]
+
+    B --> D["Keine Übernahme<br/>in die KLR"]
+
+    C --> E["Grundkosten<br/>unveränderte Übernahme"]
+    C --> F["Anderskosten<br/>andere Bewertung"]
+
+    G["Zusatzkosten<br/>kein Aufwand in der GuV"]
+
+    E --> H["Kosten der KLR"]
+    F --> H
+    G --> H
 ```
 
 ---
 
-## 11. Kalkulatorische Abschreibungen
+####  11. Kalkulatorische Zinsen
 
-In der Finanzbuchhaltung werden Anlagegüter anhand ihrer **Anschaffungs- bzw. Herstellungskosten** abgeschrieben.
+Die Höhe der Aufwandszinsen in der Finanzbuchhaltung hängt von der Finanzierung des Unternehmens ab.
 
-In der KLR sollen kalkulatorische Abschreibungen dagegen den **tatsächlichen Werteverzehr** darstellen.
+Je höher der Anteil des Fremdkapitals am Gesamtkapital, desto höher sind grundsätzlich die Aufwandszinsen.
+
+In der KLR werden dagegen Zinsen für das **gesamte genutzte betriebsnotwendige Kapital** berücksichtigt.
+
+Dabei spielt es keine Rolle, ob es sich um:
+
+- Fremdkapital
+- Eigenkapital
+
+handelt.
+
+---
+
+####  12. Kalkulatorische Abschreibungen
+
+Im externen Rechnungswesen werden die Wertminderungen von Anlagegütern durch jährliche Abschreibungen erfasst.
+
+Dabei werden die Anschaffungs- bzw. Herstellungskosten auf die Jahre der Nutzung verteilt.
+
+##### Bilanzielle Abschreibung
+
+Bilanzmäßig werden Wirtschaftsgüter des Anlagevermögens abgeschrieben, unabhängig davon, ob sie dem eigentlichen Betriebszweck dienen.
+
+##### Kalkulatorische Abschreibung
+
+Kalkulatorisch werden dagegen nur Anlagegüter berücksichtigt, die **betriebsnotwendig** sind.
+
+Als betriebsnotwendig gelten Anlagen, die laufend:
+
+- dem Betriebszweck
+- der Leistungserstellung
+- der Leistungsverwertung
+
+dienen.
+
+Auch Reserveanlagen können dazugehören.
+
+##### Besonderheiten
+
+Die kalkulatorische Abschreibung soll eine **verbrauchsbedingte bzw. tatsächliche Abschreibung** darstellen.
+
+Sie ist unabhängig von bilanzpolitischen und steuerrechtlichen Überlegungen.
 
 Dabei gilt:
 
-- nur **betriebsnotwendige Anlagegüter**
 - Abschreibung vom **Wiederbeschaffungswert**
 - tatsächliche Nutzungsdauer
 - lineare Abschreibung
 
 ##### Prinzip der Substanzerhaltung
 
-Die KLR geht davon aus, dass ein Anlagegut nach Ablauf seiner Nutzungsdauer durch ein gleichwertiges Anlagegut ersetzt werden muss.
+Die KLR geht davon aus, dass am Ende der Nutzungsdauer wieder ein gleichwertiges Anlagegut angeschafft werden muss.
 
-Die zukünftigen Wiederbeschaffungskosten sollen daher über die verkauften Produkte erwirtschaftet werden.
+Die zukünftigen Wiederbeschaffungskosten müssen deshalb zuvor über die verkauften Produkte erwirtschaftet werden.
 
 ---
 
-## 12. Kalkulatorischer Unternehmerlohn
+####  13. Kalkulatorischer Unternehmerlohn
 
-Bei Einzelunternehmen und Personengesellschaften erhält der Unternehmer normalerweise kein reguläres Gehalt, sondern einen Anteil am Gewinn.
+Geschäftsführende Gesellschafter von Personengesellschaften oder Einzelunternehmen erhalten im Gegensatz zu Geschäftsführern einer Kapitalgesellschaft kein reguläres Gehalt, sondern Anteile am Gewinn.
 
-Ohne Berücksichtigung seiner Arbeitsleistung wären die Selbstkosten zu niedrig.
+Würde ihre Arbeitsleistung nicht berücksichtigt, wären die ermittelten Selbstkosten zu niedrig.
 
 Deshalb wird ein **kalkulatorischer Unternehmerlohn** angesetzt.
 
-Als Orientierung dient das Gehalt eines vergleichbaren leitenden Angestellten.
+Als Maßstab dient das übliche Gehalt eines leitenden Angestellten in vergleichbarer:
 
-> **Kalkulatorischer Unternehmerlohn = Zusatzkosten**
+- Position
+- Unternehmensgröße
+- Branche
 
----
-
-## 13. Kalkulatorische Miete
-
-Werden eigene private Räume betrieblich genutzt oder besitzt das Unternehmen seine Betriebsräume selbst, entstehen keine tatsächlichen Mietzahlungen.
-
-Damit die Kosten trotzdem realistisch dargestellt werden, wird eine **kalkulatorische Miete** angesetzt.
-
-Als Grundlage dient die **ortsübliche Miete vergleichbarer Räume**.
-
-> **Kalkulatorische Miete = Zusatzkosten**
+> [!note]
+> Der kalkulatorische Unternehmerlohn gehört zu den **Zusatzkosten**.
 
 ---
 
-## 14. Kalkulatorische Wagnisse
+####  14. Kalkulatorische Miete
 
-Für bestimmte betriebliche Einzelrisiken können **kalkulatorische Wagniskosten** berücksichtigt werden.
+Werden eigene private Räume betrieblich genutzt oder ist das Unternehmen selbst Eigentümer der Betriebsräume, entstehen keine Mietkosten gegenüber einem Vermieter.
+
+Um eine Verzerrung der Kostensituation zu verhindern, wird in der KLR eine **kalkulatorische Miete** angesetzt.
+
+Als Grundlage dient die ortsübliche Miethöhe vergleichbarer Räume.
+
+> [!note]
+> Die kalkulatorische Miete gehört zu den **Zusatzkosten**.
+
+---
+
+####  15. Kalkulatorische Wagnisse
+
+Für spezielle Einzelrisiken eines Unternehmens können **kalkulatorische Wagniskosten** angesetzt werden.
 
 Beispiele:
 
 - Unfälle
-- Brand
-- Explosion
+- Brandgefahren
+- Explosionen
 - Diebstahl
 - Schwund
 - Preisverfall
 - Verderb
+- Warenverschlechterung
+- Nachbesserungsarbeiten
 - Materialfehler
 - Arbeitsfehler
+- Ausfall von Arbeitskräften
 - Forderungsausfälle
 
-Sie werden nur berücksichtigt, wenn das Risiko **nicht durch eine Versicherung abgedeckt** ist und mit entsprechender Wahrscheinlichkeit eintreten kann.
+Kalkulatorische Wagniskosten werden nur angesetzt, wenn die Risiken:
 
-Das allgemeine Unternehmerrisiko zählt **nicht** dazu.
+- nicht durch eine Versicherung abgedeckt sind
+- mit hoher Wahrscheinlichkeit eintreten können
+
+Das **allgemeine Unternehmerrisiko** zählt nicht zu den kalkulatorischen Wagnissen.
 
 ---
 
-## 15. Einzelkosten und Gemeinkosten
+####  16. Einzelkosten und Gemeinkosten
 
 ##### Einzelkosten
 
 > [!definition]
-> Kosten, die einem Kostenträger **direkt** zugerechnet werden können.
+> **Einzelkosten** können einem Kostenträger direkt zugerechnet werden.
 
 Beispiele:
 
 - Fertigungsmaterial
 - Bauteile
-- Fertigungslöhne
+- Löhne
 - Verpackung
 - Werbung für ein konkretes Projekt
 - Vertreterprovision
@@ -701,49 +790,67 @@ Beispiele:
 ##### Gemeinkosten
 
 > [!definition]
-> Kosten, die einem Kostenträger **nicht direkt** zugerechnet werden können.
+> **Gemeinkosten** können einem Kostenträger nicht direkt zugerechnet werden.
 
 Beispiele:
 
-- Betriebsstoffe
+- Betriebsstoffe, z. B. Schmierstoffe
 - Gehälter
 - Energiekosten
 - Miete
 - Büromaterial
 - Steuern
-- Gebäudeabschreibungen
-- Maschinenabschreibungen
-- allgemeine Werbung
-- kalkulatorische Zinsen
+- Abschreibungen auf Gebäude und Maschinen
+- Werbung für das Unternehmen
+- kalkulatorische Zinsen für Eigenkapital
 
-Gemeinkosten müssen über einen **Verteilungsschlüssel** verteilt werden.
+Gemeinkosten müssen mithilfe von **Verteilungsschlüsseln** verteilt werden.
+
+##### Weg von Einzelkosten und Gemeinkosten
+
+```mermaid
+flowchart TD
+    A["Kostenartenrechnung<br/>Welche Kosten?"]
+
+    A --> B["Einzelkosten"]
+    A --> C["Gemeinkosten"]
+
+    B --> G["Kostenträgerrechnung"]
+
+    C --> D["Kostenstellenrechnung"]
+    D --> E["BAB"]
+    E --> F["Gemeinkostenzuschläge"]
+    F --> G
+
+    G --> H["Kostenträger<br/>Produkt / Auftrag / Dienstleistung"]
+```
+
+> [!important]
+> **Einzelkosten** gehen direkt zum Kostenträger.
+>
+> **Gemeinkosten** nehmen den Weg über **Kostenstellenrechnung → BAB → Gemeinkostenzuschläge → Kostenträger**.
 
 ---
 
-## 16. Kostenstellenrechnung
+####  17. Kostenstellenrechnung
 
-Die **Kostenstellenrechnung** ist die **2. Stufe der Kostenrechnung**.
+Die **Kostenstellenrechnung** ist die **2. Stufe der KLR**.
 
-Sie verteilt insbesondere die Gemeinkosten auf die Bereiche, in denen sie entstanden sind.
+Sie ist erforderlich, um die Gemeinkosten nach einem geeigneten Verfahren anteilig den Kostenträgern zurechnen zu können.
 
 > [!question]
 > **Wo sind welche Kosten in welcher Höhe angefallen?**
 
 Eine **Kostenstelle** ist der Ort, an dem Kosten entstehen.
 
-Eine Kostenstelle kann beispielsweise sein:
+Dabei kann es sich handeln um:
 
-- Arbeitsplatz
-- Unterabteilung
-- Abteilung
-- betrieblicher Funktionsbereich
+- einen Arbeitsplatz
+- eine Unterabteilung
+- eine Abteilung
+- einen betrieblichen Funktionsbereich
 
-##### Typische Kostenstellen eines Industriebetriebs
-
-1. **Material**
-2. **Fertigung**
-3. **Verwaltung**
-4. **Vertrieb**
+##### Bildung von Kostenstellen
 
 Kostenstellen können nach verschiedenen Kriterien gebildet werden:
 
@@ -751,23 +858,28 @@ Kostenstellen können nach verschiedenen Kriterien gebildet werden:
 - funktionell
 - organisatorisch
 
+In Industriebetrieben hat sich insbesondere die Bildung nach **Funktionsbereichen** durchgesetzt:
+
+1. Material
+2. Fertigung
+3. Verwaltung
+4. Vertrieb
+
 ---
 
-## 17. Betriebsabrechnungsbogen (BAB)
+####  18. Betriebsabrechnungsbogen (BAB)
 
-Der **Betriebsabrechnungsbogen (BAB)** wird innerhalb der Kostenstellenrechnung verwendet.
+Der **Betriebsabrechnungsbogen (BAB)** wird innerhalb der Kostenstellenrechnung eingesetzt.
 
 Seine Aufgaben sind:
 
 - Verteilung der Gemeinkosten auf die Kostenstellen
 - Ermittlung der Gemeinkostensummen
 
-Der BAB ist typischerweise aufgebaut nach:
+Der BAB ist typischerweise aufgebaut:
 
 - **senkrecht:** Gemeinkostenarten
 - **waagerecht:** Kostenstellen
-
-Dabei wird unterschieden:
 
 ##### Kostenstelleneinzelkosten
 
@@ -775,13 +887,13 @@ Gemeinkosten, die einer Kostenstelle **direkt** zugeordnet werden können.
 
 ##### Kostenstellengemeinkosten
 
-Gemeinkosten, die einer Kostenstelle nur **indirekt über Verteilungsschlüssel** zugeordnet werden können.
+Gemeinkosten, die nur **indirekt über Verteilungsschlüssel** einer Kostenstelle zugeordnet werden können.
 
 ---
 
-## 18. Kostenträgerrechnung
+####  19. Kostenträgerrechnung
 
-Die **Kostenträgerrechnung** ist die **3. Stufe der Kostenrechnung**.
+Die **Kostenträgerrechnung** ist die **3. Stufe der KLR**.
 
 Sie baut auf den Ergebnissen der:
 
@@ -790,7 +902,7 @@ Sie baut auf den Ergebnissen der:
 
 auf.
 
-Einzelkosten und die Kosten der Kostenstellen werden möglichst **verursachungsgerecht auf die Kostenträger verteilt**.
+Die Einzelkosten und die Kosten der einzelnen Kostenstellen werden möglichst verursachungsgerecht auf die Kostenträger verteilt.
 
 > [!question]
 > **Wofür sind welche Kosten in welcher Höhe entstanden?**
@@ -806,85 +918,97 @@ Kostenträger können sein:
 
 ##### Aufgaben der Kostenträgerrechnung
 
-- Ermittlung der Kosten einzelner Kostenträger
-- Daten für die Bestandsbewertung fertiger und unfertiger Erzeugnisse
-- Kontrolle der Wirtschaftlichkeit des Herstellungsprozesses
-- Informationen für Einkauf, Konstruktion, Fertigung und Vertrieb
+- Ermittlung aller Kosten der einzelnen Kostenträger
+- Ermittlung von Daten für die Bestandsbewertung fertiger und unfertiger Erzeugnisse
+- Überprüfung der Wirtschaftlichkeit des Herstellungsprozesses
+- Bereitstellung von Informationen für Einkauf, Konstruktion, Fertigung und Vertrieb
 - Kalkulation der Verkaufspreise
 
 ##### Arten der Kostenträgerrechnung
 
 **Kostenträgerstückrechnung**
 
-→ Kalkulation der Kosten eines einzelnen Produkts bzw. einer einzelnen Leistung.
+→ Kalkulation
 
 **Kostenträgerzeitrechnung**
 
-→ Betriebsanalyse und Kontrolle der Wirtschaftlichkeit der einzelnen Kostenträger.
+→ Betriebsanalyse und Kontrolle der Wirtschaftlichkeit der einzelnen Kostenträger
 
 ---
 
-## 19. Ablauf der Kostenrechnung am Beispiel
+###  Beispiel: Von der Kostenart bis zum Kostenträger
 
-Der gesamte Ablauf lässt sich am einfachsten an einem Beispiel verstehen.
-
-Angenommen, ein Unternehmen stellt **Schreibtische** her.
+Angenommen, ein Unternehmen produziert **Schreibtische**.
 
 In einem Monat entstehen folgende Kosten:
 
-- Holz: 20.000 €
-- Fertigungslöhne: 15.000 €
-- Strom: 5.000 €
-- Miete: 8.000 €
-- Gehälter Verwaltung: 6.000 €
-- Werbung: 2.000 €
-
-##### Schritt 1: Kostenartenrechnung
-
-Zuerst wird gefragt:
-
-> **Welche Kosten sind angefallen?**
-
-```text
-Holz                     20.000 €
-Fertigungslöhne          15.000 €
-Strom                     5.000 €
-Miete                     8.000 €
-Verwaltungsgehälter       6.000 €
-Werbung                    2.000 €
----------------------------------
-Gesamtkosten             56.000 €
-```
-
-Anschließend wird unterschieden:
-
-```text
-Kosten
-│
-├── Einzelkosten
-│   ├── Holz
-│   └── Fertigungslöhne
-│
-└── Gemeinkosten
-    ├── Strom
-    ├── Miete
-    ├── Verwaltungsgehälter
-    └── Werbung
-```
-
-Die **Einzelkosten** können direkt dem Schreibtisch zugerechnet werden.
-
-Die **Gemeinkosten** müssen zunächst über die Kostenstellenrechnung verteilt werden.
+| Kostenart | Betrag |
+|---|---:|
+| Holz | 20.000 € |
+| Fertigungslöhne | 15.000 € |
+| Strom | 5.000 € |
+| Miete | 8.000 € |
+| Verwaltungsgehälter | 6.000 € |
+| Werbung | 2.000 € |
+| **Gesamt** | **56.000 €** |
 
 ---
 
-##### Schritt 2: Kostenstellenrechnung und BAB
+####  Schritt 1: Kostenartenrechnung
 
-Jetzt lautet die Frage:
+Zunächst lautet die Frage:
+
+> **Welche Kosten sind angefallen?**
+
+Die Kosten werden erfasst und anschließend in **Einzelkosten** und **Gemeinkosten** unterschieden.
+
+```mermaid
+flowchart TD
+    A["Kostenartenrechnung<br/>56.000 €"]
+
+    A --> B["Einzelkosten<br/>35.000 €"]
+    A --> C["Gemeinkosten<br/>21.000 €"]
+
+    B --> D["Holz<br/>20.000 €"]
+    B --> E["Fertigungslöhne<br/>15.000 €"]
+
+    C --> F["Strom<br/>5.000 €"]
+    C --> G["Miete<br/>8.000 €"]
+    C --> H["Verwaltungsgehälter<br/>6.000 €"]
+    C --> I["Werbung<br/>2.000 €"]
+```
+
+Die **Einzelkosten** können direkt den produzierten Schreibtischen zugerechnet werden.
+
+Bei den **Gemeinkosten** ist das nicht möglich.
+
+---
+
+####  Schritt 2: Kostenstellenrechnung
+
+Nun lautet die Frage:
 
 > **Wo sind die Gemeinkosten entstanden?**
 
-Dazu werden die Gemeinkosten mithilfe des **BAB** auf die Kostenstellen verteilt.
+Dafür werden die Gemeinkosten den verschiedenen Kostenstellen zugeordnet.
+
+```mermaid
+flowchart LR
+    A["Gemeinkosten<br/>21.000 €"]
+
+    A --> B["Material"]
+    A --> C["Fertigung"]
+    A --> D["Verwaltung"]
+    A --> E["Vertrieb"]
+```
+
+Die eigentliche Verteilung erfolgt mithilfe des **Betriebsabrechnungsbogens**.
+
+---
+
+####  Schritt 3: Betriebsabrechnungsbogen (BAB)
+
+Im BAB werden die Gemeinkosten auf die Kostenstellen verteilt.
 
 Vereinfachtes Beispiel:
 
@@ -896,52 +1020,63 @@ Vereinfachtes Beispiel:
 | Werbung | – | – | – | 2.000 € | 2.000 € |
 | **Summe** | **2.000 €** | **8.000 €** | **7.800 €** | **3.200 €** | **21.000 €** |
 
-Damit wissen wir beispielsweise:
+Damit ist bekannt, **wo die Gemeinkosten entstanden sind**.
 
-- Materialstelle verursacht 2.000 € Gemeinkosten
-- Fertigungsstelle verursacht 8.000 € Gemeinkosten
-- Verwaltung verursacht 7.800 € Gemeinkosten
-- Vertrieb verursacht 3.200 € Gemeinkosten
+```mermaid
+flowchart LR
+    A["BAB<br/>Gemeinkosten 21.000 €"]
 
-Der BAB beantwortet damit die Frage:
+    A --> B["Material<br/>2.000 €"]
+    A --> C["Fertigung<br/>8.000 €"]
+    A --> D["Verwaltung<br/>7.800 €"]
+    A --> E["Vertrieb<br/>3.200 €"]
+```
 
-> **Wo sind die Gemeinkosten angefallen?**
+Aus den Kostenstellensummen können anschließend die entsprechenden **Gemeinkostenzuschläge** ermittelt werden.
 
 ---
 
-##### Schritt 3: Kostenträgerrechnung
+####  Schritt 4: Kostenträgerrechnung
 
-Jetzt müssen die Kosten auf die Produkte bzw. Aufträge verteilt werden.
-
-Die Frage lautet:
+Jetzt lautet die Frage:
 
 > **Wofür sind die Kosten entstanden?**
 
-Angenommen, das Unternehmen produziert zwei Schreibtischmodelle:
+Die Kosten werden konkreten:
 
-- Modell A
-- Modell B
+- Produkten
+- Aufträgen
+- Dienstleistungen
 
-Die **Einzelkosten** können direkt zugeordnet werden:
+zugerechnet.
 
-```text
-Holz ──────────────────────────────┐
-                                   ├──> Modell A / Modell B
-Fertigungslöhne ───────────────────┘
+Dabei gibt es zwei Wege:
+
+```mermaid
+flowchart TD
+    A["Einzelkosten"]
+    B["Gemeinkosten"]
+
+    A --> F["Kostenträgerrechnung"]
+
+    B --> C["Kostenstellenrechnung"]
+    C --> D["BAB"]
+    D --> E["Gemeinkostenzuschläge"]
+    E --> F
+
+    F --> G["Schreibtisch Modell A"]
+    F --> H["Schreibtisch Modell B"]
 ```
 
-Die **Gemeinkosten** nehmen dagegen den Weg über die Kostenstellen:
+Die **Einzelkosten** werden also direkt zugerechnet.
 
-```text
-Strom ────────┐
-Miete ────────┤
-Gehälter ─────┼──> BAB ──> Kostenstellen ──> Gemeinkostenzuschläge ──> Produkte
-Werbung ──────┘
-```
+Die **Gemeinkosten** gelangen über die Kostenstellenrechnung und den BAB zum Kostenträger.
 
-Am Ende werden **Einzelkosten und zugerechnete Gemeinkosten** zusammengeführt.
+---
 
-Vereinfachtes Beispiel für einen Schreibtisch:
+####  Schritt 5: Ermittlung der Selbstkosten
+
+Für einen einzelnen Schreibtisch könnte sich beispielsweise folgende vereinfachte Kalkulation ergeben:
 
 | Kosten | Betrag |
 |---|---:|
@@ -952,77 +1087,64 @@ Vereinfachtes Beispiel für einen Schreibtisch:
 | + Verwaltungs-/Vertriebsgemeinkosten | 20 € |
 | **Selbstkosten** | **200 €** |
 
-Damit beantwortet die Kostenträgerrechnung die Frage:
-
-> **Wie viele Kosten hat dieser konkrete Schreibtisch verursacht?**
+Die Kostenträgerrechnung zeigt somit, **welche Kosten ein konkretes Produkt verursacht hat**.
 
 ---
 
-## 20. Gesamtzusammenhang
+### Gesamtzusammenhang
 
-```text
-                    KOSTENRECHNUNG
-                          │
-                          ▼
-              1. KOSTENARTENRECHNUNG
-                          │
-                  "Welche Kosten?"
-                          │
-             ┌────────────┴────────────┐
-             │                         │
-             ▼                         ▼
-        Einzelkosten              Gemeinkosten
-             │                         │
-             │                         ▼
-             │              2. KOSTENSTELLENRECHNUNG
-             │                         │
-             │                        BAB
-             │                         │
-             │                  "Wo entstanden?"
-             │                         │
-             │                         ▼
-             │               Gemeinkostenzuschläge
-             │                         │
-             └────────────┬────────────┘
-                          ▼
-               2. KOSTENTRÄGERRECHNUNG
-                          │
-                    "Wofür entstanden?"
-                          │
-                          ▼
-              Produkt / Auftrag / Leistung
-                          │
-                          ▼
-                     Selbstkosten
+```mermaid
+flowchart TD
+    A["1. Kostenartenrechnung<br/><b>Welche Kosten?</b>"]
+
+    A --> B["Einzelkosten"]
+    A --> C["Gemeinkosten"]
+
+    C --> D["2. Kostenstellenrechnung<br/><b>Wo entstanden?</b>"]
+    D --> E["Betriebsabrechnungsbogen<br/>BAB"]
+    E --> F["Material"]
+    E --> G["Fertigung"]
+    E --> H["Verwaltung"]
+    E --> I["Vertrieb"]
+
+    F --> J["Gemeinkostenzuschläge"]
+    G --> J
+    H --> J
+    I --> J
+
+    B --> K["3. Kostenträgerrechnung<br/><b>Wofür entstanden?</b>"]
+    J --> K
+
+    K --> L["Produkt / Auftrag / Dienstleistung"]
+    L --> M["Selbstkosten"]
 ```
+
+##### Der Weg in einem Satz
 
 > [!important]
-> **Kostenartenrechnung:** Welche Kosten sind entstanden?
+> **Kostenartenrechnung** ermittelt, **welche Kosten** entstanden sind.
 >
-> **Kostenstellenrechnung / BAB:** Wo sind die Gemeinkosten entstanden?
+> **Kostenstellenrechnung und BAB** ermitteln, **wo die Gemeinkosten** entstanden sind.
 >
-> **Kostenträgerrechnung:** Wofür sind die Kosten entstanden?
+> **Kostenträgerrechnung** ermittelt, **wofür die Kosten** entstanden sind.
 
-##### Kurz gesagt
+##### Lernschema
 
-```text
-Kostenart
-   ↓
-Welche Kosten?
-   ↓
-Einzelkosten ───────────────────────────┐
-                                       │
-Gemeinkosten                            │
-   ↓                                   │
-Kostenstelle                            │
-   ↓                                   │
-BAB                                     │
-   ↓                                   │
-Gemeinkostenzuschlag                    │
-   ↓                                   │
-   └───────────────────────────────────┤
-                                       ↓
-                                Kostenträger
-                                       ↓
-                                  Selbstkosten
+```mermaid
+flowchart LR
+    A["Kostenartenrechnung<br/>WELCHE?"]
+    B["Kostenstellenrechnung<br/>WO?"]
+    C["BAB<br/>Gemeinkosten verteilen"]
+    D["Kostenträgerrechnung<br/>WOFÜR?"]
+    E["Selbstkosten"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
 ```
+
+> [!tip]
+> **Welche? → Wo? → Wofür?**
+>
+> Kostenartenrechnung → Kostenstellenrechnung / BAB → Kostenträgerrechnung
