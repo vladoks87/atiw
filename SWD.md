@@ -636,9 +636,9 @@ Werte werden in Objekten gespeichert.
 
 ```JSON
 {
-	"Objekt" : "wert";
+	"Objekt" : "wert",
 	"Objekt2" : [
-		"Array1";
+		"Array1",
 		"Array2"
 	]
 }
