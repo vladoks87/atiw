@@ -8,20 +8,35 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8e4555e54272f883",
+            "id": "55fb4032c451b892",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "SWD.md",
-                "bFile": "SWD.md",
-                "aRef": ""
+                "file": "GIT.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: SWD  (Working Tree)"
+              "icon": "lucide-file",
+              "title": "GIT"
+            }
+          },
+          {
+            "id": "6363accf1abcd985",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WBL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "WBL"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -41,7 +56,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Dateiexplorer"
@@ -94,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SWD.md",
+                "file": "EVP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +121,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for SWD"
+              "title": "Rückverweise auf EVP"
             }
           },
           {
@@ -156,17 +173,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "WBL.md",
+                "file": "SWD.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of WBL"
+              "title": "Outline of SWD"
             }
           },
           {
-            "id": "9be679e8bd066216",
+            "id": "1b1a1cb0edea89ae",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -180,7 +197,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 351.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,23 +211,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8e4555e54272f883",
+  "active": "6363accf1abcd985",
   "lastOpenFiles": [
     "SWD.md",
-    "EVP.md",
+    "WBL.md",
+    "Pasted image 20260913143507.png",
+    "Images_Files/Pasted image 20260913143517.png",
     "GIT.md",
     "POL.md",
-    "WBL.md",
-    "Images_Files/Pasted image 20260626104438.png",
-    "Images_Files/Pasted image 20260626103130.png",
-    "Images_Files/Pasted image 20260626102845.png",
-    "Images_Files/Pasted image 20260626102608.png",
-    "Images_Files/Pasted image 20260626102438.png",
-    "Images_Files/Pasted image 20260626095753.png",
-    "Images_Files/Pasted image 20260626075529.png",
-    "Images_Files/Pasted image 20260622165439.png",
-    "Images_Files/Pasted image 20260622163824.png",
-    "Images_Files/Pasted image 20260622163413.png",
+    "EVP.md",
+    "Images_Files/Pasted image 20260705154925.png",
+    "Images_Files/Pasted image 20260705154959.png",
+    "Pasted image 20260705154722.png",
+    "Images_Files/Pasted image 20260705153849.png",
+    "Images_Files/Pasted image 20260705154334.png",
+    "Images_Files/Pasted image 20260705154221.png",
+    "Images_Files/Pasted image 20260705154114.png",
+    "Images_Files/Pasted image 20260705144220.png",
     "Images_Files"
   ]
 }

@@ -696,8 +696,224 @@ Grundlagen - Namensauflösung in der Namenshierarchie - DNS-Zonen (Forward Looku
 [[#Kryptographie]]
 alles rund um [[#TLS 1.2]] und [[#TLS 1.3]] ([[#Diffie-Hellman]])
 [[#Angriffe und Absicherungen]]
-Cyber Kill Chain - Reconnaissance-Strategien, Angriffe auf Accounts, Exploits, DDoS zwei Strategien Ihrer Wahl, Social Engineering, Abwehrmaßnahmen
-#### NAT-PAT
-#### DNS
-#### Angriffe und Absicherungen
+[[#Cyber Kill Chain]] - Reconnaissance-Strategien, Angriffe auf Accounts, Exploits, DDoS zwei Strategien Ihrer Wahl, Social Engineering, Abwehrmaßnahmen
 
+---
+#### NAT-PAT
+#Roboter 
+
+NAT (Network Address Translation) übersetzt private IP-Adressen in öffentliche – und umgekehrt. Es löst das Problem der IPv4-Adressknappheit und trennt interne Netze vom Internet.
+
+##### Private IP-Adressbereiche (nicht im Internet routbar)
+
+| Bereich | Subnetz |
+|---|---|
+| Klasse A | `10.0.0.0/8` |
+| Klasse B | `172.16.0.0/12` |
+| Klasse C | `192.168.0.0/16` |
+##### NAT-Typen
+
+| Typ | Übersetzung | Einsatz |
+|---|---|---|
+| **Statisches NAT** | 1:1 (eine private ↔ eine öffentliche IP) | Server mit fester externer IP |
+| **Dynamisches NAT** | n:m (Pool aus öffentlichen IPs) | Mehrere Geräte, mehrere öffentliche IPs |
+| **PAT / Masquerading** | n:1 (viele private → eine öffentliche IP) | Heimnetz, Firmennetz (Normalfall) |
+##### PAT – Port Address Translation
+
+PAT ist die **Erweiterung von NAT um Portnummern**. Da sich alle internen Geräte eine öffentliche IP teilen, wird jede Verbindung durch eine eindeutige **Port-Kombination** unterschieden. Der Router speichert alle Zuordnungen in der **NAT-Tabelle**.
+##### NAT-Tabelle (Beispiel)
+
+| Interne IP | Int. Port | Öffentliche IP | Ext. Port | Ziel-IP | Ziel-Port |
+|---|---|---|---|---|---|
+| 192.168.1.10 | 54321 | 93.184.1.1 | 40001 | 8.8.8.8 | 443 |
+| 192.168.1.20 | 54321 | 93.184.1.1 | 40002 | 8.8.8.8 | 443 |
+
+##### SNAT vs. DNAT
+
+| | SNAT (Source NAT) | DNAT (Destination NAT) |
+|---|---|---|
+| **Richtung** | Ausgehend (LAN → Internet) | Eingehend (Internet → LAN) |
+| **Anwendung** | Internetzugang für interne Geräte | Portweiterleitung zu internem Server |
+| **Beispiel** | Heimrouter | Webserver hinter Router |
+##### Vor- & Nachteile
+
+**Vorteile:**
+- Spart öffentliche IP-Adressen
+- Interne Geräte von außen nicht direkt erreichbar (Sicherheit)
+- Netzstruktur bleibt nach außen verborgen
+
+**Nachteile:**
+- Direkter Zugriff von außen ohne DNAT nicht möglich
+- Erhöhte Komplexität bei VoIP, VPN, P2P
+- Verstößt gegen das End-to-End-Prinzip des Internets
+
+---
+#### DNS
+#Roboter
+##### Was ist DNS?
+
+Das **Domain Name System (DNS)** ist das „Telefonbuch" des Internets. Es übersetzt menschenlesbare Domainnamen (z. B. `www.example.com`) in IP-Adressen (z. B. `93.184.216.34`), die Computer zur Kommunikation benötigen.
+##### Hierarchischer Aufbau
+
+DNS ist hierarchisch organisiert:
+
+```
+. (Root)
+└── com.
+    └── example.com.
+        └── www.example.com.
+```
+
+| Ebene | Bezeichnung | Beispiel |
+|---|---|---|
+| Root | Wurzel aller Domains | `.` |
+| TLD | Top-Level-Domain | `.com`, `.de`, `.org` |
+| Second-Level | Domainname | `example.com` |
+| Subdomain | Unterdomäne | `www.example.com` |
+
+##### Ablauf einer DNS-Auflösung (Rekursion)
+
+1. **Client** fragt den **lokalen Resolver** (z. B. Router oder `127.0.0.53`)
+2. Resolver prüft seinen **Cache** → bei Treffer: sofortige Antwort
+3. Kein Cache-Treffer → Resolver fragt einen **Root-Nameserver** (13 Root-Cluster weltweit)
+4. Root verweist auf den **TLD-Nameserver** (z. B. für `.com`)
+5. TLD-Nameserver verweist auf den **autoritativen Nameserver** der Domain
+6. Autoritativer Nameserver liefert die **finale IP-Adresse**
+7. Resolver **cached** die Antwort gemäß TTL und gibt sie an den Client zurück
+
+```
+Client → Resolver → Root-NS → TLD-NS → Auth-NS → IP-Adresse
+```
+
+##### Wichtige Record-Typen
+
+| Record | Funktion | Beispiel |
+|---|---|---|
+| `A` | Domain → IPv4-Adresse | `example.com → 93.184.216.34` |
+| `AAAA` | Domain → IPv6-Adresse | `example.com → 2606:2800::1` |
+| `CNAME` | Alias auf andere Domain | `www → example.com` |
+| `MX` | Mail-Server der Domain | `mail.example.com` |
+| `TXT` | Freitext (SPF, DKIM, …) | `v=spf1 include:…` |
+| `NS` | Zuständige Nameserver | `ns1.example.com` |
+| `PTR` | Reverse-DNS (IP → Domain) | `34.216.184.93.in-addr.arpa` |
+| `SRV` | Service-Locator (Port + Proto) | `_sip._tcp.example.com` |
+
+##### TTL & Caching
+Die **TTL (Time to Live)** gibt in Sekunden an, wie lange ein DNS-Eintrag gecacht werden darf. Niedrige TTL (z. B. 60 s) ermöglicht schnelle Änderungen, erhöht aber die Last auf die Nameserver. Hohe TTL (z. B. 86400 s = 1 Tag) reduziert Anfragen, verzögert aber die Propagation bei Änderungen.
+
+##### Sicherheit: DNSSEC
+**DNSSEC** fügt kryptografische Signaturen zu DNS-Antworten hinzu und verhindert so **DNS-Spoofing** (gefälschte Antworten). Der Resolver prüft die Signaturkette bis zur Root. DNSSEC schützt die **Integrität**, nicht die Vertraulichkeit der Abfragen – dafür ist DoH/DoT zuständig.
+##### E-Mail-Sicherheit: SPF, DKIM & DMARC
+SPF, DKIM und DMARC sind drei DNS-basierte Protokolle, die zusammen sicherstellen, dass E-Mails wirklich von der angegebenen Domain stammen und nicht gefälscht wurden.
+
+Alle drei nutzen **DNS-TXT-Records** zur Absenderauthentifizierung.
+
+| Protokoll | Funktion | DNS-Record |
+|---|---|---|
+| **SPF** | Erlaubte Mailserver festlegen | `v=spf1 mx -all` |
+| **DKIM** | Mail kryptografisch signieren | `v=DKIM1; k=rsa; p=...` |
+| **DMARC** | Policy für SPF/DKIM-Fehler | `v=DMARC1; p=reject` |
+
+##### Ablauf
+Mail kommt an  
+├─► SPF: Erlaubter Server?  
+├─► DKIM: Signatur gültig?  
+└─► DMARC: Beides fehlgeschlagen → none / quarantine / reject
+##### DMARC-Policy
+
+- `p=none` → Testmodus, nur Berichte
+- `p=quarantine` → Spam-Ordner
+- `p=reject` → Mail wird abgewiesen
+---
+### Cyber Kill Chain
+
+Die Cyber Kill Chain beschreibt die **7 Phasen eines gezielten Cyberangriffs** – von der ersten Erkundung bis zur Zielerreichung. Angreifer durchlaufen diese Phasen sequenziell; wird eine Phase unterbrochen, scheitert der Angriff.
+
+| Phase | Bezeichnung | Ziel des Angreifers |
+|---|---|---|
+| 1 | Reconnaissance | Informationen über das Ziel sammeln |
+| 2 | Weaponization | Angriffswerkzeug vorbereiten |
+| 3 | Delivery | Werkzeug zum Ziel transportieren |
+| 4 | Exploitation | Schwachstelle ausnutzen |
+| 5 | Installation | Schadsoftware installieren |
+| 6 | Command & Control | Fernzugriff aufbauen |
+| 7 | Actions on Objectives | Ziel erreichen (Daten stehlen, verschlüsseln etc.) |
+
+##### Reconnaissance – Erkundungsstrategien
+
+Reconnaissance ist die **erste und wichtigste Phase** – je mehr Informationen gesammelt werden, desto gezielter der Angriff.
+
+**Passive Reconnaissance (kein direkter Kontakt mit Ziel):**
+- OSINT (Open Source Intelligence): LinkedIn, WHOIS, Shodan, Google Dorking
+- DNS-Abfragen: Subdomains, MX-Records, Nameserver ermitteln
+- Metadaten aus öffentlichen Dokumenten (z. B. PDF-Autor, Softwareversionen)
+
+**Aktive Reconnaissance (direkter Kontakt mit Ziel):**
+- Portscanning (z. B. mit Nmap): offene Ports und Dienste erkennen
+- Fingerprinting: Softwareversionen von Diensten auslesen
+- Vulnerability Scanning: bekannte Schwachstellen automatisch prüfen
+
+##### Angriffe auf Accounts
+
+Ziel ist die **Übernahme von Benutzerkonten** ohne Kenntnis der Zugangsdaten.
+
+| Angriff | Beschreibung |
+|---|---|
+| **Brute Force** | Alle möglichen Passwörter systematisch durchprobieren |
+| **Dictionary Attack** | Passwortliste mit häufigen Passwörtern verwenden |
+| **Credential Stuffing** | Gestohlene Login-Daten aus Leaks bei anderen Diensten testen |
+| **Password Spraying** | Ein häufiges Passwort gegen viele Accounts testen (umgeht Sperren) |
+| **Pass-the-Hash** | Gestohlenen Passwort-Hash direkt zur Authentifizierung nutzen |
+
+##### Exploits
+
+Ein Exploit **nutzt eine Schwachstelle** in Software, Hardware oder Konfiguration aus.
+
+| Typ | Beschreibung |
+|---|---|
+| **Zero-Day-Exploit** | Angriff auf unbekannte, noch ungepatchte Schwachstelle |
+| **Buffer Overflow** | Speicherüberlauf zum Einschleusen von Code |
+| **SQL Injection** | Schadcode in Datenbankabfragen einschleusen |
+| **Remote Code Execution (RCE)** | Beliebigen Code auf dem Zielsystem ausführen |
+| **Privilege Escalation** | Rechte vom normalen User auf Admin/Root erhöhen |
+
+**CVE – Common Vulnerabilities and Exposures:**
+CVE ist ein **öffentliches Verzeichnis bekannter Sicherheitslücken**, gepflegt von der MITRE Corporation. Jede Schwachstelle erhält eine eindeutige ID (z. B. `CVE-2021-44228` = Log4Shell). Zusammen mit dem **CVSS-Score (0–10)** gibt CVE Auskunft über Schweregrad und Angriffsfläche – und ist Grundlage für priorisiertes Patch-Management.
+
+##### DDoS – Zwei Strategien
+
+DDoS (Distributed Denial of Service) zielt darauf ab, einen Dienst durch **Überlastung unerreichbar** zu machen.
+
+**1. Volumetrischer Angriff (z. B. UDP Flood):**
+Das Ziel wird mit massenhaften Paketen überflutet, bis die Bandbreite erschöpft ist. Tausende kompromittierte Geräte (Botnet) senden gleichzeitig – typische Größenordnung: hunderte Gbit/s.
+
+**2. Application Layer Angriff (z. B. HTTP Flood / Slowloris):**
+Anstatt Bandbreite zu überlasten, werden legitim aussehende HTTP-Anfragen gesendet, die den Webserver ressourcenseitig erschöpfen. Schwerer zu erkennen, da der Traffic wie normaler Nutzerverkehr wirkt.
+
+##### Social Engineering
+
+Social Engineering manipuliert **Menschen statt Systeme** – der Mensch ist das schwächste Glied.
+
+| Methode | Beschreibung |
+|---|---|
+| **Phishing** | Gefälschte E-Mails mit Links zu Fake-Loginseiten |
+| **Spear Phishing** | Gezieltes Phishing mit personalisierten Infos (aus Reconnaissance) |
+| **Vishing** | Angriff per Telefonanruf (z. B. als IT-Support ausgeben) |
+| **Pretexting** | Erfundenes Szenario, um Vertrauen zu gewinnen |
+| **Baiting** | Infizierter USB-Stick wird absichtlich „verloren" |
+| **Tailgating** | Physischer Zutritt durch Hinterhergehen (kein Ausweis) |
+
+##### Abwehrmaßnahmen
+
+**Technisch:**
+- Patch-Management: regelmäßige Updates, Zero-Days minimieren
+- MFA (Multi-Faktor-Authentifizierung): Account-Angriffe erschweren
+- IDS/IPS: Angriffsmuster erkennen und blockieren
+- Firewall & DDoS-Schutz (Rate Limiting, Scrubbing Center)
+- Least Privilege: Nutzer erhalten nur nötige Rechte
+
+**Organisatorisch:**
+- Security Awareness Trainings: Social Engineering erkennen
+- Incident Response Plan: klare Prozesse im Angriffsfall
+- Penetration Testing: eigene Systeme regelmäßig prüfen lassen
+- Passwort-Richtlinien + Passwortmanager
