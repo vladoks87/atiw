@@ -636,13 +636,13 @@ Hybride Verschlüsselung - Vorgehen
 ##### TLS 
 ###### Diffie-Hellman
 
-Der Diffie-Hellman-Algorithmus dient dazu, einen gemeinsamen geheimen Schlüssel über einen unsicheren Kanal auszutauschen. Dabei werden öffentliche Parameter wie eine Primzahl und eine Basis genutzt, während beide Seiten geheime Zufallswerte wählen; daraus entsteht am Ende derselbe gemeinsame Schlüssel [web:81][web:91].
+Der Diffie-Hellman-Algorithmus dient dazu, einen gemeinsamen geheimen Schlüssel über einen unsicheren Kanal auszutauschen. Dabei werden öffentliche Parameter wie eine Primzahl und eine Basis genutzt, während beide Seiten geheime Zufallswerte wählen; daraus entsteht am Ende derselbe gemeinsame Schlüssel.
 
 *Ablauf*
 1. Öffentliche Werte vereinbaren: Primzahl \(p\) und Basis \(g\).
 2. Alice und Bob wählen jeweils geheime Zahlen \(a\) und \(b\).
 3. Beide berechnen öffentliche Werte und tauschen sie aus.
-4. Aus den empfangenen Werten berechnen beide den gleichen gemeinsamen Schlüssel [web:77][web:86].
+4. Aus den empfangenen Werten berechnen beide den gleichen gemeinsamen Schlüssel.
 
 Wichtige Eigenschaft
 - Der Schlüssel wird nicht direkt übertragen.
@@ -650,11 +650,11 @@ Wichtige Eigenschaft
 
 ##### TLS 1.2
 
-TLS 1.2 ist eine ältere, aber noch weit verbreitete Version von Transport Layer Security. Sie unterstützt viele Cipher Suites und war lange der Standard für sichere Verbindungen im Web [web:78][web:82].
+TLS 1.2 ist eine ältere, aber noch weit verbreitete Version von Transport Layer Security. Sie unterstützt viele Cipher Suites und war lange der Standard für sichere Verbindungen im Web.
 **Merkmale**
 - Flexibler als ältere TLS-Versionen.
 - Unterstützt mehrere Handshake-Varianten.
-- Im Vergleich zu TLS 1.3 komplexer und langsamer [web:78][web:84].
+- Im Vergleich zu TLS 1.3 komplexer und langsamer.
 
 ##### TLS 1.3
 
@@ -920,7 +920,7 @@ Social Engineering manipuliert **Menschen statt Systeme** – der Mensch ist das
 
 ### Block 5
 #Klausur
--[[#Kryptographie]]
+[[#Kryptographie]]
 [[GIT#Datensicherheit/Datenschutz]]
 [[GIT#TOMs RAID, Backup, USV]]
 VPN - IPSec - Grundlagen IPSec Protokolle ESP AH Tunneling-Prinzip
