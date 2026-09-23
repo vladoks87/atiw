@@ -1,8 +1,8 @@
 ```table-of-contents
 ```
 ## Block 1
-#### IP-Adressen
-##### IPv4
+### IP-Adressen
+#### IPv4
 Eine IPv4 Adresse besteht aus 4 Oktetten, wobei ein Oktett ein Byte ist. Das ergibt eine Größe von **32 Bit**
 Jedes Oktett kann den Wertebereich von 0-255 abdecken.
 Eine IPv4 Adresse kann nur mithilfe einer **Subnetzmaske** gelesen werden. Diese teilt die IPv4 Adresse in den **Netzanteil** und den **Hostanteil**
@@ -19,7 +19,7 @@ Bei einer **Netzwerkadresse** sind **alle Hostbits binär 0**, diese fast alle H
 Eine **Broadcastadresse** setzt **alle Hostbits auf 1**. also 192.168.4.255
 Beide Adressen dürfen niemals einem Gerät zugewiesen werden und man muss bei der Berechnung der möglichen Hosts immer 2 abziehen.
 Weitere Sonderfälle sind **Unicast**, die eindeutige IP eines Rechners, z.B. eines Webservers, **Multicast** welches alle Hosts adressiert die sich eine Multicastadresse teilen (Class D, 239.1.168.200). **Multicast**adressen haben den IP-Bereich von 224-239 im ersten Oktett.
- 
+
 Spezielle IPv4 Adressen:
 ![[Pasted image 20250310175706.png]]
 Weitere private IP-Adressen:
@@ -28,10 +28,10 @@ Weitere private IP-Adressen:
 224.0.0.0/4 (224-239) -> Multicast Adressen
 
 ---
-##### IPv6
+#### IPv6
 **Überblick Unterschiede v4 zu v6**
 ![[Pasted image 20250310180554.png]]
-###### Formaler Aufbau:
+##### Formaler Aufbau:
 **Trennzeichen:** ":"
 Einheiten sind **Hextette** statt Oktetten
 **Zahlensystem: Hexadezimal**
@@ -44,7 +44,7 @@ Einheiten sind **Hextette** statt Oktetten
  Regeln für das Kürzen:
 	 - Führende Nullen in enem Hextett werden gekürzt
 	 - Mehrere Nuller-Hextette werden durch **"::"** gekürzt
-###### IPv6-Unicast
+##### IPv6-Unicast
 Unicast Adresse identifiziert wie bei IPv4 eindeutig ein Gerät, Source-Address eines Pakets muss zwingend eine Unicast Adresse sein. Ziel kann **Multicast** sein, **Broadcast** gibt es in v6 nicht mehr! Dies hat den Vorteil Traffic zu reduzieren und macht NAT unnötig und den Nachteil, dass jeder IPv6 fähige Rechner für das Internet zwingend zwei Adressen benötigt.
 ###### 1. Link-Local (LLA)
 - Sind auf das gleiche Netzwerk beschränkt.
@@ -57,13 +57,13 @@ Unicast Adresse identifiziert wie bei IPv4 eindeutig ein Gerät, Source-Address 
 	- 1. Globales Routing Prefix /48 vom Provider
 	- 2. Subnetz-ID mit 16 Bit zur Adressierung von Teilnetzen z.B. im Unternehmen
 	- 3. Schnittstellen-ID mit 64 Bit
-###### IPv6 Multicast
+##### IPv6 Multicast
 - besonders wichtig, da es keinen Broadcast mehr gibt
 - beginnen mit **FF00::/8**
 - das Präfix /8 sagt dabei, dass die ersten 8 Bit fest vorgegeben sind
 ![[Pasted image 20250310181435.png]]
 ---
-#### MAC-Adressen (Media Access Control)
+### MAC-Adressen (Media Access Control)
 - identifiziert das *physische* Quell- und Zielgerät (**NIC - Network Interface Connector**)
 - nur im lokalen Netz gültig
 - 12 Hexadezimale Ziffern (z.B.: 90-1B-0E-4B-ED), also 48 Bit oder 6 Byte
@@ -96,37 +96,37 @@ Englisch: **P**lease **D**o **N**ot **T**hrow **S**alami **P**izza **A**way 1 ->
 - wenn diese übereinstimmen sendet es an die **Source-MAC-Adresse** zurück seine Antwort mit der eigenen MAC-Adresse (*ARP-Reply*)
 - der Ziel PC kann diese Antwort im ARP-Cache speichern, dieser lässt sich mit ```arp -a```anzeigen
 ---
-#### Ausdehnung von Netzwerken
+### Ausdehnung von Netzwerken
 ![[Pasted image 20250311181240.png]]
-**Wichtig sind nur WAN, LAN und MAN** 
-#### Umrechnung Dezimal/Binär/Hexadezimal
+**Wichtig sind nur WAN, LAN und MAN**
+### Umrechnung Dezimal/Binär/Hexadezimal
 **Dezimal zu Binär -Divisionsrestverfahren**
 
 Beispiel 229
-229 / 2 = 114 Rest 1 **Einerstelle** 
+229 / 2 = 114 Rest 1 **Einerstelle**
 114 / 2 = 57  Rest 0
 57 / 2 = 28   Rest 1
 28 / 2 = 14   Rest 0
 14 / 2 = 7      Rest 0
 7 / 2 = 3        Rest 1
 3 / 2 = 1        Rest 1
-1 / 2 = 0        Rest 1 **128er Stelle** 
+1 / 2 = 0        Rest 1 **128er Stelle**
 Dann von unten nach oben eintragen
 
-| 128 | 64  | 32  | 16  | 8   | 4   | 2   | 1   |
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1   | 1   | 1   | 0   | 0   | 1   | 0   | 1   |
+| 1 | 1 | 1 | 0 | 0 | 1 | 0 | 1 |
 **Hexadezimal zu Binär**
 - 2 Stellige Hexadezimalzahl lässt sich leicht binär umrechnen da diese in 1 Byte passen
 - halbiert man dieses Byte kann man durch einsetzen des Werts binär die Hexadezimalzahl umrechnen
 Beispiel E9 - E im linken Teil des Bytes, 9 im rechten Teil. E entspricht 14
 
-| 8   | 4   | 2   | 1   | 8   | 4   | 2   | 1   |
+| 8 | 4 | 2 | 1 | 8 | 4 | 2 | 1 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1   | 1   | 1   | 0   | 1   | 0   | 0   | 1   |
+| 1 | 1 | 1 | 0 | 1 | 0 | 0 | 1 |
 Das ergibt also binär 11101001 = 233 = E9
 
-##### Allgemeine Anforderungen an Netzwerke
+### Allgemeine Anforderungen an Netzwerke
 - müssen skalierbar sein
 	- **vertikale Skalierbarkeit** also Verbesserung innerhalb eines Systems (mehr RAM für einen Server)
 	- **horizontale Skalierbarkeit** also Verbesserung durch Hinzufügen von Ressourcen (z.B.: extra Server bereitstellen)
@@ -134,10 +134,10 @@ Das ergibt also binär 11101001 = 233 = E9
 
 ## Block 2
 
-#### Subnetting
+### Subnetting
 - Einteilung eines Netzes in kleinere Teilnetze
 - z.B. sinnvoll für Provider die ihnen zugewiesene IP Bereiche aufteilen wollen
-##### Subnetting in IPv4
+#### Subnetting in IPv4
 
 Beispiel das Netz 192.168.100.0/24 in zwei **Teilnetze**:
 Subnetzmaske 255.255.255.0 benötigt **ein weiteres Bit** im Netzwerkanteil
@@ -151,47 +151,47 @@ Vorgehen:
 		3a. IP-Adresse letztes Oktett / Schrittgröße, ganzzahligen Anteil \* Schrittgröße = Netzadresse
 4. Anzahl Hosts = 2 hoch restliche Bits
 
-| Präfix | Anzahl Netze | Anzahl Hosts  | Schrittgröße |
+| Präfix | Anzahl Netze | Anzahl Hosts | Schrittgröße |
 | ------ | ------------ | ------------- | ------------ |
-| /25    | 2^1=**2**    | 2^7-2=**126** | 128          |
-| /26    | 2^2=**4**    | 2^6-2=**62**  | 64           |
-| /27    | 2^3=**8**    | 2^5-2=**30**  | 32           |
-| /28    | 2^4=**16**   | 2^4-2=**14**  | 16           |
-| /29    | 2^5=**32**   | 2^3-2=**6**   | 8            |
-| /30    | 2^6=**64**   | 2^2-2=**2**   | 4            |
+| /25 | 2^1=**2** | 2^7-2=**126** | 128 |
+| /26 | 2^2=**4** | 2^6-2=**62** | 64 |
+| /27 | 2^3=**8** | 2^5-2=**30** | 32 |
+| /28 | 2^4=**16** | 2^4-2=**14** | 16 |
+| /29 | 2^5=**32** | 2^3-2=**6** | 8 |
+| /30 | 2^6=**64** | 2^2-2=**2** | 4 |
 
-##### Subnetting in IPv6
+#### Subnetting in IPv6
 gleiches Prinzip, Ermittlung der zusätzlich notwendigen Bits. Für IHK landet man meistens bei 4 Teilnetzen (00, 40, 80, C0) - also 2 zusätzliche Bits
 
 
 Beispiel:
 **``` 2025:ACAD:1:ABC0::/58```**  soll in Netze eingeteilt werden - wir benötigen 2 extra Bits, da 2^2 = 4
-Bisher feste Bits: 
-2025 = 16, ACAD = 32, 0001 = 48, AB = 56 
+Bisher feste Bits:
+2025 = 16, ACAD = 32, 0001 = 48, AB = 56
 Beim C sind 2 Bits bereits fest (8, 4):
 
-| 8   | 4   | 2   | 1   |
+| 8 | 4 | 2 | 1 |
 | --- | --- | --- | --- |
-| 1   | 1   | 0   | 0   |
+| 1 | 1 | 0 | 0 |
 Unsere Subnetze werden also aus den letzten beiden Bits des C gebildet.
 
-| 8   | 4   | 2   | 1   | ergibt   |
+| 8 | 4 | 2 | 1 | ergibt |
 | --- | --- | --- | --- | -------- |
-| 1   | 1   | 0   | 0   | AB**C**0 |
-| 1   | 1   | 0   | 1   | AB**D**0 |
-| 1   | 1   | 1   | 0   | AB**E**0 |
-| 1   | 1   | 1   | 1   | AB**F**0 |
+| 1 | 1 | 0 | 0 | AB**C**0 |
+| 1 | 1 | 0 | 1 | AB**D**0 |
+| 1 | 1 | 1 | 0 | AB**E**0 |
+| 1 | 1 | 1 | 1 | AB**F**0 |
 Und das neue Präfix lautet /60.
-Unsere Netze sind also 
-``` 
+Unsere Netze sind also
+```
 2025:ACAD:1:ABC0:: /60
 2025:ACAD:1:ABD0:: /60
 2025:ACAD:1:ABE0:: /60
 2025:ACAD:1:ABF0:: /60
-``` 
-***
-#### IP Protokoll 
-##### IP Protokoll Header
+```
+---
+### IP Protokoll
+#### IP Protokoll Header
 **Eigenschaften des IP-Protokolls**
 **Verbindungslos** - keine Überprüfung ob Daten das Ziel erreichen
 **Best Effort** - Weg ist immer unterschiedlich
@@ -209,10 +209,10 @@ Beispiel:
 ![[Pasted image 20250619161625.png]]
 Jede **Zeile** hat 32 Bit, die vier Ziffern am Anfang sind die Zeilennummern und können ignoriert werden. Abzählen von jeweils 32 Bit - also **4 Hexadezimalen Zahlen** für jede Zeile.
 So steht die Source-IP in Zeile 4 - daher lautet sie **C0 A8 01 11** oder dezimal **192.168.1.17**
-***
-#### DHCP v4 und v6
+---
+### DHCP v4 und v6
 
-##### DHCP v4
+#### DHCP v4
 ![[Pasted image 20260626102438.png]]
 Automatische Vergabe von IP Adressen.
 Vorteile eines DHCP-Servers
@@ -254,29 +254,29 @@ DHCP vergibt:
 Um Fehlkonfigurationen und Angriffe zu vermeiden kann man IP-Adressen am DHCP-Server reservieren, nach der Reservierung wird einer Mac-Adresse immer die gleiche IP-Adresse zugewiesen.
 Des Weiteren kann man den IP-Adressbereich reservieren und so auf die genaue Anzahl der benötigen Adressen begrenzen, so sind für unauthorisierte Clients keine IP-Adressen zur Vergabe frei.
 
-##### DHCP v6
+#### DHCP v6
 Ablauf:
 - der Client richtet sich mit der Multicastadresse **FF02::2 (all routers)** an den Router in seinem lokalen Netzwerksegment. An dieser Stelle entscheidet sich welches Verfahren der dynamischen Adresszuordnung durchgeführt wird.
 
-| Option | Adressvergabe  | DHCP-Server                                     |
+| Option | Adressvergabe | DHCP-Server |
 | ------ | -------------- | ----------------------------------------------- |
-| 1      | SLAAC          | wird nicht benötigt                             |
-| 2      | Stateless DHCP | Vergibt die Bereichsoptionen                    |
-| 3      | Stateful DHCP  | Vergibt die IP-Adresse und die Bereichsoptionen |
+| 1 | SLAAC | wird nicht benötigt |
+| 2 | Stateless DHCP | Vergibt die Bereichsoptionen |
+| 3 | Stateful DHCP | Vergibt die IP-Adresse und die Bereichsoptionen |
 ![[Pasted image 20260626102608.png]]
 Die Nachricht **Router Solicitation** verwendet als Zieladresse die Multicast-Adresse FF02::2. Die Antwort vom Router, das **Router Advertisement **wird ausgewertet.
 
 Im Router Advertisement werden zwei Flags mitgeschickt:
 
-| Flag   | Bezeichnung             | Bedeutung                       |                                        |
+| Flag | Bezeichnung | Bedeutung |  |
 | ------ | ----------------------- | ------------------------------- | -------------------------------------- |
-| M-Flag | Managed -> IP-Adresse   | 0 – IP-Adresse vom Router       | 1 – IP-Adresse vom DHCPv6              |
+| M-Flag | Managed -> IP-Adresse | 0 – IP-Adresse vom Router | 1 – IP-Adresse vom DHCPv6 |
 | O-Flag | Other->Bereichsoptionen | 0 – Bereichsoptionen vom Router | 1.  Bereichsoptionen vom DHCPv6-Server |
 Falls ein DHCP-Server benötigt wird (Option 2 oder 3) sieht die anschließende Kommunikation mit dem DHCPv6-Server folgendermaßen aus.
 ![[Pasted image 20260626102845.png]]
-Der Client eine DHCP-Solicitation-Nachricht an die DHCPv6-Multicast-Adresse "ff02::1:2" (alle DHCPv6-Server).  
+Der Client eine DHCP-Solicitation-Nachricht an die DHCPv6-Multicast-Adresse "ff02::1:2" (alle DHCPv6-Server).
 DHCPv6-Client: UDP Port 546, DHCP-Server: UDP Port 547
-1. Die erreichbaren DHCPv6-Server antworten mit einer DHCP-Advertisement-Nachricht, die die Parameter (DNS-Server, NTP-Server etc.) zur Vervollständigung der IP-Konfiguration enthält (bei stateful auch den globalen Präfix).  
+1. Die erreichbaren DHCPv6-Server antworten mit einer DHCP-Advertisement-Nachricht, die die Parameter (DNS-Server, NTP-Server etc.) zur Vervollständigung der IP-Konfiguration enthält (bei stateful auch den globalen Präfix).
 2.    Der Client wählt eine IP-Konfiguration aus und fordert sie beim jeweiligen DHCPv6-Server mit einem DHCPv6-Request explizit an.
 3.   Der DHCPv6-Server speichert die IP-Konfiguration mit der Client-ID (Stateful Address Configuration) und bestätigt dem Client die IP-Konfiguration per DHCPv6-Reply. Alle anderen DHCPv6-Server, die keine Anforderung des Clients erhalten haben, geben ihre angebotene IPv6-Adresse wieder frei.
 #### SLAAC
@@ -332,8 +332,8 @@ IPv4 und IPv6 sind zwei verschiedene Versionen des Internetprotokolls (IP). IPv6
 
 „Unicast“ beschreibt, wie der größte Teil des Internets funktioniert. In Unicast-Netzwerken hat jedes angeschlossene Gerät im Netzwerk eine eindeutige Adresse. Nachrichten, die an diese Adresse (im Internet eine IP-Adresse) gerichtet sind, gehen nur an dieses Gerät – und nicht an mehrere Geräte, wie beim Multicasting.
 
-#### ICMP und NDP
-##### ICMP 
+### ICMP und NDP
+#### ICMP
 1. Welche **Aufgabe** hat ICMP?
 	Diagnose im Netzwerk
 2. Mit welchen **Befehlen** wird ICMP aktiviert?
@@ -342,21 +342,21 @@ IPv4 und IPv6 sind zwei verschiedene Versionen des Internetprotokolls (IP). IPv6
 	ICMP Echo Request mit der IP-Adresse (Typ 8, Code 0) von der Quelle zum Ziel
 	ICMP Echo Reply (Typ 0, Code 0)
 
-##### NDP - Neighbor Discovery Protocol
+#### NDP - Neighbor Discovery Protocol
 Das Neighbor Discovery Protocol ist ein Protokoll für IPv6. **Es ersetzt z.B. das ARP-Protokoll**, das Broadcast-Prinzip basiert!
 
-| NDP-Nachricht in IPv6       | Aufgabe                                                | ARP-Nachricht in IPv4 | Zieladresse |
+| NDP-Nachricht in IPv6 | Aufgabe | ARP-Nachricht in IPv4 | Zieladresse |
 | --------------------------- | ------------------------------------------------------ | --------------------- | ----------- |
-| Neighbor Solicitation (NS)  | Wie ARP: Fragt nach MAC-Adresse zu einer IPv6-Adresse. | ARP-Request           | FF02::1     |
-| Neighbor Advertisement (NA) | Antwort auf NS mit MAC-Adresse                         | ARP-Reply             |             |
+| Neighbor Solicitation (NS) | Wie ARP: Fragt nach MAC-Adresse zu einer IPv6-Adresse. | ARP-Request | FF02::1 |
+| Neighbor Advertisement (NA) | Antwort auf NS mit MAC-Adresse | ARP-Reply |  |
 
 Socilicited Node Adress FF02::1:ABCD:DEEF:AFFE:1 – Multicast mit Hostanteil
-#### Routing
+### Routing
 
-#### TCP, UDP und Portadressen - Transportschicht
+### TCP, UDP und Portadressen - Transportschicht
 ![[Pasted image 20250624150555.png]]
-**Aufgaben** 
- 
+**Aufgaben**
+
 1. Nachverfolgung einzelner Konversationen
 2. Segmentierung von Daten und Zusammensetzen von Segmenten
 3. Identifizieren der Anwendungen
@@ -371,10 +371,10 @@ SYN - SYN, ACK - ACK
 
 **TCP vs. UDP**
 
-| TCP                                                      | UDP                                                        |
+| TCP | UDP |
 | -------------------------------------------------------- | ---------------------------------------------------------- |
-| Verbindungsorientiert                                    | Verbindungslos                                             |
-| Sendet verlorene Daten erneut                            | sendet nichts noch einmal                                  |
+| Verbindungsorientiert | Verbindungslos |
+| Sendet verlorene Daten erneut | sendet nichts noch einmal |
 | Gut dort, wo alles komplett ankommen muss (z.B. E-Mails) | Gut dort, wo einzelne Teile folgenlos verlorengehen können |
 
 ## Block 3
@@ -414,24 +414,24 @@ Anforderungen (Hosts):
 **Adressvergabe (vom größten zum kleinsten Netz)**
 
 Ausgangsnetz: 192.168.1.0/24
-**Netz A** (≈100 Hosts) → /25   
-Netz:        192.168.1.0/25  
-Hostbereich: 192.168.1.1 – 192.168.1.126  
-Broadcast:   192.168.1.127 
+**Netz A** (≈100 Hosts) → /25
+Netz:        192.168.1.0/25
+Hostbereich: 192.168.1.1 – 192.168.1.126
+Broadcast:   192.168.1.127
 
-**Netz B** (≈50 Hosts) → /26   
-Netz:        192.168.1.128/26  
-Hostbereich: 192.168.1.129 – 192.168.1.190  
+**Netz B** (≈50 Hosts) → /26
+Netz:        192.168.1.128/26
+Hostbereich: 192.168.1.129 – 192.168.1.190
 Broadcast:   192.168.1.191
 
-**Netz C** (≈25 Hosts) → /27   
-Netz:  192.168.1.192/27  
-Hostbereich: 192.168.1.193 – 192.168.1.222  
-Broadcast:   192.168.1.223 
+**Netz C** (≈25 Hosts) → /27
+Netz:  192.168.1.192/27
+Hostbereich: 192.168.1.193 – 192.168.1.222
+Broadcast:   192.168.1.223
 
-**Netz D** (≈10 Hosts) → /28   
-Netz:        192.168.1.224/28  
-Hostbereich: 192.168.1.225 – 192.168.1.238  
+**Netz D** (≈10 Hosts) → /28
+Netz:        192.168.1.224/28
+Hostbereich: 192.168.1.225 – 192.168.1.238
 Broadcast:   192.168.1.239`
 
 **Hosts pro Netz**: $(2^h - 2)$, mit **h = Anzahl Host-Bits** (z.B. **/26 → 6 Host-Bits → 62 Hosts**).
@@ -441,10 +441,10 @@ Broadcast:   192.168.1.239`
 ### Routing
 
 #### Statisches Routing
-Ziel ist Verbindungen zwischen Netzwerken herzustellen, ohne Routing kennt ein Router nur die angeschlossenen Netzwerke. 
+Ziel ist Verbindungen zwischen Netzwerken herzustellen, ohne Routing kennt ein Router nur die angeschlossenen Netzwerke.
 Beispiel Routingtabelle:
 
-| Router 1           | Router 2           |
+| Router 1 | Router 2 |
 | ------------------ | ------------------ |
 | L - 192.168.1.1/32 | L - 192.168.2.1/32 |
 | C - 192.168.1.0/24 | C - 192.168.2.0/24 |
@@ -456,10 +456,10 @@ C - Connected - Netzadresse des angeschlossenen Netzes.
 Router 1 kennt nur die Netze 0.0 und 0.1, Router 2 kennt nur die Netze 0.0 und 0.2.
 
 Statischer Routingeintrag Router 1 um Netz 2.0/24 bekannt zu machen wäre also:
-S - 192.168.2.0 via 192.168.0.2 
+S - 192.168.2.0 via 192.168.0.2
 Statisch - *Zielnetz* via *Next Hop*.
 
-``` terminal
+```terminal
 ip route 192.168.1.0 255.255.255.0 192.168.0.1
 ```
 
@@ -467,7 +467,7 @@ Befehl für Cisco. Die Rückroute würde so eingerichtet.
 
 Dann gibt es noch den Standardrouting-Befehl, wie er auch im DSL Router zuhause die Verbindung ins Internet herstellt:
 
-``` terminal
+```terminal
 ip route 0.0.0.0 0.0.0.0 next hop
 ```
 
@@ -478,11 +478,11 @@ In IPV6 lautet der Befehl ``ipv6 route ::/0 next hop``
 
 Dynamisches Routing soll den Einrichtungsaufwand in großen Netzwerken verringern, dazu gibt es zwei Protokolle.
 
-| Vorteil                                                     | Nachteil                                           |
+| Vorteil | Nachteil |
 | ----------------------------------------------------------- | -------------------------------------------------- |
-| Automatisch günstigste Wege                                 | Höherer Ressourcenverbrauch (Traffic und Hardware) |
-| Kann besser auf Veränderungen reagieren - Ausfallsicherheit | Keine Kontrolle der optimalen Wege                 |
-| Weniger administrativer Aufwand                             | Sicherheit: Updates sind nicht vertrauenswürdig    |
+| Automatisch günstigste Wege | Höherer Ressourcenverbrauch (Traffic und Hardware) |
+| Kann besser auf Veränderungen reagieren - Ausfallsicherheit | Keine Kontrolle der optimalen Wege |
+| Weniger administrativer Aufwand | Sicherheit: Updates sind nicht vertrauenswürdig |
 
 ##### RIP - Routing Information Protocol
 RIP ist ein Distanzvektorprotokoll bzw. Nachbarschaftsprinzip, jeder  Nachbar meldet seine Nachbarn und die Route dorthin. Dies wiederholt sich alle 30 Sekunden. Wenn alle Router sich gemeldet haben herrscht **Konvergenz**, d.h. jeder Router kennt die optimalen Routen im Netzwerk.
@@ -491,27 +491,27 @@ RIPv2 ist dabei eine Weiterentwicklung mit mehr Sicherheit und weniger Traffic.
 ##### OSPF
 OSPF funktioniert über Link-States (eigene Verbindungen) die an alle angeschlossenen Netzwerke außer das eingehende weitergeschickt werden. Aus diesen Link-States wird ein Shortest Path First Baum erstellt und mit dem Dijkstra Algorithmus der kürzeste Weg gefunden. Sobald dieser feststeht herrscht Konvergenz und OSPF Traffic verringert sich und verschickt nur noch Keep-Alives und Updates.
 
-#### Administrative Distanz und Metriken 
+#### Administrative Distanz und Metriken
 Administrative Distanz (AD) ist ein Wert in Cisco-Routern, der die Vertrauenswürdigkeit und Priorität von Routenquellen bewertet – niedrigere Werte werden bevorzugt, wenn mehrere Routen zum selben Ziel existieren.​
 
 **Standard-AD-Werte (Cisco)**
 
-| Routing-Quelle          | Administrative Distanz | Metrik     |
+| Routing-Quelle | Administrative Distanz | Metrik |
 | ----------------------- | ---------------------- | ---------- |
-| Direkt verbundene Netze | 0​                     | -          |
-| Statische Route         | 1 ​                    | -          |
-| OSPF                    | 110 ​                  | Bandbreite |
-| RIP                     | 120 ​                  | Hop Count  |
+| Direkt verbundene Netze | 0​ | - |
+| Statische Route | 1 ​ | - |
+| OSPF | 110 ​ | Bandbreite |
+| RIP | 120 ​ | Hop Count |
 
 Bei gleichem Zielnetz wählt der Router die Route mit dem niedrigsten AD-Wert, z. B. OSPF vor RIP.
 
-| Unterschied             | RIP            | OSPF                |
+| Unterschied | RIP | OSPF |
 | ----------------------- | -------------- | ------------------- |
-| Updates nach Konvergenz | ja             | nein                |
-| Update Traffic          | Permanent hoch | Zu Beginn  <br>hoch |
-| Metrik                  | Hop Count      | Bandbreite          |
-| Skalierbarkeit          | Schlechter     | Besser              |
-| AD                      | 120            | 110                 |
+| Updates nach Konvergenz | ja | nein |
+| Update Traffic | Permanent hoch | Zu Beginn  <br>hoch |
+| Metrik | Hop Count | Bandbreite |
+| Skalierbarkeit | Schlechter | Besser |
+| AD | 120 | 110 |
 
 ---
 ### Firewalls und ACLs
@@ -523,20 +523,20 @@ Am Ende jeder Firewall befindet sich außerdem ein implizietes **deny any**, wel
 
 **Wichtige Ports und Dienste**
 
-| Port | Protokoll | Dienst      | Verwendung[](https://www.ionos.de/digitalguide/server/knowhow/tcp-und-udp-ports/) |
+| Port | Protokoll | Dienst | Verwendung[](https://www.ionos.de/digitalguide/server/knowhow/tcp-und-udp-ports/) |
 | ---- | --------- | ----------- | --------------------------------------------------------------------------------- |
-| 22   | TCP       | SSH         | Sichere Remote-Verbindung                                                         |
-| 23   | TCP       | Telnet      | Unsichere Remote-Verbindung                                                       |
-| 25   | TCP       | SMTP        | E-Mail-Versand                                                                    |
-| 53   | TCP/UDP   | DNS         | Namensauflösung                                                                   |
-| 67   | UDP       | DHCP-Server | IP-Zuweisung                                                                      |
-| 68   | UDP       | DHCP-Client | IP-Anfragen                                                                       |
-| 80   | TCP       | HTTP        | Unverschlüsselte Webseiten                                                        |
-| 143  | TCP       | IMAP        | E-Mail-Abruf                                                                      |
-| 443  | TCP       | HTTPS       | Verschlüsselte Webseiten                                                          |
-| 993  | TCP       | IMAPS       | Sicheres IMAP (SSL/TLS)                                                           |
-| 21   | TCP       | FTP         | Dateitransfer (Control)                                                           |
-| 110  | TCP       | POP3        | E-Mail-Abruf (klassisch)                                                          |
+| 22 | TCP | SSH | Sichere Remote-Verbindung |
+| 23 | TCP | Telnet | Unsichere Remote-Verbindung |
+| 25 | TCP | SMTP | E-Mail-Versand |
+| 53 | TCP/UDP | DNS | Namensauflösung |
+| 67 | UDP | DHCP-Server | IP-Zuweisung |
+| 68 | UDP | DHCP-Client | IP-Anfragen |
+| 80 | TCP | HTTP | Unverschlüsselte Webseiten |
+| 143 | TCP | IMAP | E-Mail-Abruf |
+| 443 | TCP | HTTPS | Verschlüsselte Webseiten |
+| 993 | TCP | IMAPS | Sicheres IMAP (SSL/TLS) |
+| 21 | TCP | FTP | Dateitransfer (Control) |
+| 110 | TCP | POP3 | E-Mail-Abruf (klassisch) |
 
 #### SPI, Proxy und Reverse-Proxy
 **SPI, Proxy und Reverse-Proxy** sind zentrale Netzwerkkonzepte für Sicherheit und Traffic-Steuerung, die du als Sysadmin oft in Firewalls (z.B. FRITZ!Box) oder nginx konfigurierst.
@@ -551,13 +551,13 @@ Am Ende jeder Firewall befindet sich außerdem ein implizietes **deny any**, wel
 
 **Vergleichstabelle**
 
-|Kriterium|SPI|Proxy (Forward)|Reverse-Proxy|
-|---|---|---|---|
-|**Schutzrichtung**|Bidirektional (Firewall)|Client → Internet|Internet → Server|
-|**Funktion**|Connection-Tracking|Caching, Filtering, Anonymität|Load Balancing, SSL-Termination|
-|**Layer**|L3/L4 (IP/TCP/UDP)|L5-L7 (HTTP/SOCKS)|L5-L7 (HTTP/HTTPS)|
-|**Typische Nutzung**|FRITZ!Box Firewall|Corporate Webproxy|nginx vor Docker-Apps|
-|**IP-Verbergen**|Nein|Client-IP|Server-IP|
+| Kriterium | SPI | Proxy (Forward) | Reverse-Proxy |
+| --- | --- | --- | --- |
+| **Schutzrichtung** | Bidirektional (Firewall) | Client → Internet | Internet → Server |
+| **Funktion** | Connection-Tracking | Caching, Filtering, Anonymität | Load Balancing, SSL-Termination |
+| **Layer** | L3/L4 (IP/TCP/UDP) | L5-L7 (HTTP/SOCKS) | L5-L7 (HTTP/HTTPS) |
+| **Typische Nutzung** | FRITZ!Box Firewall | Corporate Webproxy | nginx vor Docker-Apps |
+| **IP-Verbergen** | Nein | Client-IP | Server-IP |
 
 ---
 ### Kryptographie
@@ -573,11 +573,11 @@ Mit der Kryptographie sollen im Wesentlichen 3 Ziele erreicht werden:
 
 [[GIT#IT-Grundschutz/Schutzbedarfsanalyse]]
 
-| Ziel  (VIA)        | CIA             | Erläuterung                                   |
+| Ziel  (VIA) | CIA | Erläuterung |
 | ------------------ | --------------- | --------------------------------------------- |
 | 1. Vertraulichkeit | Confidentiality | Nur bestimmte Personen dürfen die Daten sehen |
-| 2. Integrität      | Integrity       | Die Daten liegen unverändert vor              |
-| 3. Authentizität   | Authenticity    | Der Sender kann verifiziert werden            |
+| 2. Integrität | Integrity | Die Daten liegen unverändert vor |
+| 3. Authentizität | Authenticity | Der Sender kann verifiziert werden |
 #### Symmetrische Verschlüsselung
 **AES – Advanced Encryption Standard**
 
@@ -586,7 +586,7 @@ Schlüssellängen von 128, 192 oder 256 Bit. AES verschlüsselt in mehreren Etap
 **Problem symmetrischer Verschlüsselung - Schlüsselaustausch**
 
 Einsatz: WLAN, Festplatten, Zertifikate
-##### Asymmetrische Verschlüsselung
+#### Asymmetrische Verschlüsselung
 **Grundprinzip**: Jeder Teilnehmer erhält ein Schlüsselpaar, das einen mathematischen Zusammenhang hat. Bob erhält einen öffentlichen Schlüssel Key$_{pub}$ und einen Key$_{priv}$ den nur er selbst kennt.
 
 Das Verschlüsselungsverfahren heißt **RSA** (Rivest Shamir Adleman). Die Schlüssellänge dieses RSA-Schlüsselpaars kann 2048, 3072 bzw. 4096 Bits sein.
@@ -601,7 +601,7 @@ Dazu wird der [[#Hashwerte|Hashwert]] der Nachricht an die Nachricht gehangen un
 
 ![[Pasted image 20260201134931.png]]
 
-##### Hashwerte
+#### Hashwerte
 Die **Hashfunktion** ist eine kryptografische Prüfsumme für eine Nachricht, um deren Integrität sicherzustellen. Im ersten Schritt wird der Hashwert wie ein Komprimat, ein Fingerabdruck an den Klartext angehängt. Der gewählte Algorithmus legt fest, wie lang der Hashwert ist und wie er berechnet wird.
 
 Anforderungen an ein Hashverfahren sind:
@@ -621,20 +621,20 @@ Bekannte Hash-Algorithmen
 
 Prüfen H1=H2? Daten sind unverändert
 
-##### Hybride Verschlüsselung
+#### Hybride Verschlüsselung
 Kombination aus symmetrisch und asymmetrisch um die jeweiligen Schwächen auszugleichen.
 
-| Verfahren    | Vorteil(e)                                          | Nachteil(e)                  |
+| Verfahren | Vorteil(e) | Nachteil(e) |
 | ------------ | --------------------------------------------------- | ---------------------------- |
-| symmetrisch  | Performant, da einfache Rechenoperationen vorliegen | Schlüsselaustausch           |
-| asymmetrisch | Die Schlüssel liegen bereits vor                    | Langsam, hoher Rechenaufwand |
+| symmetrisch | Performant, da einfache Rechenoperationen vorliegen | Schlüsselaustausch |
+| asymmetrisch | Die Schlüssel liegen bereits vor | Langsam, hoher Rechenaufwand |
 
 Hybride Verschlüsselung - Vorgehen
 
 1. Der Session Key wird asymmetrisch verschlüsselt
 2. Die Daten symmetrisch verschlüsselt
-##### TLS 
-###### Diffie-Hellman
+#### TLS
+##### Diffie-Hellman
 
 Der Diffie-Hellman-Algorithmus dient dazu, einen gemeinsamen geheimen Schlüssel über einen unsicheren Kanal auszutauschen. Dabei werden öffentliche Parameter wie eine Primzahl und eine Basis genutzt, während beide Seiten geheime Zufallswerte wählen; daraus entsteht am Ende derselbe gemeinsame Schlüssel [web:81][web:91].
 
@@ -666,15 +666,15 @@ Merkmale
 - Bessere Performance und typischerweise mehr Schutz durch moderne Verfahren [web:78][web:84].
 #### Kurzvergleich: TLS 1.2 vs. TLS 1.3
 
-| Punkt              | TLS 1.2                                 | TLS 1.3                                    |
+| Punkt | TLS 1.2 | TLS 1.3 |
 | ------------------ | --------------------------------------- | ------------------------------------------ |
-| Handshake          | 2 Round-Trips                           | 1 Round-Trip                               |
+| Handshake | 2 Round-Trips | 1 Round-Trip |
 | Schlüsselaustausch | RSA **oder** Diffie-Hellman (DHE/ECDHE) | Nur Diffie-Hellman (ECDHE) – verpflichtend |
-| Forward Secrecy    | Optional (nur mit DHE/ECDHE)            | Immer aktiv (ECDHE erzwingt es)            |
-| Cipher Suites      | Viele, inkl. veraltete                  | Reduziert, nur sichere                     |
-| Verschlüsselung    | AES-CBC oder AES-GCM                    | Nur AES-GCM oder ChaCha20                  |
-| Sicherheit         | Gut, aber komplexer                     | Modern und strenger                        |
-| Empfehlung         | Noch verbreitet                         | Standard für neue Systeme                  |
+| Forward Secrecy | Optional (nur mit DHE/ECDHE) | Immer aktiv (ECDHE erzwingt es) |
+| Cipher Suites | Viele, inkl. veraltete | Reduziert, nur sichere |
+| Verschlüsselung | AES-CBC oder AES-GCM | Nur AES-GCM oder ChaCha20 |
+| Sicherheit | Gut, aber komplexer | Modern und strenger |
+| Empfehlung | Noch verbreitet | Standard für neue Systeme |
 > **Hinweis zum Schlüsselaustausch:**
 > In TLS 1.2 war Diffie-Hellman optional — viele Server nutzten stattdessen RSA.
 > Bei RSA wird der Sitzungsschlüssel mit dem langfristigen privaten Schlüssel des Servers verschlüsselt.
@@ -683,8 +683,8 @@ Merkmale
 > In TLS 1.3 ist RSA als Schlüsselaustausch komplett entfernt.
 > Nur noch **ECDHE (Ephemeral Diffie-Hellman)** ist erlaubt: Für jede Sitzung wird ein **frischer, einmaliger Schlüssel** ausgehandelt, der danach verworfen wird.
 > Selbst wenn der Server-Schlüssel später in falsche Hände gerät, bleiben vergangene Sitzungen geschützt — das nennt man **Forward Secrecy**.
-### Block 4
-#### Klausur
+## Block 4
+### Klausur
 [[#Routing]]
 1. Routing-Aufgabe: Szenario Netzwerk - Eigene Routingeinträge erstellen und lesen können - Troubleshooting am PC
 [[#DHCP v4]]
@@ -699,43 +699,43 @@ alles rund um [[#TLS 1.2]] und [[#TLS 1.3]] ([[#Diffie-Hellman]])
 [[#Cyber Kill Chain]] - Reconnaissance-Strategien, Angriffe auf Accounts, Exploits, DDoS zwei Strategien Ihrer Wahl, Social Engineering, Abwehrmaßnahmen
 
 ---
-#### NAT-PAT
-#Roboter 
+### NAT-PAT
+#Roboter
 
 NAT (Network Address Translation) übersetzt private IP-Adressen in öffentliche – und umgekehrt. Es löst das Problem der IPv4-Adressknappheit und trennt interne Netze vom Internet.
 
-##### Private IP-Adressbereiche (nicht im Internet routbar)
+#### Private IP-Adressbereiche (nicht im Internet routbar)
 
 | Bereich | Subnetz |
-|---|---|
+| --- | --- |
 | Klasse A | `10.0.0.0/8` |
 | Klasse B | `172.16.0.0/12` |
 | Klasse C | `192.168.0.0/16` |
-##### NAT-Typen
+#### NAT-Typen
 
 | Typ | Übersetzung | Einsatz |
-|---|---|---|
+| --- | --- | --- |
 | **Statisches NAT** | 1:1 (eine private ↔ eine öffentliche IP) | Server mit fester externer IP |
 | **Dynamisches NAT** | n:m (Pool aus öffentlichen IPs) | Mehrere Geräte, mehrere öffentliche IPs |
 | **PAT / Masquerading** | n:1 (viele private → eine öffentliche IP) | Heimnetz, Firmennetz (Normalfall) |
-##### PAT – Port Address Translation
+#### PAT – Port Address Translation
 
 PAT ist die **Erweiterung von NAT um Portnummern**. Da sich alle internen Geräte eine öffentliche IP teilen, wird jede Verbindung durch eine eindeutige **Port-Kombination** unterschieden. Der Router speichert alle Zuordnungen in der **NAT-Tabelle**.
-##### NAT-Tabelle (Beispiel)
+#### NAT-Tabelle (Beispiel)
 
 | Interne IP | Int. Port | Öffentliche IP | Ext. Port | Ziel-IP | Ziel-Port |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | 192.168.1.10 | 54321 | 93.184.1.1 | 40001 | 8.8.8.8 | 443 |
 | 192.168.1.20 | 54321 | 93.184.1.1 | 40002 | 8.8.8.8 | 443 |
 
-##### SNAT vs. DNAT
+#### SNAT vs. DNAT
 
-| | SNAT (Source NAT) | DNAT (Destination NAT) |
-|---|---|---|
+|  | SNAT (Source NAT) | DNAT (Destination NAT) |
+| --- | --- | --- |
 | **Richtung** | Ausgehend (LAN → Internet) | Eingehend (Internet → LAN) |
 | **Anwendung** | Internetzugang für interne Geräte | Portweiterleitung zu internem Server |
 | **Beispiel** | Heimrouter | Webserver hinter Router |
-##### Vor- & Nachteile
+#### Vor- & Nachteile
 
 **Vorteile:**
 - Spart öffentliche IP-Adressen
@@ -748,12 +748,12 @@ PAT ist die **Erweiterung von NAT um Portnummern**. Da sich alle internen Gerät
 - Verstößt gegen das End-to-End-Prinzip des Internets
 
 ---
-#### DNS
+### DNS
 #Roboter
-##### Was ist DNS?
+#### Was ist DNS?
 
 Das **Domain Name System (DNS)** ist das „Telefonbuch" des Internets. Es übersetzt menschenlesbare Domainnamen (z. B. `www.example.com`) in IP-Adressen (z. B. `93.184.216.34`), die Computer zur Kommunikation benötigen.
-##### Hierarchischer Aufbau
+#### Hierarchischer Aufbau
 
 DNS ist hierarchisch organisiert:
 
@@ -765,13 +765,13 @@ DNS ist hierarchisch organisiert:
 ```
 
 | Ebene | Bezeichnung | Beispiel |
-|---|---|---|
+| --- | --- | --- |
 | Root | Wurzel aller Domains | `.` |
 | TLD | Top-Level-Domain | `.com`, `.de`, `.org` |
 | Second-Level | Domainname | `example.com` |
 | Subdomain | Unterdomäne | `www.example.com` |
 
-##### Ablauf einer DNS-Auflösung (Rekursion)
+#### Ablauf einer DNS-Auflösung (Rekursion)
 
 1. **Client** fragt den **lokalen Resolver** (z. B. Router oder `127.0.0.53`)
 2. Resolver prüft seinen **Cache** → bei Treffer: sofortige Antwort
@@ -785,10 +785,10 @@ DNS ist hierarchisch organisiert:
 Client → Resolver → Root-NS → TLD-NS → Auth-NS → IP-Adresse
 ```
 
-##### Wichtige Record-Typen
+#### Wichtige Record-Typen
 
 | Record | Funktion | Beispiel |
-|---|---|---|
+| --- | --- | --- |
 | `A` | Domain → IPv4-Adresse | `example.com → 93.184.216.34` |
 | `AAAA` | Domain → IPv6-Adresse | `example.com → 2606:2800::1` |
 | `CNAME` | Alias auf andere Domain | `www → example.com` |
@@ -798,26 +798,26 @@ Client → Resolver → Root-NS → TLD-NS → Auth-NS → IP-Adresse
 | `PTR` | Reverse-DNS (IP → Domain) | `34.216.184.93.in-addr.arpa` |
 | `SRV` | Service-Locator (Port + Proto) | `_sip._tcp.example.com` |
 
-##### TTL & Caching
+#### TTL & Caching
 Die **TTL (Time to Live)** gibt in Sekunden an, wie lange ein DNS-Eintrag gecacht werden darf. Niedrige TTL (z. B. 60 s) ermöglicht schnelle Änderungen, erhöht aber die Last auf die Nameserver. Hohe TTL (z. B. 86400 s = 1 Tag) reduziert Anfragen, verzögert aber die Propagation bei Änderungen.
 
-##### Sicherheit: DNSSEC
+#### Sicherheit: DNSSEC
 **DNSSEC** fügt kryptografische Signaturen zu DNS-Antworten hinzu und verhindert so **DNS-Spoofing** (gefälschte Antworten). Der Resolver prüft die Signaturkette bis zur Root. DNSSEC schützt die **Integrität**, nicht die Vertraulichkeit der Abfragen – dafür ist DoH/DoT zuständig.
-##### E-Mail-Sicherheit: SPF, DKIM & DMARC
+#### E-Mail-Sicherheit: SPF, DKIM & DMARC
 SPF, DKIM und DMARC sind drei DNS-basierte Protokolle, die zusammen sicherstellen, dass E-Mails wirklich von der angegebenen Domain stammen und nicht gefälscht wurden.
 
 Alle drei nutzen **DNS-TXT-Records** zur Absenderauthentifizierung.
 
 | Protokoll | Funktion | DNS-Record |
-|---|---|---|
+| --- | --- | --- |
 | **SPF** | Erlaubte Mailserver festlegen | `v=spf1 mx -all` |
 | **DKIM** | Mail kryptografisch signieren | `v=DKIM1; k=rsa; p=...` |
 | **DMARC** | Policy für SPF/DKIM-Fehler | `v=DMARC1; p=reject` |
 
 ##### Ablauf
-Mail kommt an  
-├─► SPF: Erlaubter Server?  
-├─► DKIM: Signatur gültig?  
+Mail kommt an
+├─► SPF: Erlaubter Server?
+├─► DKIM: Signatur gültig?
 └─► DMARC: Beides fehlgeschlagen → none / quarantine / reject
 ##### DMARC-Policy
 
@@ -830,7 +830,7 @@ Mail kommt an
 Die Cyber Kill Chain beschreibt die **7 Phasen eines gezielten Cyberangriffs** – von der ersten Erkundung bis zur Zielerreichung. Angreifer durchlaufen diese Phasen sequenziell; wird eine Phase unterbrochen, scheitert der Angriff.
 
 | Phase | Bezeichnung | Ziel des Angreifers |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Reconnaissance | Informationen über das Ziel sammeln |
 | 2 | Weaponization | Angriffswerkzeug vorbereiten |
 | 3 | Delivery | Werkzeug zum Ziel transportieren |
@@ -839,7 +839,7 @@ Die Cyber Kill Chain beschreibt die **7 Phasen eines gezielten Cyberangriffs** �
 | 6 | Command & Control | Fernzugriff aufbauen |
 | 7 | Actions on Objectives | Ziel erreichen (Daten stehlen, verschlüsseln etc.) |
 
-##### Reconnaissance – Erkundungsstrategien
+#### Reconnaissance – Erkundungsstrategien
 
 Reconnaissance ist die **erste und wichtigste Phase** – je mehr Informationen gesammelt werden, desto gezielter der Angriff.
 
@@ -853,24 +853,24 @@ Reconnaissance ist die **erste und wichtigste Phase** – je mehr Informationen 
 - Fingerprinting: Softwareversionen von Diensten auslesen
 - Vulnerability Scanning: bekannte Schwachstellen automatisch prüfen
 
-##### Angriffe auf Accounts
+#### Angriffe auf Accounts
 
 Ziel ist die **Übernahme von Benutzerkonten** ohne Kenntnis der Zugangsdaten.
 
 | Angriff | Beschreibung |
-|---|---|
+| --- | --- |
 | **Brute Force** | Alle möglichen Passwörter systematisch durchprobieren |
 | **Dictionary Attack** | Passwortliste mit häufigen Passwörtern verwenden |
 | **Credential Stuffing** | Gestohlene Login-Daten aus Leaks bei anderen Diensten testen |
 | **Password Spraying** | Ein häufiges Passwort gegen viele Accounts testen (umgeht Sperren) |
 | **Pass-the-Hash** | Gestohlenen Passwort-Hash direkt zur Authentifizierung nutzen |
 
-##### Exploits
+#### Exploits
 
 Ein Exploit **nutzt eine Schwachstelle** in Software, Hardware oder Konfiguration aus.
 
 | Typ | Beschreibung |
-|---|---|
+| --- | --- |
 | **Zero-Day-Exploit** | Angriff auf unbekannte, noch ungepatchte Schwachstelle |
 | **Buffer Overflow** | Speicherüberlauf zum Einschleusen von Code |
 | **SQL Injection** | Schadcode in Datenbankabfragen einschleusen |
@@ -880,7 +880,7 @@ Ein Exploit **nutzt eine Schwachstelle** in Software, Hardware oder Konfiguratio
 **CVE – Common Vulnerabilities and Exposures:**
 CVE ist ein **öffentliches Verzeichnis bekannter Sicherheitslücken**, gepflegt von der MITRE Corporation. Jede Schwachstelle erhält eine eindeutige ID (z. B. `CVE-2021-44228` = Log4Shell). Zusammen mit dem **CVSS-Score (0–10)** gibt CVE Auskunft über Schweregrad und Angriffsfläche – und ist Grundlage für priorisiertes Patch-Management.
 
-##### DDoS – Zwei Strategien
+#### DDoS – Zwei Strategien
 
 DDoS (Distributed Denial of Service) zielt darauf ab, einen Dienst durch **Überlastung unerreichbar** zu machen.
 
@@ -890,12 +890,12 @@ Das Ziel wird mit massenhaften Paketen überflutet, bis die Bandbreite erschöpf
 **2. Application Layer Angriff (z. B. HTTP Flood / Slowloris):**
 Anstatt Bandbreite zu überlasten, werden legitim aussehende HTTP-Anfragen gesendet, die den Webserver ressourcenseitig erschöpfen. Schwerer zu erkennen, da der Traffic wie normaler Nutzerverkehr wirkt.
 
-##### Social Engineering
+#### Social Engineering
 
 Social Engineering manipuliert **Menschen statt Systeme** – der Mensch ist das schwächste Glied.
 
 | Methode | Beschreibung |
-|---|---|
+| --- | --- |
 | **Phishing** | Gefälschte E-Mails mit Links zu Fake-Loginseiten |
 | **Spear Phishing** | Gezieltes Phishing mit personalisierten Infos (aus Reconnaissance) |
 | **Vishing** | Angriff per Telefonanruf (z. B. als IT-Support ausgeben) |
@@ -903,7 +903,7 @@ Social Engineering manipuliert **Menschen statt Systeme** – der Mensch ist das
 | **Baiting** | Infizierter USB-Stick wird absichtlich „verloren" |
 | **Tailgating** | Physischer Zutritt durch Hinterhergehen (kein Ausweis) |
 
-##### Abwehrmaßnahmen
+#### Abwehrmaßnahmen
 
 **Technisch:**
 - Patch-Management: regelmäßige Updates, Zero-Days minimieren
@@ -918,16 +918,16 @@ Social Engineering manipuliert **Menschen statt Systeme** – der Mensch ist das
 - Penetration Testing: eigene Systeme regelmäßig prüfen lassen
 - Passwort-Richtlinien + Passwortmanager
 
-### Block 5
+## Block 5
 #Klausur
 -[[#Kryptographie]]
 [[GIT#Datensicherheit/Datenschutz]]
 [[GIT#TOMs RAID, Backup, USV]]
 VPN - IPSec - Grundlagen IPSec Protokolle ESP AH Tunneling-Prinzip
 
-#### VPN & IPsec
+### VPN & IPsec
 
-##### VPN – Virtual Private Network
+#### VPN – Virtual Private Network
 
 Ein **VPN (Virtual Private Network)** ermöglicht die sichere Übertragung von Daten über ein unsicheres bzw. öffentliches Netzwerk, beispielsweise das Internet.
 
@@ -957,7 +957,7 @@ VPN ist ein Oberbegriff. Je nach eingesetzter VPN-Technologie kann die Einordnun
 **IPsec arbeitet auf OSI-Schicht 3 – der Vermittlungsschicht.**
 
 | Schicht | Bezeichnung | Beispiele |
-|---:|---|---|
+| ---: | --- | --- |
 | 7 | Anwendung | HTTP, DNS, SMTP |
 | 6 | Darstellung | Datenformate |
 | 5 | Sitzung | Sitzungssteuerung |
@@ -1036,7 +1036,7 @@ Host A ═══════════ Internet ══════════
 Wichtige Bestandteile:
 
 | Bestandteil | Aufgabe |
-|---|---|
+| --- | --- |
 | **AH** | Authentifizierung und Integrität |
 | **ESP** | Verschlüsselung und optional Integrität/Authentifizierung |
 | **IKE** | Aushandlung von Schlüsseln und Sicherheitsparametern |
@@ -1099,7 +1099,7 @@ Damit deckt ESP insbesondere **Vertraulichkeit und Integrität** aus der CIA-Tri
 #### AH und ESP im Vergleich
 
 | Eigenschaft | AH | ESP |
-|---|---:|---:|
+| --- | ---: | ---: |
 | Verschlüsselung | ❌ | ✅ |
 | Vertraulichkeit | ❌ | ✅ |
 | Integrität | ✅ | ✅ |
