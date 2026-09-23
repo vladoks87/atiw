@@ -704,7 +704,7 @@ Der Ablauf ist ungefähr so:
 1. Der Client sendet `PUBLISH`.
 2. Der Broker empfängt die Nachricht und antwortet mit `PUBACK`.
 3. Kommt die Bestätigung nicht rechtzeitig an, sendet der Client die Nachricht erneut.
-4. Dadurch kann die Nachricht im Fehlerfall **mehrfach** ankommen.wara+1
+4. Dadurch kann die Nachricht im Fehlerfall **mehrfach** ankommen.
 
 Das bedeutet: Die Nachricht geht normalerweise nicht verloren, aber der Empfänger muss mit **Duplikaten** rechnen.
 
