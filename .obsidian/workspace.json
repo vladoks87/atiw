@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projekt IHK/Ideen.md",
+                "file": "EVP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ideen"
+              "title": "EVP"
             }
           }
         ],
@@ -213,15 +213,15 @@
   },
   "active": "6363accf1abcd985",
   "lastOpenFiles": [
-    "WBL.md",
+    "GIT.md",
+    "EVP.md",
     "Projekt IHK/Ideen.md",
+    "WBL.md",
     "Projekt IHK",
     "SWD.md",
     "Pasted image 20260913143507.png",
     "Images_Files/Pasted image 20260913143517.png",
-    "GIT.md",
     "POL.md",
-    "EVP.md",
     "Images_Files/Pasted image 20260705154925.png",
     "Images_Files/Pasted image 20260705154959.png",
     "Pasted image 20260705154722.png",

@@ -917,3 +917,10 @@ Social Engineering manipuliert **Menschen statt Systeme** – der Mensch ist das
 - Incident Response Plan: klare Prozesse im Angriffsfall
 - Penetration Testing: eigene Systeme regelmäßig prüfen lassen
 - Passwort-Richtlinien + Passwortmanager
+
+### Block 5
+#Klausur
+-[[#Kryptographie]]
+[[GIT#Datensicherheit/Datenschutz]]
+[[GIT#TOMs RAID, Backup, USV]]
+VPN - IPSec - Grundlagen IPSec Protokolle ESP AH Tunneling-Prinzip
