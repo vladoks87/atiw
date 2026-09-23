@@ -27,6 +27,20 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "WBL.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "WBL"
+            }
+          },
+          {
+            "id": "387c38f820729e9d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "EVP.md",
                 "mode": "source",
                 "source": false
@@ -36,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -211,17 +225,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6363accf1abcd985",
+  "active": "387c38f820729e9d",
   "lastOpenFiles": [
-    "GIT.md",
-    "EVP.md",
-    "Projekt IHK/Ideen.md",
     "WBL.md",
+    "Projekt IHK/Ideen.md",
     "Projekt IHK",
     "SWD.md",
     "Pasted image 20260913143507.png",
     "Images_Files/Pasted image 20260913143517.png",
+    "GIT.md",
     "POL.md",
+    "EVP.md",
     "Images_Files/Pasted image 20260705154925.png",
     "Images_Files/Pasted image 20260705154959.png",
     "Pasted image 20260705154722.png",

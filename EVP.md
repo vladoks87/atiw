@@ -924,3 +924,294 @@ Social Engineering manipuliert **Menschen statt Systeme** – der Mensch ist das
 [[GIT#Datensicherheit/Datenschutz]]
 [[GIT#TOMs RAID, Backup, USV]]
 VPN - IPSec - Grundlagen IPSec Protokolle ESP AH Tunneling-Prinzip
+
+#### VPN & IPsec
+
+##### VPN – Virtual Private Network
+
+Ein **VPN (Virtual Private Network)** ermöglicht die sichere Übertragung von Daten über ein unsicheres bzw. öffentliches Netzwerk, beispielsweise das Internet.
+
+Dabei entsteht ein **logischer Tunnel** zwischen zwei Kommunikationspartnern.
+
+```text
+Standort A                                      Standort B
+192.168.1.0/24                                  192.168.2.0/24
+
+PC ── Switch ── VPN-Gateway ═══ Internet ═══ VPN-Gateway ── Switch ── PC
+                           <── VPN-Tunnel ──>
+```
+
+Wichtige Ziele:
+
+- Schutz der übertragenen Daten
+- sichere Nutzung öffentlicher Netze
+- Verbindung räumlich getrennter Netzwerke
+- sicherer Zugriff auf interne Unternehmensressourcen
+
+---
+
+#### Einordnung in das OSI-Modell
+
+VPN ist ein Oberbegriff. Je nach eingesetzter VPN-Technologie kann die Einordnung unterschiedlich sein.
+
+**IPsec arbeitet auf OSI-Schicht 3 – der Vermittlungsschicht.**
+
+| Schicht | Bezeichnung | Beispiele |
+|---:|---|---|
+| 7 | Anwendung | HTTP, DNS, SMTP |
+| 6 | Darstellung | Datenformate |
+| 5 | Sitzung | Sitzungssteuerung |
+| 4 | Transport | TCP, UDP |
+| **3** | **Vermittlung** | **IPv4, IPv6, IPsec** |
+| 2 | Sicherung | Ethernet, MAC |
+| 1 | Bitübertragung | Kupfer, Glasfaser |
+
+Da IPsec auf Schicht 3 arbeitet, kann es den **IP-Verkehr unabhängig von der Anwendung schützen**.
+
+Anwendungen wie HTTP, SMB oder andere TCP-/UDP-basierte Dienste müssen IPsec nicht selbst unterstützen.
+
+---
+
+#### VPN-Topologien
+
+##### Site-to-Site-VPN
+
+Verbindet zwei vollständige Netzwerke bzw. Standorte miteinander.
+
+```text
+LAN A                                           LAN B
+192.168.1.0/24                                  192.168.2.0/24
+      │                                               │
+      ▼                                               ▼
+VPN-Gateway ═════════════ Internet ═════════════ VPN-Gateway
+                 <──── VPN-Tunnel ────>
+```
+
+Typische Einsatzbereiche:
+
+- Filiale ↔ Zentrale
+- Standort ↔ Standort
+- Unternehmensnetz ↔ Rechenzentrum
+
+##### Client-to-Site
+
+Ein einzelnes Endgerät verbindet sich mit einem entfernten Netzwerk.
+
+```text
+Notebook
+   │
+   ▼
+Internet
+   ║
+   ║ VPN-Tunnel
+   ║
+   ▼
+VPN-Gateway
+   │
+   ▼
+Firmennetz
+```
+
+Typische Einsatzbereiche:
+
+- Homeoffice
+- Außendienst
+- Administratoren
+
+##### Host-to-Host-VPN
+
+Zwei einzelne Systeme bauen direkt eine geschützte Verbindung miteinander auf.
+
+```text
+Host A ═══════════ Internet ═══════════ Host B
+                IPsec-Verbindung
+```
+
+---
+
+#### IPsec – Internet Protocol Security
+
+**IPsec** ist kein einzelnes Protokoll, sondern ein **Framework aus verschiedenen Protokollen und Verfahren** zur Absicherung von IP-Kommunikation.
+
+Wichtige Bestandteile:
+
+| Bestandteil | Aufgabe |
+|---|---|
+| **AH** | Authentifizierung und Integrität |
+| **ESP** | Verschlüsselung und optional Integrität/Authentifizierung |
+| **IKE** | Aushandlung von Schlüsseln und Sicherheitsparametern |
+| **SA** | Festlegung der Parameter einer IPsec-Verbindung |
+
+---
+
+#### AH – Authentication Header
+
+**AH (Authentication Header)** stellt insbesondere **Integrität und Authentizität** sicher.
+
+Damit wird insbesondere das Schutzziel **Integrity (Integrität)** erfüllt:
+
+- Manipulationen an übertragenen Daten können erkannt werden.
+- Der Kommunikationspartner kann authentifiziert werden.
+- Schutz gegen Replay-Angriffe ist möglich.
+
+AH bietet allerdings **keine Confidentiality (Vertraulichkeit)**, da die Nutzdaten nicht verschlüsselt werden.
+
+```text
+Normales IP-Paket:
+
+┌───────────┬─────────┬──────────────┐
+│ IP-Header │ TCP/UDP │    Daten     │
+└───────────┴─────────┴──────────────┘
+
+
+Mit AH:
+
+┌───────────┬────┬─────────┬──────────────┐
+│ IP-Header │ AH │ TCP/UDP │    Daten     │
+└───────────┴────┴─────────┴──────────────┘
+```
+
+---
+
+#### ESP – Encapsulating Security Payload
+
+**ESP (Encapsulating Security Payload)** ist für moderne IPsec-Verbindungen besonders wichtig.
+
+ESP ermöglicht:
+
+- **Confidentiality (Vertraulichkeit)** durch Verschlüsselung
+- **Integrity (Integrität)** durch Erkennung von Manipulationen
+- Authentifizierung
+- Schutz gegen Replay-Angriffe
+
+Damit deckt ESP insbesondere **Vertraulichkeit und Integrität** aus der CIA-Triade ab.
+
+**Availability (Verfügbarkeit)** wird durch IPsec nicht automatisch gewährleistet. Ein VPN kann beispielsweise weiterhin durch Netzwerkausfälle oder DoS-Angriffe nicht erreichbar sein.
+
+```text
+┌───────────┬────────────┬─────────────────────┬─────────────┐
+│ IP-Header │ ESP-Header │ verschlüsselte Daten│ ESP-Trailer │
+└───────────┴────────────┴─────────────────────┴─────────────┘
+```
+
+---
+
+#### AH und ESP im Vergleich
+
+| Eigenschaft | AH | ESP |
+|---|---:|---:|
+| Verschlüsselung | ❌ | ✅ |
+| Vertraulichkeit | ❌ | ✅ |
+| Integrität | ✅ | ✅ |
+| Authentifizierung | ✅ | ✅ |
+| Schutz gegen Replay-Angriffe | ✅ | ✅ |
+| Typischer VPN-Einsatz | selten | **häufig** |
+
+---
+
+#### Transport Mode
+
+Beim **Transport Mode** bleibt der ursprüngliche IP-Header erhalten.
+
+Geschützt wird hauptsächlich der Inhalt des ursprünglichen IP-Pakets.
+
+```text
+Original:
+
+┌───────────┬─────────┬────────────┐
+│ IP-Header │ TCP/UDP │   Daten    │
+└───────────┴─────────┴────────────┘
+
+
+ESP Transport Mode:
+
+┌───────────┬─────┬─────────────────────┬─────┐
+│ IP-Header │ ESP │ TCP/UDP + Daten     │ ESP │
+└───────────┴─────┴─────────────────────┴─────┘
+                  └── verschlüsselt ──┘
+```
+
+Typischer Anwendungsfall:
+
+```text
+Host A ←──────── IPsec ────────→ Host B
+```
+
+---
+
+#### Tunnel Mode
+
+Beim **Tunnel Mode** wird das **gesamte ursprüngliche IP-Paket eingekapselt**.
+
+Anschließend wird ein **neuer äußerer IP-Header** hinzugefügt.
+
+```text
+Ursprüngliches Paket:
+
+┌────────────────────┬─────────┬───────────┐
+│ Original IP-Header │ TCP/UDP │   Daten   │
+└────────────────────┴─────────┴───────────┘
+
+
+IPsec Tunnel Mode:
+
+┌────────────────┬─────┬──────────────────────────────────┬─────┐
+│ Neuer IP-Header│ ESP │ Original IP │ TCP/UDP │ Daten    │ ESP │
+└────────────────┴─────┴──────────────────────────────────┴─────┘
+                       └────── verschlüsselt ────────────┘
+```
+
+Der **äußere IP-Header** ermöglicht das Routing durch das Internet.
+
+Das ursprüngliche IP-Paket befindet sich geschützt innerhalb des Tunnels.
+
+---
+
+#### Tunneling am Beispiel
+
+Zwei Unternehmensnetze werden über das Internet verbunden:
+
+```text
+PC A                                                     PC B
+192.168.1.20                                         192.168.2.30
+     │                                                    │
+     ▼                                                    ▼
+┌───────────┐                                        ┌───────────┐
+│ Gateway A │                                        │ Gateway B │
+│203.0.113.10                                        │198.51.100.20
+└─────┬─────┘                                        └─────┬─────┘
+      │                                                    │
+      └══════════════ IPsec / ESP Tunnel ══════════════════┘
+                        Internet
+```
+
+Das ursprüngliche Paket enthält beispielsweise:
+
+```text
+Quelle: 192.168.1.20
+Ziel:   192.168.2.30
+```
+
+Beim Tunnel Mode wird dieses Paket vollständig eingekapselt:
+
+```text
+┌───────────────────────────────────────┐
+│ Äußerer IP-Header                    │
+│ Quelle: 203.0.113.10                 │
+│ Ziel:   198.51.100.20                │
+├───────────────────────────────────────┤
+│ ESP                                   │
+├───────────────────────────────────────┤
+│ Original IP-Header                   │
+│ Quelle: 192.168.1.20                 │
+│ Ziel:   192.168.2.30                 │
+│                                       │
+│ TCP / UDP                             │
+│ Nutzdaten                             │
+└───────────────────────────────────────┘
+        ↑ geschützter Bereich ↑
+```
+
+Die Router im Internet verwenden für die Weiterleitung die **öffentlichen IP-Adressen der VPN-Gateways**.
+
+Das ursprüngliche IP-Paket wird geschützt durch den Tunnel transportiert und am Ziel-VPN-Gateway wieder ausgepackt.
