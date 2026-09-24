@@ -1,14 +1,28 @@
 {
   "main": {
-    "id": "d84fefcd69e0bcf5",
+    "id": "0133721f44f28e34",
     "type": "split",
     "children": [
       {
-        "id": "bb203a7909053960",
+        "id": "ba30c56ec4bee95a",
         "type": "tabs",
         "children": [
           {
-            "id": "f290778edf7eb646",
+            "id": "27bfc2ef0f6df46e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "POL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "POL"
+            }
+          },
+          {
+            "id": "657f57e3daf9f244",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -21,17 +35,18 @@
               "title": "GIT"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "fefba6a80df483c6",
+    "id": "1815d48e38f6f417",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "4270682834e9ed22",
+        "id": "423b6e77c485a13e",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -44,7 +59,7 @@
         }
       },
       {
-        "id": "8e869e13528f3267",
+        "id": "42d9237338c6dab8",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -57,11 +72,11 @@
             "sortOrder": "alphabetical"
           },
           "icon": "lucide-search",
-          "title": "Search"
+          "title": "Suchen"
         }
       },
       {
-        "id": "52db988394ea6091",
+        "id": "2a6cfcdb8c800b56",
         "type": "leaf",
         "state": {
           "type": "tag",
@@ -76,7 +91,7 @@
         }
       },
       {
-        "id": "41d4d17921e45b77",
+        "id": "2a5d8f6628fbd055",
         "type": "leaf",
         "state": {
           "type": "all-properties",
@@ -86,28 +101,28 @@
             "searchQuery": ""
           },
           "icon": "lucide-archive",
-          "title": "All properties"
+          "title": "Alle Eigenschaften"
         }
       },
       {
-        "id": "a639b03459b167bc",
+        "id": "934cb73a53591b40",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
           "state": {},
           "icon": "lucide-bookmark",
-          "title": "Bookmarks"
+          "title": "Lesezeichen"
         }
       }
     ],
     "currentTab": 0
   },
   "right": {
-    "id": "38d5262371ad6354",
+    "id": "4a1347b6ed8bf0f2",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "25d88c71be557086",
+        "id": "a3539f6d916b259e",
         "type": "leaf",
         "state": {
           "type": "backlink",
@@ -122,34 +137,36 @@
             "unlinkedCollapsed": true
           },
           "icon": "links-coming-in",
-          "title": "Backlinks"
+          "title": "Rückverweise"
         }
       },
       {
-        "id": "c72b14ba71bfa78e",
+        "id": "1d5d5b66a5783170",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
           "state": {
+            "file": "GIT.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
           "icon": "links-going-out",
-          "title": "Outgoing links"
+          "title": "Ausgehende Links"
         }
       },
       {
-        "id": "22d4efbec7a58204",
+        "id": "dfdb386645c0168c",
         "type": "leaf",
         "state": {
           "type": "outline",
           "state": {
+            "file": "GIT.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
           },
           "icon": "lucide-list",
-          "title": "Outline"
+          "title": "Gliederung"
         }
       }
     ],
@@ -157,18 +174,33 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "switcher:Schnellauswahl öffnen": false,
       "graph:Graph-Ansicht öffnen": false,
       "canvas:Neuen Canvas erstellen": false,
       "daily-notes:Heutige Notiz öffnen": false,
       "templates:Vorlage einfügen": false,
       "command-palette:Befehlspalette öffnen": false,
-      "bases:Neue Base erstellen": false,
-      "obsidian-git:Open Git source control": false
+      "bases:Neue Base erstellen": false
     }
   },
-  "active": "f290778edf7eb646",
+  "active": "657f57e3daf9f244",
   "lastOpenFiles": [
-    "SWD.md"
+    "POL.md",
+    "GIT.md",
+    "Images_Files/Pasted image 20260204172245.png",
+    "Images_Files/Pasted image 20260126161242.png",
+    "Images_Files/Pasted image 20260705154959.png",
+    "Images_Files/Pasted image 20260626102845.png",
+    "Images_Files/Pasted image 20260203193802.png",
+    "Images_Files/Pasted image 20260705144220.png",
+    "Images_Files/Pasted image 20260705154221.png",
+    "Images_Files/Pasted image 20250311171804.png",
+    "Images_Files/Pasted image 20260204170119.png",
+    "Images_Files/Pasted image 20250624151130.png",
+    "Images_Files",
+    "SWD.md",
+    "WBL.md",
+    "EVP.md"
   ]
 }
