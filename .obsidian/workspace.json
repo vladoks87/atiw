@@ -39,14 +39,14 @@
             "id": "98f4d67edef007d9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "SWD.md",
-                "mode": "source",
-                "source": false
+                "aFile": "EVP.md",
+                "bFile": "EVP.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "SWD"
+              "icon": "diff",
+              "title": "Diff: EVP  (Working Tree)"
             }
           }
         ],
@@ -227,10 +227,13 @@
   },
   "active": "98f4d67edef007d9",
   "lastOpenFiles": [
+    "EVP.md",
+    "conflict-files-obsidian-git.md",
+    "SWD.md",
+    "Images_Files/merged_abnahme.pdf",
+    "Images_Files/Testprotokolle.pdf",
     "Images_Files/Pasted image 20261003113333.png",
     "Formatierung Obisidian.md",
-    "SWD.md",
-    "EVP.md",
     "GIT.md",
     "WBL.md",
     "Projekt IHK/Ideen.md",
@@ -245,7 +248,6 @@
     "Images_Files/Pasted image 20260705154334.png",
     "Images_Files/Pasted image 20260705154221.png",
     "Images_Files/Pasted image 20260705154114.png",
-    "Images_Files/Pasted image 20260705144220.png",
     "Images_Files"
   ]
 }
