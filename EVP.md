@@ -683,6 +683,10 @@ Merkmale
 > In TLS 1.3 ist RSA als Schlüsselaustausch komplett entfernt.
 > Nur noch **ECDHE (Ephemeral Diffie-Hellman)** ist erlaubt: Für jede Sitzung wird ein **frischer, einmaliger Schlüssel** ausgehandelt, der danach verworfen wird.
 > Selbst wenn der Server-Schlüssel später in falsche Hände gerät, bleiben vergangene Sitzungen geschützt — das nennt man **Forward Secrecy**.
+
+![[Pasted image 20260923175445.png]]
+
+![[Pasted image 20260923175540.png]]
 ### Block 4
 #### Klausur
 [[#Routing]]
