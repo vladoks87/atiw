@@ -908,7 +908,7 @@ Die Testplanung ist die praktische Umsetzung der Qualitätsanforderungen.
 
 ---
 
-#### Beispiel: bahn.de
+##### Beispiel: bahn.de
 
 **Testfrage:**  
 Kann ein Benutzer eine Zugverbindung von Paderborn nach Berlin für einen bestimmten Tag finden und die gewünschten Informationen nachvollziehen?
@@ -920,3 +920,47 @@ Kann ein Benutzer eine Zugverbindung von Paderborn nach Berlin für einen bestim
 |**Fehlertoleranz**|Was passiert bei falschen oder unvollständigen Eingaben?|
 |**Leistung**|Wie schnell werden die Verbindungen angezeigt?|
 |**Zugänglichkeit**|Sind Bedienelemente und Informationen verständlich erreichbar?|
+#### REST-API
+API steht für **Application Programming Interface**. Eine API ist eine Schnittstelle, über die Programme miteinander kommunizieren können. Eine **REST-API ist eine Schnittstelle, über die Programme über das Internet** Daten austauschen können.
+
+Eine REST-API ermöglicht es einem Programm, Daten von einem anderen Programm abzurufen, zu
+erstellen, zu ändern oder zu löschen.
+
+Beispiel: Client → HTTP-Anfrage → REST-API → Antwort → Client
+
+**Grundprinzip**
+
+Eine REST-API stellt Ressourcen über eindeutige URLs bereit. Clients greifen über HTTP auf diese Ressourcen zu.
+
+| HTTP-Methode | Bedeutung | Beispiel |
+|---|---|---|
+| **GET** | Daten abrufen | Benutzer anzeigen |
+| **POST** | Neue Daten anlegen | Benutzer erstellen |
+| **PUT** | Ressource vollständig ersetzen | Benutzerdaten überschreiben |
+| **PATCH** | Ressource teilweise ändern | E-Mail-Adresse ändern |
+| **DELETE** | Ressource löschen | Benutzer entfernen |
+
+**Wichtige Merkmale**
+
+- Kommunikation meist über **HTTP/HTTPS**
+- Ressourcen werden über **URLs / Endpunkte** angesprochen
+- Daten werden häufig als **JSON** übertragen
+- REST ist **zustandslos**: Jede Anfrage enthält alle Informationen, die zur Verarbeitung nötig sind
+- Client und Server sind voneinander getrennt
+- Ein REST-Endpunkt könnte z. B. so aussehen:
+
+```text
+GET /api/users/42
+```
+
+``` JSON
+{
+  "id": 42,
+  "name": "Max Mustermann"
+}
+```
+
+> [!info]
+> Eine REST-Antwort enthält immer einen HTTP-Statuscode.  
+> Ein Response-Body mit Daten ist optional und hängt von Anfrage und API-Design ab.
+
