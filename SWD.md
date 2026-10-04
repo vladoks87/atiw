@@ -288,7 +288,7 @@ Mailserver (192.168.1.11) wird gestartet.
 
 ### Block 3
 
-### UML-Diagramme
+#### UML-Diagramme
 
 Wichtige Diagramme sind **Strukturdiagramme** und **Verhaltensdiagramme** - Struktur zeiugt wie ein System aufgebaut ist. Dies ist statisch.
 
@@ -316,7 +316,6 @@ Generalisierung: Vererbung von Eigenschaften.
 
 ![[Pasted image 20260126161034.png]]
 Pfeil zeigt immer auf den GENERELLEN Anwendungsfall.
-
 
 #### Aktivitätendiagramm
 Flussdiagramm, welches von einem System ausgeführte Aktivitäten abbildet.
@@ -526,7 +525,7 @@ Kunde(KundenID, Name, Telefonnummern)
 ```
 
 - Problem: `Telefonnummern` enthält mehrere Werte in einem Feld.
-- 
+
 **Korrektur (1NF-konform)**
 
 ```text
@@ -577,7 +576,6 @@ Artikel(Artikelnr, ArtikelName)
 - Voraussetzung: Tabelle ist in 2NF.
 - Keine **transitiven Abhängigkeiten**: Kein Nichtschlüsselattribut hängt über ein anderes Nichtschlüsselattribut vom Schlüssel ab.
 - Alle Nichtschlüsselattribute hängen direkt vom Primärschlüssel ab.
-
 
 **Beispiel (Verletzung der 3NF)**
 
@@ -656,7 +654,6 @@ dokumentieren.
 - Bereitstellung von Dateien (Auschecken)
 - Kollaboration
 
-
 | Repository   | Verzeichnis, dessen Inhalte versioniert werden.         |
 | ------------ | ------------------------------------------------------- |
 | Historie     | Zeitlicher Verlauf der Versionen                        |
@@ -670,3 +667,300 @@ Lock-Modify-Write Prinzip:
  Copy-Modify-Merge Prinzip:
  - lokale Arbeitskopien werden erstellt und später zusammengeführt (Merge)
  ![[Pasted image 20260626095753.png]]
+ 
+### Block 5
+
+#### Softwarequalität
+
+##### SQuaRE
+
+Die Normenfamilie **ISO/IEC 250xx**, auch als **SQuaRE** (_Software product Quality Requirements and Evaluation_) bekannt, ist eine internationale Reihe von Standards zur Definition, Messung und Bewertung der Qualität von Softwareprodukten und Systemen.
+
+|Ziel|Bedeutung|
+|---|---|
+|**Standardisierung**|Schafft einen einheitlichen Ansatz zur Beurteilung von Softwarequalität.|
+|**Ganzheitliche Betrachtung**|Geht über reine Fehlerfreiheit hinaus und umfasst verschiedene Aspekte der Produktqualität.|
+|**Grundlage für Anforderungen**|Unterstützt die systematische Definition und Bewertung von Qualitätsanforderungen.|
+
+**Kernbereiche der SQuaRE-Normenfamilie**
+
+|Normbereich|Schwerpunkt|
+|---|---|
+|**ISO/IEC 25000**|SQuaRE-Modell und allgemeine Begriffe|
+|**ISO/IEC 25010**|Produktqualitätsmodell und Nutzungsqualitätsmodell|
+|**ISO/IEC 2502x**|Qualitätsmessung und Referenzmodelle|
+|**ISO/IEC 2503x**|Qualitätsanforderungen|
+|**ISO/IEC 2504x**|Qualitätsbewertung und Evaluationsprozesse|
+![[Pasted image 20261003113333.png]]
+
+---
+#### Normenreihe ISO/IEC 25000
+
+| Phase                | Inhalte                                                                                                                                                                                                                                                                        |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Qualitätsplanung** | Anforderungen und Ziele festlegen, funktionale und nichtfunktionale Anforderungen unterscheiden, konkrete Merkmale definieren, Zielerfüllungsgrad bestimmen, Maßnahmen zur Qualitätssicherung und Qualitätsmessung planen, Testumgebung und Ressourcen festlegen, priorisieren |
+| **Durchführung**     | Qualitätssichernde Maßnahmen durchführen, Qualitätsmessungen durchführen, Ergebnisse protokollieren, auf Abweichungen reagieren, Ressourcen bereitstellen                                                                                                                      |
+| **Abschluss**        | Abnahme, kurzfristige interne Bewertung, langfristige Anpassungen                                                                                                                                                                                                              |
+
+---
+
+#### Qualität von Software nach ISO/IEC 25010
+
+Softwarequalität beschreibt das Maß, in dem die Anforderungen des Auftraggebers erfüllt werden.
+
+|Nr.|Qualitätsmerkmal|Wichtige Aspekte|
+|---|---|---|
+|1|**Funktionale Eignung**|Vollständigkeit der Softwarefunktionen, funktionale Korrektheit, angemessene Funktionalität|
+|2|**Leistungseffizienz**|Zeitverhalten, effektive Ressourcennutzung, Kapazität|
+|3|**Kompatibilität**|Koexistenz mit anderer Software, Interoperabilität|
+|4|**Benutzbarkeit / Usability**|Erkennbarkeit, Erlernbarkeit, Bedienbarkeit, Schutz vor Fehlbedienung, ästhetische Benutzeroberfläche, leichter Zugang|
+|5|**Zuverlässigkeit**|Ausgereiftheit, Verfügbarkeit, Fehlertoleranz, Wiederherstellbarkeit|
+|6|**Sicherheit**|Datenschutz, Integrität, Schutz vor Manipulation, sichere Administration, geschützte Benutzerkonten, Authentizierbarkeit|
+|7|**Wartbarkeit**|Modularer Aufbau, wiederverwendbare Komponenten, Analysefähigkeit, Modifizierbarkeit, Testbarkeit|
+|8|**Übertragbarkeit**|Adaptivität, leichte Installation, Austauschbarkeit|
+
+> [!info]  
+> „Die Software funktioniert“ reicht nicht aus. Softwarequalität betrachtet zusätzlich unter anderem Bedienbarkeit, Zuverlässigkeit, Sicherheit und Wartbarkeit.
+
+---
+#### Software-Ergonomie
+
+Software-Ergonomie beschäftigt sich damit, Software an die Bedürfnisse und Fähigkeiten der Menschen anzupassen, damit sie **menschengerecht, effektiv und zufriedenstellend** genutzt werden kann.
+
+Die **DIN EN ISO 9241** ist eine Normenreihe mit Anforderungen an die Ergonomie interaktiver Systeme.
+
+**Usability und User Experience**
+
+|Begriff|Bedeutung|
+|---|---|
+|**Usability / Gebrauchstauglichkeit**|Ausmaß, in dem bestimmte Benutzer ein Produkt in einem bestimmten Nutzungskontext effektiv, effizient und zufriedenstellend nutzen können|
+|**User Experience**|Gesamtheit der Eindrücke und Erlebnisse eines Nutzers bei der Interaktion mit einem Produkt|
+
+> [!summary]  
+> **Softwareergonomie = Usability = Benutzbarkeit**
+
+**Ziele der Software-Ergonomie**
+
+|Ziel|Bedeutung|
+|---|---|
+|**Software an den Menschen anpassen**|Nicht der Mensch soll sich an die Software anpassen müssen.|
+|**Gebrauchstauglichkeit**|Die Software soll effektiv, effizient und zufriedenstellend nutzbar sein.|
+|**Vermeidung von Belastungen**|Intuitive Bedienung soll unnötige Belastungen reduzieren.|
+
+**Untermerkmale der Benutzbarkeit**
+
+|Untermerkmal|Erklärung|Beispiel|
+|---|---|---|
+|**Erlernbarkeit**|Wie schnell ist die Software nutzbar?|Intuitive Menüstruktur|
+|**Bedienbarkeit**|Wie effizient kann sie genutzt werden?|Tastenkürzel|
+|**Erkennbarkeit der Eignung**|Ist der Zweck sofort klar?|Selbsterklärende Icons|
+|**Fehlerschutz**|Werden Fehler vermieden?|Pflichtfelder markieren|
+|**Fehlertoleranz**|Können Fehler korrigiert werden?|Undo-Funktion|
+|**Zufriedenheit**|Ist die Nutzung angenehm?|Konsistentes Design|
+|**Barrierefreiheit**|Ist die Nutzung trotz Einschränkungen möglich?|Ausreichende Kontraste|
+
+---
+#### Gestaltungsgrundsätze nach DIN EN ISO 9241-110
+
+|Gestaltungsgrundsatz|Bedeutung|Beispiel|
+|---|---|---|
+|**Aufgabenangemessenheit**|Die Software soll die Erledigung der Aufgabe unterstützen.|Ein Texteditor bietet die für die Textbearbeitung notwendigen Funktionen.|
+|**Selbstbeschreibungsfähigkeit**|Der Nutzer soll verstehen, wo er sich im System befindet und was zu tun ist.|Aussagekräftige Buttons und Tooltips|
+|**Steuerbarkeit**|Der Benutzer soll das System aktiv steuern können.|Undo-Funktion, Abbrechen, Zurück-Navigation|
+|**Erwartungskonformität**|Gestaltung und Verhalten sollen den Erwartungen der Nutzer entsprechen und konsistent sein.|Ein „Speichern“-Button speichert Daten wie üblich.|
+|**Fehlertoleranz**|Das System soll Fehler verzeihen und bei der Korrektur helfen.|Eingabefehler werden abgefangen und Korrekturmöglichkeiten angeboten.|
+|**Lernförderlichkeit**|Das System soll leicht erlernbar sein und den Nutzer unterstützen.|Hilfetexte, Tutorials, konsistente Menüführung|
+|**Individualisierbarkeit**|Oberfläche und Bedienung sollen an individuelle Bedürfnisse angepasst werden können.|Anpassbare Shortcuts, Layouts oder Farbschemata|
+
+---
+#### Barrierefreiheit nach DIN EN ISO 9241-171
+
+Als barrierefrei gelten informationstechnische Systeme, wenn sie für Menschen mit Behinderungen in allgemein üblicher Weise, ohne besondere Erschwernis und grundsätzlich ohne fremde Hilfe auffindbar, zugänglich und nutzbar sind.
+
+Die **DIN EN ISO 9241-171** beschreibt Leitlinien für die Zugänglichkeit von Software und verfolgt den Ansatz **Design for All**.
+
+|Themenbereich|Anforderungen / Beispiele|
+|---|---|
+|**Allgemeine Anforderungen**|Software soll für Menschen mit unterschiedlichen Behinderungen nutzbar sein.|
+|**Darstellung / Visualisierung**|Farbkontraste, Schriftgrößen, Icons, anpassbare Oberfläche|
+|**Bedienung / Eingabe**|Tastatursteuerung, Shortcuts, alternative Eingabemethoden|
+|**Information / Feedback**|Verständliche Fehlermeldungen, akustische Signale, klare Navigation|
+|**Anpassbarkeit / Individualisierung**|Oberfläche und Verhalten individuell anpassbar|
+|**Dokumentation / Hilfen**|Hilfetexte, Tutorials, barrierefreie Dokumentation|
+
+---
+### Testplanung
+
+Die ISO/IEC-250xx-Reihe beschreibt nicht konkret, **wie** getestet wird, sondern **was** und **warum** getestet wird.
+
+Die Testplanung ist die praktische Umsetzung der Qualitätsanforderungen.
+
+#### Evaluationsprozess nach ISO 25040
+
+1. Evaluationsziele festlegen
+2. Metriken auswählen
+3. Bewertungsmethoden bestimmen
+4. Messungen durchführen
+5. Ergebnisse interpretieren
+
+**Von der Norm zum Testplan**
+
+|Norm-Element|Entsprechung im Testplan|Beispiel|
+|---|---|---|
+|**Qualitätsmerkmal (25010)**|Testziel|Benutzbarkeit|
+|**Metrik (25023)**|Testkriterium|Aufgabe muss ohne Hilfe lösbar sein|
+|**Evaluationsschritt (25040)**|Testaktivität|Nutzer führt Aufgabe X aus|
+|**Bewertungsschwelle**|Akzeptanzkriterium|≤ 1 Fehler, ≤ 2 Minuten|
+
+---
+
+#### Klassifikation von Software-Testverfahren
+
+**Zeitpunkt des Testens**
+
+|Testart|Bedeutung|
+|---|---|
+|**Unit-Test**|Test einzelner Funktionen oder Klassen|
+|**Integrationstest**|Test des Zusammenspiels mehrerer Module|
+|**Systemtest**|Test des gesamten Systems gegen die Anforderungen|
+|**Abnahmetest**|Test durch Auftraggeber oder Nutzer zur Freigabe|
+|**Regressionstest**|Wiederholung von Tests nach Änderungen|
+
+**Testverfahren**
+
+|Kategorie|Verfahren|Bedeutung|
+|---|---|---|
+|**Ausführungsart**|Dynamisch|Test durch Ausführen der Software|
+|**Ausführungsart**|Statisch|Prüfung ohne Programmausführung, z. B. Review|
+|**Testzugang**|Black-Box|Test ohne Kenntnis der inneren Struktur|
+|**Testzugang**|Grey-Box|Test mit teilweisem Wissen über die Struktur|
+|**Testzugang**|White-Box|Test mit vollständiger Kenntnis des Codes|
+
+**Testintention**
+
+|Testart|Ziel|
+|---|---|
+|**Funktional**|Prüfen, ob Funktionen korrekt arbeiten|
+|**Nicht-funktional**|Prüfen von Qualitätsmerkmalen|
+|**Performance**|Prüfen von Laufzeit, Antwortzeit und Last|
+|**Sicherheitstest**|Prüfen des Schutzes vor Angriffen|
+|**Gebrauchstauglichkeitstest**|Prüfen der Benutzerfreundlichkeit|
+|**Zugänglichkeitstest**|Prüfen der Barrierefreiheit|
+
+> [!summary]  
+> **Testzeitpunkt = Wann?**  
+> **Testverfahren = Wie?**  
+> **Testintention = Warum?**
+
+---
+
+#### Vorgehen bei einer Testplanung
+
+1. **Software und Testbereich festlegen**
+    - Welche Software wird getestet?
+    - Was ist der Zweck der Software?
+    - Wer ist die Zielgruppe?
+    - Welcher Bereich wird getestet?
+    - Welche typische Benutzeraufgabe steht im Mittelpunkt?
+
+2. **Qualitätsanforderung bestimmen**  
+    Auswahl anhand der **ISO/IEC 25010**, z. B.:
+    - funktionale Eignung
+    - Benutzbarkeit
+    - Zuverlässigkeit
+    - Leistung
+    - Sicherheit
+    - Kompatibilität
+    
+3. **Testziel formulieren**
+    - Festlegen, was konkret überprüft werden soll.
+    
+4. **Messgröße / Metrik festlegen**  
+    Beispiele:
+    - benötigte Zeit
+    - Anzahl der Fehler
+    - Antwortzeit der Software
+    
+5. **Akzeptanzkriterium festlegen**
+    - Festlegen, welches Ergebnis noch als akzeptabel gilt.
+
+6. **Testverfahren auswählen**
+    - Passendes Testverfahren für das jeweilige Testziel auswählen.
+
+7. **Testfälle erstellen**
+    - Testfälle in einem Testprotokoll dokumentieren.
+
+8. **Test durchführen und dokumentieren**  
+    Zu dokumentieren sind:
+    - tatsächliche Ergebnisse
+    - aufgetretene Fehler
+    - benötigte Zeit
+    - Anzahl der Fehlversuche
+    - Abweichungen vom erwarteten Ergebnis
+
+9. **Ergebnis bewerten**  
+    Zu prüfen ist:
+    - Wurde das Testziel erreicht?
+    - Wurden die Anforderungen erfüllt?
+    - Welche Fehler wurden festgestellt?
+    - Welche Qualitätsprobleme gibt es?
+    - Ist die Software aus Sicht der Bewertung für die Freigabe geeignet?
+
+---
+
+##### Beispiel: bahn.de
+
+**Testfrage:**  
+Kann ein Benutzer eine Zugverbindung von Paderborn nach Berlin für einen bestimmten Tag finden und die gewünschten Informationen nachvollziehen?
+
+|Qualitätsmerkmal|Möglicher Test|
+|---|---|
+|**Funktionale Eignung**|Wird die richtige Verbindung angezeigt?|
+|**Benutzbarkeit**|Findet ein Benutzer die gewünschte Verbindung ohne Hilfe?|
+|**Fehlertoleranz**|Was passiert bei falschen oder unvollständigen Eingaben?|
+|**Leistung**|Wie schnell werden die Verbindungen angezeigt?|
+|**Zugänglichkeit**|Sind Bedienelemente und Informationen verständlich erreichbar?|
+#### REST-API
+API steht für **Application Programming Interface**. Eine API ist eine Schnittstelle, über die Programme miteinander kommunizieren können. Eine **REST-API ist eine Schnittstelle, über die Programme über das Internet** Daten austauschen können.
+
+Eine REST-API ermöglicht es einem Programm, Daten von einem anderen Programm abzurufen, zu
+erstellen, zu ändern oder zu löschen.
+
+Beispiel: Client → HTTP-Anfrage → REST-API → Antwort → Client
+
+**Grundprinzip**
+
+Eine REST-API stellt Ressourcen über eindeutige URLs bereit. Clients greifen über HTTP auf diese Ressourcen zu.
+
+| HTTP-Methode | Bedeutung | Beispiel |
+|---|---|---|
+| **GET** | Daten abrufen | Benutzer anzeigen |
+| **POST** | Neue Daten anlegen | Benutzer erstellen |
+| **PUT** | Ressource vollständig ersetzen | Benutzerdaten überschreiben |
+| **PATCH** | Ressource teilweise ändern | E-Mail-Adresse ändern |
+| **DELETE** | Ressource löschen | Benutzer entfernen |
+
+**Wichtige Merkmale**
+
+- Kommunikation meist über **HTTP/HTTPS**
+- Ressourcen werden über **URLs / Endpunkte** angesprochen
+- Daten werden häufig als **JSON** übertragen
+- REST ist **zustandslos**: Jede Anfrage enthält alle Informationen, die zur Verarbeitung nötig sind
+- Client und Server sind voneinander getrennt
+- Ein REST-Endpunkt könnte z. B. so aussehen:
+
+```text
+GET /api/users/42
+```
+
+``` JSON
+{
+  "id": 42,
+  "name": "Max Mustermann"
+}
+```
+
+> [!info]
+> Eine REST-Antwort enthält immer einen HTTP-Statuscode.  
+> Ein Response-Body mit Daten ist optional und hängt von Anfrage und API-Design ab.
+
