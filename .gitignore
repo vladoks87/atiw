@@ -1,0 +1,21 @@
+# Obsidian: gerätespezifischer Workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Obsidian temporäre/cache Dateien
+.obsidian/cache/
+.obsidian/.trash/
+
+# Betriebssystem-Dateien
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporäre Dateien
+*.tmp
+*.temp
+*.swp
+*.bak
+
+# Konfliktdateien vom Obsidian-Git-Plugin
+conflict-files-obsidian-git.md
