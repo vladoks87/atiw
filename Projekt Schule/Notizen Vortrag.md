@@ -1,0 +1,24 @@
+- Begrüßung Azubis
+- Vorstellung Merlin und ich als Mitarbeiter FIT244 GmbH
+- Vorstellung Paderformance Parkour
+- Vorstellung Heißer Draht
+- Vorstellung Präsi-> Vom Fach zum Produkt
+- Überleitung an Merlin
+- Vorstellung SWD
+	- Inhalte 
+		- UML
+		- Programmierung
+		- Datenbanken 
+		- APIs
+	Umsetzung SWD
+		- UML Planung Abläufe
+		- Programmierung C++
+		- Spiellogik, Grafik, Hardware
+		-  Code zeigen und etwas erklären
+- Vorstellung WBL
+	- Inhalte
+		- Preise kalkulieren
+		- Steuern und Abgaben
+	- Umsetzung WBL
+		- Berechnung der Projektkosten
+		
