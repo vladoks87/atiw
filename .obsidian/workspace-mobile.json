@@ -4,53 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "ba30c56ec4bee95a",
+        "id": "93c977c66359ebfe",
         "type": "tabs",
         "children": [
           {
-            "id": "27bfc2ef0f6df46e",
+            "id": "80830cbc9a2e70f5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "POL.md",
+                "file": "SWD.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "POL"
-            }
-          },
-          {
-            "id": "657f57e3daf9f244",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "GIT.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "GIT"
-            }
-          },
-          {
-            "id": "658b77559ad46f42",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "EVP.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "EVP"
+              "title": "SWD"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -141,7 +112,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "EVP.md",
+            "file": "SWD.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -198,13 +169,14 @@
       "bases:Neue Base erstellen": false
     }
   },
-  "active": "658b77559ad46f42",
+  "active": "80830cbc9a2e70f5",
   "lastOpenFiles": [
+    "POL.md",
+    "GIT.md",
+    "EVP.md",
     "Pasted image 20260923175540.png",
     "Pasted image 20260923175513.png",
     "Pasted image 20260923175445.png",
-    "POL.md",
-    "GIT.md",
     "Images_Files/Pasted image 20260204172245.png",
     "Images_Files/Pasted image 20260126161242.png",
     "Images_Files/Pasted image 20260705154959.png",
@@ -212,10 +184,8 @@
     "Images_Files/Pasted image 20260203193802.png",
     "Images_Files/Pasted image 20260705144220.png",
     "Images_Files/Pasted image 20260705154221.png",
-    "Images_Files/Pasted image 20250311171804.png",
     "Images_Files",
     "SWD.md",
-    "WBL.md",
-    "EVP.md"
+    "WBL.md"
   ]
 }
