@@ -40,6 +40,7 @@ Linux Server
 - nur Agents die senden?
 - Kombo?
 - Je nach Kunde
+- komplette Trennung am saubersten, Agent vor Ort muss Skripte ausführen können zb für api abfragen oder Soap/rest
 **Anforderungen:**
 - Mandantenfähig
 - geringe bis keine Lizenzkosten
