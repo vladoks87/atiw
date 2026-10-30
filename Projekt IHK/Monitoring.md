@@ -45,8 +45,19 @@ Linux Server
 - Mandantenfähig
 - geringe bis keine Lizenzkosten
 - Senden der Metriken über HTTPS
+- Extra User für API Abrufe (esxi, Firewall)
 **Auswahl der Metriken**
-
+- **Server**
+	  - Auslastung
+	  - Uptime
+	  - Services
+- **Clients** 
+	- Auslastung
+	- Uptime
+	- Win Version
 **Ausblick**
 - Skripte für schnelle Einrichtung
 - Alloy Snippets vorbereiten für gängige Geräte
+
+**Schwierigkeiten**
+- schöne Dashboards bauen
