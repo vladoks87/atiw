@@ -46,3 +46,7 @@ Linux Server
 - geringe bis keine Lizenzkosten
 - Senden der Metriken über HTTPS
 **Auswahl der Metriken**
+
+**Ausblick**
+- Skripte für schnelle Einrichtung
+- Alloy Snippets vorbereiten für gängige Geräte
