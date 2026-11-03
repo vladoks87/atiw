@@ -4,24 +4,21 @@ flowchart LR
     RP["Reverse Proxy"]
 
     subgraph WEB["Websites"]
-        FT["ftsoft.de"]
-        SQL["manager-sql.de"]
+        FT["monitoring.ftsoft.de"]
         CHG["Changes"]
     end
 
-    subgraph SERVICES["Services"]
+    subgraph SERVICES["Services CB"]
         MAIL["MailStore"]
         KP["KeePass"]
-        MON["Monitoring"]
+        KL["Kalenderapp"]
     end
 
     RP --> FT
-    RP --> SQL
     RP --> CHG
-
     RP --> MAIL
     RP --> KP
-    RP --> MON
+    RP --> KL
 ```
 
 **Voraussetzungen:**

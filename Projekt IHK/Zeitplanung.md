@@ -20,4 +20,7 @@ Persistente Grafana-Daten
 
 
 Docker, Grafana Stack = 1 Stunde
+
+Kollektoren einrichten ?? 2 Stunden
+
 Einrichtung Domain, Reverse Proxy 30 Min
